@@ -5,7 +5,7 @@ This software utilizes the genotypic frequencies under double-reduction to estim
 V1.0 64bit for Windows 
 
 to be added.
-https://github.com/huangkang1987/polygene/raw/master/PolyGene V1.0.zip
+https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.0.zip
 
 Citation:
 
