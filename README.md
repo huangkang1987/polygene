@@ -15,7 +15,8 @@ https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.0.zip
 
 Citation:
 
-to be added.
+Huang K, Dunn DW, Ritland K, Li BG (2020) POLYGENE: population genetics analyses for autopolyploids based on allelic phenotypes. Methods in Ecology and Evolution, DOI: https://doi.org/10.1111/2041-210X.13338
+
 
 Bug report and suggestions
 
