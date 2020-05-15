@@ -1,6 +1,6 @@
 #PolyGene
 
-This software utilizes the genotypic frequencies under double-reduction to estimate the allele frequencies from allelic phenotypes for polyploids. The software performs a variety of population genetic analyses including genetic diversity analysis, phenotypic or genotypic distribution test, linkage disequilibrium test, genetic differentiation test, genetic distance analysis, principal coordinate analysis, hierarchical clustering analysis, individual inbreeding coefficient estimation, individual heterozygosity index estimation, population assignment, pairwise relatedness estimation, parentage analysis, AMOVA and Bayesian clustering. 
+This software uses the genotypic frequencies under double-reduction to estimate the allele frequencies from allelic phenotypes for polyploids. The software performs a variety of population genetic analyses including genetic diversity analysis, phenotypic or genotypic distribution, linkage disequilibrium and genetic differentiation tests, genetic distance, principal coordinate and hierarchical clustering analyses, individual inbreeding coefficient, individual heterozygosity index and pairwise relatedness estimations, population assignment, parentage analysis, AMOVA and Bayesian clustering.
 
 
 V1.1 64bit for Windows, Ubuntu and Mac OS X
