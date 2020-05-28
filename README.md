@@ -3,20 +3,10 @@
 This software uses the genotypic frequencies under double-reduction to estimate the allele frequencies from allelic phenotypes for polyploids. The software performs a variety of population genetic analyses including genetic diversity analysis, phenotypic or genotypic distribution, linkage disequilibrium and genetic differentiation tests, genetic distance, principal coordinate and hierarchical clustering analyses, individual inbreeding coefficient, individual heterozygosity index and pairwise relatedness estimations, population assignment, parentage analysis, AMOVA and Bayesian clustering.
 
 
-V1.1 64bit for Windows, Ubuntu and Mac OS X
-
-https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.1.zip
-https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.1_Manual.zip
-
-
-V1.0b 64bit for Windows, Ubuntu and Mac OS X
-
-https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.0b.zip
-
-
-V1.0 64bit for Windows
-
-https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.0.zip
+V1.2 64bit for Windows, Ubuntu and Mac OS X
+Binary: https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.2.zip
+User manual: https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.2_Manual.zip
+Source code: https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.2_src.zip
 
 
 Citation:
