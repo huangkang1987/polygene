@@ -5,11 +5,11 @@ This software uses the genotypic frequencies under double-reduction to estimate 
 
 V1.3 64bit for Windows, Ubuntu and Mac OS X
 
-Binary: https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.3.zip
+Binary: https://github.com/huangkang1987/polygene/blob/master/PolyGeneV1.3.zip?raw=true
 
-User manual: https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.3_Manual.zip
+User manual: https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.3_Manual.zip?raw=true
 
-Source code: https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.3_src.zip
+Source code: https://github.com/huangkang1987/polygene/raw/master/PolyGeneV1.3_src.zip?raw=true
 
 
 Citation:
