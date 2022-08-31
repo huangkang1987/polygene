@@ -10,6 +10,8 @@ del dre.obj
 cd ..
 move dre\dre.dll bin\dre.dll
 
-%WinDir%\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe /p:Configuration=Release_x64 /p:Platform=x64 PolyGene.sln
-move PolyGene\bin\Release_x64\PolyGene.exe bin\PolyGene.exe
+cd src
+%WinDir%\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe /p:Configuration=Release "/p:Platform=Any CPU" PolyGene.sln
+cd ..
+move src\bin\Release_x64\PolyGene.exe bin\PolyGene.exe
 pause
