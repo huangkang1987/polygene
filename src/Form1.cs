@@ -1484,7 +1484,7 @@ namespace PolyGene
                 {
                     if (genotypes != null) return;
 
-                    if (alleles.Length > ploidy || (hash == 0 && !CONSIDER_NULL))
+                    if (alleles.Length > ploidy || (hash == 0 && !CONSIDER_NULL))//ok
                     {
                         genotypes = new GENOBODY[0];
                         return;
@@ -1532,7 +1532,7 @@ namespace PolyGene
                 lock (this)
                 {
                     //parentage analysis
-                    if (gametes != null || hash == 0) return;
+                    if (gametes != null || hash == 0 && DISCARD_EMPTY) return;
 
                     gametes = new Dictionary<uint, GENOBODY>();
                     int[] gals = new int[ploidy / 2];
@@ -2283,7 +2283,8 @@ namespace PolyGene
 
             public static bool IsMismatch(PHENOTYPE o, PHENOTYPE a)
             {
-                if (o.hash == 0 || a.hash == 0) return false;
+                if (o.hash == 0 || a.hash == 0) //ok
+                    return false;
                 foreach (GENOTYPE go in o.genotypes)
                     foreach (GENOBODY gga in a.body.gametes.Values)
                         if (go.IsSemiGenotype(gga))
@@ -2293,7 +2294,8 @@ namespace PolyGene
 
             public static bool IsMismatch(PHENOTYPE o, PHENOTYPE a, PHENOTYPE m)
             {
-                if (o.hash == 0 || a.hash == 0) return false;
+                if (o.hash == 0 || a.hash == 0) //ok
+                    return false;
                 if (m.hash == 0) return IsMismatch(o, a);
                 foreach (GENOTYPE go in o.genotypes)
                     foreach (GENOBODY gga in a.body.gametes.Values)
@@ -2717,7 +2719,7 @@ namespace PolyGene
                                 ph.freq[x.Key] += gh.poster * x.Value / ph.ploidy;
                         }
 
-                        if (CONSIDER_NULL && CONSIDER_NEGATIVE && ph.hash == 0)
+                        if (ph.hash == 0 && CONSIDER_NULL && CONSIDER_NEGATIVE)
                         {
                             double w1 = ph.genotypes[0].poster, w2 = 1 - w1;
                             foreach (var kv in loc[l].freq)
@@ -2728,7 +2730,7 @@ namespace PolyGene
                 }
             }
 
-            public double EMSub(int l)
+            public double EMSub(int l, int Niter)
             {
                 //em algorithm for population p, locus l, return phenotypic likelihood
                 double s = loc[l].s, f = s2f(s, ploidy, l);
@@ -2740,7 +2742,7 @@ namespace PolyGene
                 foreach (int a in keys)
                     fre1[a] = 1.0 / keys.Length;
 
-                for (int count = 0; count < MAX_EMITER; ++count)
+                for (int count = 0; count < Niter; ++count)
                 {
                     //double lnL = 0;
                     foreach (int a in keys)
@@ -2756,7 +2758,8 @@ namespace PolyGene
                     {
                         if (ph.count == 0) continue;
                         scountneg += ph.count;
-                        if (ph.hash == 0 && !CONSIDER_NEGATIVE && !CONSIDER_NULL) continue;
+
+                        if (ph.hash == 0 && DISCARD_EMPTY) continue;//ok, estimate allele freq
 
                         double spr = 0;
                         foreach (GENOTYPE gh in ph.genotypes)
@@ -2794,7 +2797,7 @@ namespace PolyGene
                     {
                         foreach (PHENOTYPE ph in phenotype[l].Values)
                         {
-                            if (ph.hash == 0 && !CONSIDER_NEGATIVE && !CONSIDER_NULL) continue;
+                            if (ph.hash == 0 && DISCARD_EMPTY) continue;//ok, estimate allele freq
                             if (ph.prob > MINALLELEFREQSQ) lnLPheno += ph.count * Math.Log(ph.prob);
                             ph.prob = -1;
                         }
@@ -2806,10 +2809,13 @@ namespace PolyGene
                 return lnLPheno;
             }
 
-            public double HardySelfingEstimator()
+            public double HardySelfingEstimator(bool extra)
             {
+                //extra mode   : using heterozygosity and allele freq obtained from EM algorithm
+                //non-extramode: using original allele frequency estimator
+
                 double re = 0;
-                if (SELFING_ESTIMATOR == SelfingRateEstimator.HardyFz)
+                if (SELFING_ESTIMATOR == SelfingRateEstimator.HardyFz || SELFING_ESTIMATOR == SelfingRateEstimator.HardyFzEM)
                 {
                     // f global
                     double alpha = 0, f1 = 0, f2 = 0;
@@ -2818,29 +2824,29 @@ namespace PolyGene
                         if (loc[l].nphenotypes <= 1) continue;
 
                         double he = 1.0, hil = 0, nv = 0;//expected heterozygosity, sum of observed heterozygosity across inds, number of visible phenotypes
-                        Dictionary<int, double> fre = CloneKey(loc[l].freq); //allele frequency vector
-                        foreach (int a in loc[l].freq.Keys) fre[a] = 0; //initialize 
+                        Dictionary<int, double> fre = extra ? loc[l].freq : CloneKey(loc[l].freq); //allele frequency vector
+                        if (!extra) foreach (int a in loc[l].freq.Keys) fre[a] = 0; //initialize 
                         if (ploidy >= 4 && ploidy % 2 == 0)
                             for (int i = 1; i <= (ploidy >> 2); ++i)
                                 alpha += all.ALPHA[l, ploidy][i] * i; //number of IBDR alleles in gamete
 
                         foreach (PHENOTYPE ph in phenotype[l].Values)
                         {
-                            if (ph.count == 0 || ph.hash == 0) continue;
+                            if (ph.count == 0 || ph.hash == 0) continue; //ok, as paper described
                             nv += ph.count; //number of visible phenotype
                             double na = ph.count / ph.alleles.Length;
-                            foreach (int a in ph.alleles)
+                            if (!extra) foreach(int a in ph.alleles)
                                 fre[a] += na; // summing allele copies
-                            hil += ph.GetHardyHidx(ploidy) * ph.count; //suming observed heterozygosity
+                            hil += (extra ? ph.GetHIndex() : ph.GetHardyHidx(ploidy)) * ph.count; //suming observed heterozygosity
                         }
 
-                        Unify(fre);
-                        foreach (double af in fre.Values)
-                            he -= af * af;
+                        if (!extra) Unify(fre);
+                        he = 1.0 - fre.Sum(o => o.Value * o.Value);
 
                         f1 += hil;
                         f2 += nv * nv / (nv - 1) * (he - (ploidy - 1) / (ploidy * nv * nv) * hil);// Hardy (2016) eqn 10
                     }
+
                     if (f1 == 0 && f2 == 0)
                         re = 0;
                     else
@@ -2854,7 +2860,7 @@ namespace PolyGene
                         if (re < 1e-10) re = 1e-10;
                     }
                 }
-                else if (SELFING_ESTIMATOR == SelfingRateEstimator.Hardyg2z)
+                else if (SELFING_ESTIMATOR == SelfingRateEstimator.Hardyg2z || SELFING_ESTIMATOR == SelfingRateEstimator.Hardyg2zEM)
                 {
                     //g2z global
                     double[] M = new double[L];//num of inds with missing data
@@ -2881,8 +2887,8 @@ namespace PolyGene
                             double hlm = 0, hl = 0, hm = 0;
                             for (int i = 0; i < n; ++i)
                             {
-                                double h1 = inds[i].g[l1].GetHardyHidx(ploidy);
-                                double h2 = inds[i].g[l2].GetHardyHidx(ploidy);
+                                double h1 = extra ? inds[i].g[l1].GetHIndex() : inds[i].g[l1].GetHardyHidx(ploidy);
+                                double h2 = extra ? inds[i].g[l2].GetHIndex() : inds[i].g[l2].GetHardyHidx(ploidy);
 
                                 hl += h1;
                                 hm += h2;
@@ -2991,7 +2997,7 @@ namespace PolyGene
                 if (flag)
                 {
                     // collapse to k-1 success, try this
-                    //g[l], df[l], pval[l] needs to calculate
+                    //g[l], df[l], pval[l] needs to be calculated
 
                     double g2 = 0;
                     int[] als = new int[ploidy];
@@ -3000,7 +3006,7 @@ namespace PolyGene
 
                     foreach (PHENOTYPE gh in phenotype[l].Values)
                     {
-                        if (gh.hash == 0) continue;
+                        if (gh.hash == 0) continue;//ok, this is genotype
                         for (int a = 0; a < ploidy; ++a)
                             als[a] = amap[gh.alleles[a]];
 
@@ -3020,7 +3026,7 @@ namespace PolyGene
 
                     foreach (uint ha in obs.Keys)
                     {
-                        if (ha == 0) continue;//bug fixed @ 20200731, don't count empty phenotypes
+                        if (ha == 0) continue;//ok, this is genotype //bug fixed @ 20200731, don't count empty phenotypes
 
                         if (exp[ha] < 5)
                             return false;
@@ -3086,7 +3092,8 @@ namespace PolyGene
 
                     foreach (PHENOTYPE gh in phenotype[l].Values)
                     {
-                        if (gh.hash == 0) continue;
+                        if (gh.hash == 0 && DISCARD_EMPTY) continue;//zzz, not sure but this function is not used
+
                         PHENOBODY pb = new PHENOBODY(ploidy, gh.alleles.Select(a => amap[a]).Distinct().ToArray(), false);
                         uint ha = pb.hash;
                         if (!obs.ContainsKey(ha))
@@ -3126,7 +3133,6 @@ namespace PolyGene
                     return false;
                 }
             }
-
 
             private void EnumPhenotypes(int l, int lay, int id, int[] tals, List<int> als, double[] obs, double[] exp, ref int op)
             {
@@ -3186,27 +3192,11 @@ namespace PolyGene
                             CollapseGeno(l, null, null, obj);
                         else
                             //CollapsePheno(l, null, null, obj);
-                        //if (false)
                         {
-
                             int op = 0;
                             int npheno = (CONSIDER_NULL || CONSIDER_NEGATIVE ? 1 : 0) + (int)PHENO_COUNT[ploidy, loc[l].freq.Count - (CONSIDER_NULL || CONSIDER_NEGATIVE ? 1 : 0)];
                             double[] obs = new double[npheno], exp = new double[npheno];
                             EnumPhenotypes(l, 0, 0, loc[l].freq.Keys.Where(o => o != NULL_ALLELE).ToArray(), new List<int>(), obs, exp, ref op);
-
-                            /*
-                            foreach (PHENOTYPE ph in phenotype[l].Values)
-                            {
-                                if (CONSIDER_NULL || CONSIDER_NEGATIVE || ph.hash != 0)
-                                {
-                                    obs[op] = ph.count;
-                                    exp[op] = ph.prob;
-                                    op++;
-                                }
-                            }
-                            Array.Resize(ref obs, op);
-                            Array.Resize(ref exp, op);
-                            */
 
                             Mul(exp, exp, Valid[l]);
 
@@ -3283,7 +3273,7 @@ namespace PolyGene
 
                         foreach (PHENOTYPE ph in phenotype[l].Values)
                         {
-                            if (ph.hash == 0) continue;
+                            if (ph.hash == 0 && DISCARD_EMPTY) continue;//zzz, not sure, check
 
                             foreach (GENOTYPE gh in ph.genotypes)
                                 gh.GetHoDiallelic(ph.count * gh.poster, ho2);
@@ -3507,7 +3497,7 @@ namespace PolyGene
                 foreach (IND ind in inds)
                 {
                     PHENOTYPE p = ind.g[l];
-                    if (p.hash == 0) continue;
+                    if (p.hash == 0) continue; //ok, this is genotype, in population simulation
                     ns += p.ploidy;
                     foreach (int a in p.alleles)
                         allele[a]++;
@@ -6496,7 +6486,7 @@ Population	Individual
                             int nphenotype = 0;
                             foreach (PHENOTYPE ph in total_pop.phenotype[l].Values)
                             {
-                                if (ph.hash == 0) continue;
+                                if (ph.hash == 0) continue;//ok, donminant method only use visible alleles
                                 nphenotype += ph.count;
                                 foreach (int a in ph.alleles.Distinct())
                                 {
@@ -6554,7 +6544,7 @@ Population	Individual
                     CALC_DIFF && DIFF_Huang2019 ||
                     CALC_INBREEDING && INBREEDING_HuangUnpub ||
                     CALC_RELATIONSHIP && (RELATIONSHIP_HuangUnpub || RELATIONSHIP_HuangUnpubm) ||
-                    CALC_DIST && (DIST_Roger1973 || DIST_Slatkin1995) && DIFF_Huang2019)
+                    CALC_DIST && (DIST_Rogers1973 || DIST_Slatkin1995) && DIFF_Huang2019)
                 {
                     CalcHomozygosity();
                 }
@@ -6688,7 +6678,7 @@ Population	Individual
                 Parallel.For(0, L, new ParallelOptions() { MaxDegreeOfParallelism = nthreads }, l =>
                 {
                     p.loc[l].s = s;
-                    double li = p.EMSub(l);
+                    double li = p.EMSub(l, MAX_EMITER);
                     lock (p)
                     { sli += li; }
                 });
@@ -6716,18 +6706,7 @@ Population	Individual
                 GetAlpha(total_pop.loc, l);
                 xp.li = 0;
                 foreach (SUBPOP p in subpops)
-                    xp.li += p.EMSub(l);
-            }
-
-            public void CalcFrequencyPES(int nthreads)
-            {
-                Parallel.For(0, L, new ParallelOptions() { MaxDegreeOfParallelism = nthreads }, l =>
-                {
-                    Point4 x = Point4.DownHillSimplex(1, 1, EMSubPES, new object[] { l, subpops });
-                    total_pop.loc[l].rs = x.real[0];
-                    Array.ForEach(subpops, p => p.loc[l].rs = x.real[0]);
-                    Increment();
-                });
+                    xp.li += p.EMSub(l, MAX_EMITER);
             }
 
             public void CalcFrequency(int nthreads)
@@ -6751,7 +6730,7 @@ Population	Individual
                     Parallel.ForEach(PL, new ParallelOptions { MaxDegreeOfParallelism = nthreads }, pl =>
                     {
                         pl.loc.s = 0;
-                        pl.pop.EMSub(pl.loc.id);
+                        pl.pop.EMSub(pl.loc.id, MAX_EMITER);
                         Increment();
                     });
                 }
@@ -6766,6 +6745,45 @@ Population	Individual
                         if (all == this) SetProgress(ProgressValue, ProgressMax);
                         CalcFrequencySelfing(nthreads);
                     }
+                    else if (SELFING_ESTIMATOR == SelfingRateEstimator.Hardyg2zEM ||
+                             SELFING_ESTIMATOR == SelfingRateEstimator.HardyFzEM)
+                    {
+                        ProgressValue = 0;
+                        ProgressMax = subpops.Length;
+                        if (all == this)
+                            SetProgress(ProgressValue, ProgressMax);
+
+                        GetAlpha(total_pop.loc);
+
+                        foreach (SUBPOP p in subpops)
+                        {
+                            double ps = -1;
+                            for (int m = 0; m < MAX_EMITER; ++m)
+                            {
+                                //update selfing rate, 1st round uses original mode, 2st uses extra mode
+                                p.s = p.HardySelfingEstimator(m != 0);
+
+                                //update allele freq
+                                Parallel.ForEach(p.loc, new ParallelOptions { MaxDegreeOfParallelism = nthreads }, loc =>
+                                {
+                                    loc.s = p.s;
+
+                                    //use more #iter in the 1st round
+                                    p.EMSub(loc.id, m != 0 ? 200 : MAX_EMITER);
+
+                                    foreach (PHENOTYPE ph in p.phenotype[loc.id].Values)
+                                        p.GetGenoPoster(ph, loc.id);
+                                });
+
+                                //check convergency 
+                                if (Math.Abs(ps - p.s) < 1e-5)
+                                    break;
+
+                                ps = p.s;
+                            }
+                            Increment();
+                        }
+                    }
                     else
                     {
                         ProgressValue = 0;
@@ -6778,12 +6796,12 @@ Population	Individual
                         var PL = (from SUBPOP p in subpops from LOC l in p.loc select new { pop = p, loc = l }).ToList();
 
                         foreach (SUBPOP p in subpops)
-                            p.s = p.HardySelfingEstimator();
+                            p.s = p.HardySelfingEstimator(false);
 
                         Parallel.ForEach(PL, new ParallelOptions { MaxDegreeOfParallelism = nthreads }, pl =>
                         {
                             pl.loc.s = pl.pop.s;
-                            pl.pop.EMSub(pl.loc.id);
+                            pl.pop.EMSub(pl.loc.id, MAX_EMITER);
                             Increment();
                         });
                     }
@@ -6796,7 +6814,13 @@ Population	Individual
                     ProgressMax = L;
                     if (all == this) SetProgress(ProgressValue, ProgressMax);
 
-                    CalcFrequencyPES(nthreads);
+                    Parallel.For(0, L, new ParallelOptions() { MaxDegreeOfParallelism = nthreads }, l =>
+                    {
+                        Point4 x = Point4.DownHillSimplex(1, 1, EMSubPES, new object[] { l, subpops });
+                        total_pop.loc[l].rs = x.real[0];
+                        Array.ForEach(subpops, p => p.loc[l].rs = x.real[0]);
+                        Increment();
+                    });
                 }
 
                 //unify
@@ -6987,14 +7011,21 @@ Population	Individual
                         AR[p, l] += K[p, l];
                         PIC[p, l] = 1 - s1 - s1 * s1 + s2;
 
+                        double ngenotypes = 0;
                         foreach (PHENOTYPE ph in tp.phenotype[l].Values)
                         {
-                            if (ph.hash == 0) continue;
-                            N[p, l] += ph.count;
+                            //do not account for missing data to consistent with previous results
+                            if (ph.hash != 0)
+                                N[p, l] += ph.count;
+
+                            // account for missing data when negative amplication or null alleles are considered, fixed @ 20220914
+                            if (ph.hash == 0 && DISCARD_EMPTY) continue;
+
+                            ngenotypes += ph.count * ph.genotypes.Sum(g => g.poster);
                             HO[p, l] += ph.count * ph.genotypes.Sum(g => g.poster * g.GetHIndex());
                         }
 
-                        HO[p, l] /= N[p, l];
+                        HO[p, l] /= ngenotypes;
                         HE[p, l] = 1 - HE[p, l];
                         AE[p, l] = 1 / AE[p, l];
                         FIX[0, p, l] = 1 - HO[p, l] / HE[p, l];
@@ -7272,7 +7303,7 @@ Population	Individual
                     foreach (IND ind in subpop.inds)
                     {
                         uint ha1 = ind.g[l1].hash, ha2 = ind.g[l2].hash;
-                        if (ha1 == 0 || ha2 == 0) continue;
+                        if (ha1 == 0 || ha2 == 0) continue;//zzz unknown
                         if (!type1.ContainsKey(ha1)) type1[ha1] = 0;
                         if (!type2.ContainsKey(ha2)) type2[ha2] = 0;
                         type1[ha1]++;
@@ -7460,7 +7491,7 @@ Population	Individual
                                 foreach (IND ind in inds)
                                 {
                                     uint ha1 = ind.g[l1].hash, ha2 = ind.g[l2].hash;
-                                    if (ha1 == 0 || ha2 == 0) continue;
+                                    if (ha1 == 0 || ha2 == 0) continue; //zzz unknown
                                     ulong ha = (((ulong)ha1) << 32) | ((ulong)ha2);
                                     if (!c1.ContainsKey(ha1)) c1[ha1] = new LS(c1.Count);
                                     if (!c2.ContainsKey(ha2)) c2[ha2] = new LS(c2.Count);
@@ -7721,7 +7752,7 @@ Population	Individual
                     IND ind = inds[i];
                     for (int l = 0, lp1 = 0; l < L; ++l)
                     {
-                        if (ind.g[l].hash == 0)
+                        if (ind.g[l].hash == 0) //ok, must use
                         {
                             //missing haplotype, weight
                             foreach (var a in ind.subpop.loc[l].freq)
@@ -7790,7 +7821,7 @@ Population	Individual
 
                     for (int l = 0; l < L; ++l)
                     {
-                        if (ind.g[l].hash == 0)
+                        if (ind.g[l].hash == 0)//ok, must use
                         {
                             //missing haplotype
                             if (enable_missing)
@@ -8238,6 +8269,7 @@ Population	Individual
                     int nt = 0, ns = 0, ns2 = 0;
                     Dictionary<int, double> allele = CloneKey(subpops[0].loc[l].freq);
                     Dictionary<int, double> sallele = CloneKey(subpops[0].loc[l].freq);
+
                     if (issim)
                     {
                         foreach (SUBPOP tp in subpops)
@@ -8289,7 +8321,7 @@ Population	Individual
                         for (int l = 0; l < L; ++l)
                         {
                             if (J != null && (J[l] == 1 || double.IsNaN(J[l])) || xi.g[l].hash == 0 || yi.g[l].hash == 0) continue;
-                            sum += SumProd(xi.g[l].freq, yi.g[l].freq);
+                            sum += SumProd(xi.g[l].freq, yi.g[l].freq);//zzz, unknown
                         }
                         sxy[i, j] = sxy[j, i] = sum;
                     }
@@ -9601,10 +9633,19 @@ Population	Individual
                     double xscale = (picwidth - 2 * margin) / rangex;
 
                     Bitmap bmp = new Bitmap(picwidth, picheight);
-                    //Vector
-                    Stream ms = new MemoryStream();
-                    Metafile mf = new Metafile(ms, Graphics.FromImage(bmp).GetHdc());
-                    Graphics g = Graphics.FromImage(mf);
+                    MemoryStream ms = null; Graphics gdc = null; Metafile mf = null; Graphics g = null;
+
+                    if (OS == OperationSystem.Windows)
+                    {
+                        //Vector image
+                        ms = new MemoryStream();
+                        gdc = Graphics.FromHwndInternal(IntPtr.Zero);
+                        mf = new Metafile(ms, gdc.GetHdc(), EmfType.EmfPlusOnly);
+                        gdc.ReleaseHdc();
+                        g = Graphics.FromImage(mf);
+                    }
+                    else
+                        g = Graphics.FromImage(bmp);
 
                     g.Clear(Color.White);
 
@@ -9747,19 +9788,26 @@ Population	Individual
                                 stleft);
                     }
 
-                    g.Dispose();
-                    ms.Seek(0, SeekOrigin.Begin);
-                    VecFile = new byte[ms.Length];
-                    ms.Read(VecFile, 0, (int)ms.Length);
-                    ms.Seek(0, SeekOrigin.Begin);
+                    if (OS == OperationSystem.Windows)
+                    {
+                        //write VecFile
+                        g.Dispose();
+                        ms.Seek(0, SeekOrigin.Begin);
+                        VecFile = new byte[ms.Length];
+                        ms.Read(VecFile, 0, (int)ms.Length);
 
-                    g = Graphics.FromImage(bmp);
-                    g.DrawImage(new Metafile(ms), 0, 0, bmp.Width, bmp.Height);
+                        //draw bitmap
+                        g = Graphics.FromImage(bmp);
+                        g.DrawImage(mf, 0, 0, bmp.Width, bmp.Height);
+                        g.Dispose();
+                        mf.Dispose();
+                        ms.Dispose();
+                    }
+                    else 
+                        VecFile = new byte[0];
+
                     MemoryStream m = new MemoryStream();
                     bmp.Save(m, ImageFormat.Png);
-
-                    ms.Dispose();
-                    g.Dispose();
                     bmp.Dispose();
                     return Image.FromStream(m);
                 }
@@ -9874,18 +9922,6 @@ Population	Individual
                         tc.left = node[a];
                         tc.right = node[b];
 
-                        ///
-                        StringBuilder sb = new StringBuilder();
-                        for (int i = 0; i < ncur; ++i)
-                        {
-                            for (int j = 0; j < ncur; ++j)
-                            {
-                                sb.Append(dcur[i, j].ToString("F3"));
-                                sb.Append("\t");
-                            }
-                            sb.Append("\r\n");
-                        }
-                        ///
                         ReduceMatrix(a, b);
                         node[a] = tc;
                         node.RemoveAt(b);
@@ -10059,6 +10095,13 @@ Population	Individual
                 double[,] Dm = (double[,])((object[])obj)[9];
                 double[,] Dr = (double[,])((object[])obj)[10];
 
+                double[,] S1 = (double[,])((object[])obj)[11];
+                double[,] S2 = (double[,])((object[])obj)[12];
+                double[,] S3 = (double[,])((object[])obj)[13];
+                double[,] S4 = (double[,])((object[])obj)[14];
+                double[,] S5 = (double[,])((object[])obj)[15];
+                double[,] S6 = (double[,])((object[])obj)[16];
+
                 int c = 0;
                 for (int i = 0; i < subpops.Length; ++i)
                 {
@@ -10068,6 +10111,8 @@ Population	Individual
                         if (c++ % nthreads != id) continue;
                         SUBPOP tp2 = subpops[j];
 
+                        double s1 = 0, s2 = 0, s3 = 0, s4 = 0, s5 = 0, s6 = 0;
+                        double dch = 0, da = 0, dr = 0, deu = 0, dmu2 = 0;
                         double t1 = 0, t2 = 0, Jx1 = 0, Jx2 = 0, Jxy = 0;
                         int eL = 0;
                         for (int l = 0; l < L; ++l)
@@ -10087,7 +10132,10 @@ Population	Individual
                         for (int l = 0; l < L; ++l)
                         {
                             if (tp.loc[l].nhaplotypes == 0 || tp2.loc[l].nhaplotypes == 0 || tp.loc[l].freq.Count < 2) continue;
-                            double Sx1 = 0, Sx2 = 0, dr = 0, eu = 0;
+
+                            int sa = 0, sb = 0, sc = 0, sd = 0;
+                            double Sx1 = 0, Sx2 = 0, ddr = 0, ddeu = 0;
+
                             foreach (int a in total_pop.loc[l].freq.Keys)
                             {
                                 double fr1 = GetMissingFreq(tp, l, a);
@@ -10098,32 +10146,63 @@ Population	Individual
                                     Sx2 += fr2 * a;
                                 }
                                 Jxy += fr1 * fr2;
-                                Dch[i, j] += fr1 * fr2 > 0 ? Math.Sqrt(fr1 * fr2) : 0;
+                                dch += fr1 * fr2 > 0 ? Math.Sqrt(fr1 * fr2) : 0;
                                 t1 += (fr1 - fr2) * (fr1 - fr2);
                                 t2 += fr1 * fr2;
-                                Da[i, j] += fr1 * fr2 > 0 ? Math.Sqrt(fr1 * fr2) : 0;
-                                dr += (fr1 - fr2) * (fr1 - fr2) / 2;
-                                eu += (fr1 - fr2) * (fr1 - fr2);
+                                da += fr1 * fr2 > 0 ? Math.Sqrt(fr1 * fr2) : 0;
+                                ddr += (fr1 - fr2) * (fr1 - fr2) / 2;
+                                ddeu += (fr1 - fr2) * (fr1 - fr2);
+
+                                if (a == NULL_ALLELE) continue;
+
+                                if (fr1 * tp.loc[l].nhaplotypes > 0.5)
+                                {
+                                    if (fr2 * tp2.loc[l].nhaplotypes > 0.5) sa++;
+                                    else sb++;
+                                }
+                                else
+                                {
+                                    if (fr2 * tp2.loc[l].nhaplotypes > 0.5) sc++;
+                                    else sd++;
+                                }
                             }
+
                             Sx1 /= 1 - GetMissingFreq(tp, l, NULL_ALLELE);
                             Sx2 /= 1 - GetMissingFreq(tp2, l, NULL_ALLELE);
-                            mu2[i, j] += (Sx1 - Sx2) * (Sx1 - Sx2);
-                            Dr[i, j] += dr > 0 ? Math.Sqrt(dr) : 0;
-                            Deu[i, j] += eu > 0 ? eu : 0;
+                            dmu2 += (Sx1 - Sx2) * (Sx1 - Sx2);
+                            dr += ddr > 0 ? Math.Sqrt(ddr) : 0;
+                            deu += ddeu > 0 ? ddeu : 0;
+
+                            s1 += 1 - (sa + sd) / (double)(sa + sb + sc + sd);
+                            s2 += 1 - (sa + sd) / (double)(sa + 2 * sb + 2 * sc + sd);
+                            s3 += 1 - sa / (double)(sa + sb + sc);
+                            s4 += 1 - (2 * sa) / (double)(2 * sa + sb + sc);
+                            s5 += 1 - sa / (double)(sa + 2 * sb + 2 * sc);
+                            s6 += 1 - sa / (double)(sa + sb + sc + sd);
                         }
 
                         Jxy /= eL;
-                        D[j, i] = D[i, j] = -Math.Log(Jxy / Math.Sqrt(Jx1 * Jx2)); //Nei
-                        Dm[j, i] = Dm[i, j] = (Jx1 + Jx2) / 2 - Jxy;//Nei's minimum
-                        Dch[i, j] = Dch[j, i] = 2 / Math.PI * Math.Sqrt(2 * (1 - Dch[i, j] / eL));//Cavalli-Sforza chord distance
-                        Th[i, j] = Th[j, i] = Math.Sqrt(t1 / (2 * eL - 2 * t2));//Reynolds, Weir, and Cockerham's genetic distance
-                        Da[j, i] = Da[i, j] = 1 - Da[i, j] / eL;//Nei's DA distance 1983
-                        Deu[j, i] = Deu[i, j] = Math.Sqrt(Deu[i, j]);//Euclidean distance, do not divide eL to make the results of PCA and PCoa are equal
-                        mu2[j, i] = mu2[i, j] = mu2[i, j] / eL;//Goldstein distance 1995
-                        Dr[j, i] = Dr[i, j] = Dr[i, j] / eL;//Roger's distance 1972
+
+                        if (DIST_Nei1972) D[j, i] = D[i, j] = -Math.Log(Jxy / Math.Sqrt(Jx1 * Jx2)); //Nei
+                        if (DIST_Nei1973) Dm[j, i] = Dm[i, j] = (Jx1 + Jx2) / 2 - Jxy;//Nei's minimum
+                        if (DIST_Cavalli1967) Dch[i, j] = Dch[j, i] = 2 / Math.PI * Math.Sqrt(2 * (1 - dch / eL));//Cavalli-Sforza chord distance
+                        if (DIST_Reynold1993) Th[i, j] = Th[j, i] = Math.Sqrt(t1 / (2 * eL - 2 * t2));//Reynolds, Weir, and Cockerham's genetic distance
+                        if (DIST_Nei1983) Da[j, i] = Da[i, j] = 1 - da / eL;//Nei's DA distance 1983
+                        if (DIST_Euclidean) Deu[j, i] = Deu[i, j] = Math.Sqrt(deu);//Euclidean distance, do not divide eL to make the results of PCA and PCoa are equal
+                        if (DIST_Goldstein1995) mu2[j, i] = mu2[i, j] = dmu2 / eL;//Goldstein distance 1995
+                        if (DIST_Rogers1973) Dr[j, i] = Dr[i, j] = dr / eL;//Rogers's distance 1972
+
+                        if (DIST_Sokal1958) S1[j, i] = S1[i, j] = Math.Sqrt(s1);
+                        if (DIST_Rogers1960) S2[j, i] = S2[i, j] = Math.Sqrt(s2);
+                        if (DIST_Jaccard1901) S3[j, i] = S3[i, j] = Math.Sqrt(s3);
+                        if (DIST_Sorensen1948) S4[j, i] = S4[i, j] = Math.Sqrt(s4);
+                        if (DIST_Sokal1963) S5[j, i] = S5[i, j] = Math.Sqrt(s5);
+                        if (DIST_Russel1940) S6[j, i] = S6[i, j] = Math.Sqrt(s6);
+
                         Increment();
                     }
                 }
+
             }
 
             public void CalcDistanceThreadInd(object obj)
@@ -10140,6 +10219,13 @@ Population	Individual
                 double[,] Dm = (double[,])((object[])obj)[9];
                 double[,] Dr = (double[,])((object[])obj)[10];
 
+                double[,] S1 = (double[,])((object[])obj)[11];
+                double[,] S2 = (double[,])((object[])obj)[12];
+                double[,] S3 = (double[,])((object[])obj)[13];
+                double[,] S4 = (double[,])((object[])obj)[14];
+                double[,] S5 = (double[,])((object[])obj)[15];
+                double[,] S6 = (double[,])((object[])obj)[16];
+
                 int c = 0;
                 for (int i = 0; i < inds.Length; ++i)
                 {
@@ -10149,8 +10235,11 @@ Population	Individual
                         if (c++ % nthreads != id) continue;
                         IND ti2 = inds[j];
 
+                        double s1 = 0, s2 = 0, s3 = 0, s4 = 0, s5 = 0, s6 = 0;
+                        double dch = 0, da = 0, dr = 0, deu = 0, dmu2 = 0;
                         double t1 = 0, t2 = 0, Jx1 = 0, Jx2 = 0, Jxy = 0;
                         int eL = 0;
+
                         for (int l = 0; l < L; ++l)
                         {
                             if (total_pop.loc[l].freq.Count < 2) continue;
@@ -10168,40 +10257,74 @@ Population	Individual
                         for (int l = 0; l < L; ++l)
                         {
                             if (total_pop.loc[l].freq.Count < 2) continue;
-                            double Sx1 = 0, Sx2 = 0, dr = 0, eu = 0;
+
+                            int sa = 0, sb = 0, sc = 0, sd = 0;
+                            double Sx1 = 0, Sx2 = 0, ddr = 0, ddeu = 0;
+
                             foreach (var a in total_pop.loc[l].freq.Keys)
                             {
                                 double fr1 = GetMissingFreq(ti, l, a);
                                 double fr2 = GetMissingFreq(ti2, l, a);
+
                                 if (a != NULL_ALLELE)
                                 {
                                     Sx1 += fr1 * a;
                                     Sx2 += fr2 * a;
                                 }
                                 Jxy += fr1 * fr2;
-                                Dch[i, j] += fr1 * fr2 > 0 ? Math.Sqrt(fr1 * fr2) : 0;
+                                dch += fr1 * fr2 > 0 ? Math.Sqrt(fr1 * fr2) : 0;
                                 t1 += (fr1 - fr2) * (fr1 - fr2);
                                 t2 += fr1 * fr2;
-                                Da[i, j] += fr1 * fr2 > 0 ? Math.Sqrt(fr1 * fr2) : 0;
-                                dr += (fr1 - fr2) * (fr1 - fr2) / 2;
-                                eu += (fr1 - fr2) * (fr1 - fr2);
+                                da += fr1 * fr2 > 0 ? Math.Sqrt(fr1 * fr2) : 0;
+                                ddr += (fr1 - fr2) * (fr1 - fr2) / 2;
+                                ddeu += (fr1 - fr2) * (fr1 - fr2);
+
+                                if (a == NULL_ALLELE) continue;
+
+                                if (ti.g[l].alleles.Contains(a))
+                                {
+                                    if (ti2.g[l].alleles.Contains(a)) sa++;
+                                    else sb++;
+                                }
+                                else
+                                {
+                                    if (ti2.g[l].alleles.Contains(a)) sc++;
+                                    else sd++;
+                                }
                             }
+
                             Sx1 /= 1 - GetMissingFreq(ti, l, NULL_ALLELE);
                             Sx2 /= 1 - GetMissingFreq(ti2, l, NULL_ALLELE);
-                            mu2[i, j] += (Sx1 - Sx2) * (Sx1 - Sx2);
-                            Dr[i, j] += dr > 0 ? Math.Sqrt(dr) : 0;
-                            Deu[i, j] += eu > 0 ? eu : 0;
+                            dmu2 += (Sx1 - Sx2) * (Sx1 - Sx2);
+                            dr += ddr > 0 ? Math.Sqrt(ddr) : 0;
+                            deu += ddeu > 0 ? ddeu : 0;
+
+                            s1 += 1 - (sa + sd) / (double)(sa + sb + sc + sd);
+                            s2 += 1 - (sa + sd) / (double)(sa + 2 * sb + 2 * sc + sd);
+                            s3 += 1 - sa / (double)(sa + sb + sc);
+                            s4 += 1 - (2 * sa) / (double)(2 * sa + sb + sc);
+                            s5 += 1 - sa / (double)(sa + 2 * sb + 2 * sc);
+                            s6 += 1 - sa / (double)(sa + sb + sc + sd);
                         }
 
                         Jxy /= eL;
-                        D[j, i] = D[i, j] = -Math.Log(Jxy / Math.Sqrt(Jx1 * Jx2)); //Nei
-                        Dm[j, i] = Dm[i, j] = (Jx1 + Jx2) / 2 - Jxy;//Nei's minimum
-                        Dch[i, j] = Dch[j, i] = 2 / Math.PI * Math.Sqrt(2 * (1 - Dch[i, j] / eL));//Cavalli-Sforza chord distance
-                        Th[i, j] = Th[j, i] = Math.Sqrt(t1 / (2 * eL - 2 * t2));//Reynolds, Weir, and Cockerham's genetic distance
-                        Da[j, i] = Da[i, j] = 1 - Da[i, j] / eL;//Nei's DA distance 1983
-                        Deu[j, i] = Deu[i, j] = Math.Sqrt(Deu[i, j]);//Euclidean distance, do not divide eL to make the results of PCA and PCoa are equal
-                        mu2[j, i] = mu2[i, j] = mu2[i, j] / eL;//Goldstein distance 1995
-                        Dr[j, i] = Dr[i, j] = Dr[i, j] / eL;//Roger's distance 1972
+
+                        if (DIST_Nei1972) D[j, i] = D[i, j] = -Math.Log(Jxy / Math.Sqrt(Jx1 * Jx2)); //Nei
+                        if (DIST_Nei1973) Dm[j, i] = Dm[i, j] = (Jx1 + Jx2) / 2 - Jxy;//Nei's minimum
+                        if (DIST_Cavalli1967) Dch[i, j] = Dch[j, i] = 2 / Math.PI * Math.Sqrt(2 * (1 - dch / eL));//Cavalli-Sforza chord distance
+                        if (DIST_Reynold1993) Th[i, j] = Th[j, i] = Math.Sqrt(t1 / (2 * eL - 2 * t2));//Reynolds, Weir, and Cockerham's genetic distance
+                        if (DIST_Nei1983) Da[j, i] = Da[i, j] = 1 - da / eL;//Nei's DA distance 1983
+                        if (DIST_Euclidean) Deu[j, i] = Deu[i, j] = Math.Sqrt(deu);//Euclidean distance, do not divide eL to make the results of PCA and PCoa are equal
+                        if (DIST_Goldstein1995) mu2[j, i] = mu2[i, j] = dmu2 / eL;//Goldstein distance 1995
+                        if (DIST_Rogers1973) Dr[j, i] = Dr[i, j] = dr / eL;//Rogers's distance 1972
+
+                        if (DIST_Sokal1958) S1[j, i] = S1[i, j] = Math.Sqrt(s1);
+                        if (DIST_Rogers1960) S2[j, i] = S2[i, j] = Math.Sqrt(s2);
+                        if (DIST_Jaccard1901) S3[j, i] = S3[i, j] = Math.Sqrt(s3);
+                        if (DIST_Sorensen1948) S4[j, i] = S4[i, j] = Math.Sqrt(s4);
+                        if (DIST_Sokal1963) S5[j, i] = S5[i, j] = Math.Sqrt(s5);
+                        if (DIST_Russel1940) S6[j, i] = S6[i, j] = Math.Sqrt(s6);
+
                         Increment();
                     }
                 }
@@ -10209,17 +10332,24 @@ Population	Individual
 
             public void CalcDistancePop(SUBPOP[] gr, StreamWriter wt, string title, List<double[,]> Fst)
             {
-                double[,] D = new double[gr.Length, gr.Length];
-                double[,] Dch = new double[gr.Length, gr.Length];
-                double[,] Th = new double[gr.Length, gr.Length];
-                double[,] Da = new double[gr.Length, gr.Length];
-                double[,] Deu = new double[gr.Length, gr.Length];
-                double[,] mu2 = new double[gr.Length, gr.Length];
-                double[,] Dm = new double[gr.Length, gr.Length];
-                double[,] Dr = new double[gr.Length, gr.Length];
+                double[,] D = !DIST_Nei1972 ? null : new double[gr.Length, gr.Length];
+                double[,] Dch = !DIST_Cavalli1967 ? null : new double[gr.Length, gr.Length];
+                double[,] Th = !DIST_Reynold1993 ? null : new double[gr.Length, gr.Length];
+                double[,] Da = !DIST_Nei1983 ? null : new double[gr.Length, gr.Length];
+                double[,] Deu = !DIST_Euclidean ? null : new double[gr.Length, gr.Length];
+                double[,] mu2 = !DIST_Goldstein1995 ? null : new double[gr.Length, gr.Length];
+                double[,] Dm = !DIST_Nei1973 ? null : new double[gr.Length, gr.Length];
+                double[,] Dr = !DIST_Rogers1973 ? null : new double[gr.Length, gr.Length];
+
+                double[,] S1 = !DIST_Sokal1958 ? null : new double[gr.Length, gr.Length];
+                double[,] S2 = !DIST_Rogers1960 ? null : new double[gr.Length, gr.Length];
+                double[,] S3 = !DIST_Jaccard1901 ? null : new double[gr.Length, gr.Length];
+                double[,] S4 = !DIST_Sorensen1948 ? null : new double[gr.Length, gr.Length];
+                double[,] S5 = !DIST_Sokal1963 ? null : new double[gr.Length, gr.Length];
+                double[,] S6 = !DIST_Russel1940 ? null : new double[gr.Length, gr.Length];
 
                 CallThread(CalcDistanceThreadPop, N_THREAD,
-                           new object[] { gr, D, Dch, Th, Da, Deu, mu2, Dm, Dr },
+                           new object[] { gr, D, Dch, Th, Da, Deu, mu2, Dm, Dr, S1, S2, S3, S4, S5, S6 },
                 ProgressValue + gr.Length * (gr.Length - 1) / 2, ref ProgressValue);
 
                 string[] names = new string[gr.Length];
@@ -10239,7 +10369,15 @@ Population	Individual
                 if (DIST_Euclidean) WriteDistance(Deu, title + ": Euclidean distance", wt, names, color);
                 if (DIST_Goldstein1995) WriteDistance(mu2, title + ": Goldstein 1995 distance", wt, names, color);
                 if (DIST_Nei1973) WriteDistance(Dm, title + ": Nei 1973 minimum genetic distance", wt, names, color);
-                if (DIST_Roger1973) WriteDistance(Dr, title + ": Roger 1972 distance", wt, names, color);
+                if (DIST_Rogers1973) WriteDistance(Dr, title + ": Rogers 1972 distance", wt, names, color);
+
+                if (DIST_Sokal1958) WriteDistance(S1, title + ": Sokal 1958 distance", wt, names, color);
+                if (DIST_Rogers1960) WriteDistance(S2, title + ": Rogers 1960 distance", wt, names, color);
+                if (DIST_Jaccard1901) WriteDistance(S3, title + ": Jaccard 1901 distance", wt, names, color);
+                if (DIST_Sorensen1948) WriteDistance(S4, title + ": Sørensen 1948 distance", wt, names, color);
+                if (DIST_Sokal1963) WriteDistance(S5, title + ": Sokal 1963 distance", wt, names, color);
+                if (DIST_Russel1940) WriteDistance(S6, title + ": Russel 1940 distance", wt, names, color);
+
                 if (DIST_Reynolds1983)
                 {
                     int c = 0;
@@ -10256,17 +10394,24 @@ Population	Individual
 
             public void CalcDistanceInd(IND[] inds, StreamWriter wt)
             {
-                double[,] D = new double[inds.Length, inds.Length];
-                double[,] Dch = new double[inds.Length, inds.Length];
-                double[,] Th = new double[inds.Length, inds.Length];
-                double[,] Da = new double[inds.Length, inds.Length];
-                double[,] Deu = new double[inds.Length, inds.Length];
-                double[,] mu2 = new double[inds.Length, inds.Length];
-                double[,] Dm = new double[inds.Length, inds.Length];
-                double[,] Dr = new double[inds.Length, inds.Length];
+                double[,] D = !DIST_Nei1972 ? null : new double[inds.Length, inds.Length];
+                double[,] Dch = !DIST_Cavalli1967 ? null : new double[inds.Length, inds.Length];
+                double[,] Th = !DIST_Reynold1993 ? null : new double[inds.Length, inds.Length];
+                double[,] Da = !DIST_Nei1983 ? null : new double[inds.Length, inds.Length];
+                double[,] Deu = !DIST_Euclidean ? null : new double[inds.Length, inds.Length];
+                double[,] mu2 = !DIST_Goldstein1995 ? null : new double[inds.Length, inds.Length];
+                double[,] Dm = !DIST_Nei1973 ? null : new double[inds.Length, inds.Length];
+                double[,] Dr = !DIST_Rogers1973 ? null : new double[inds.Length, inds.Length];
+
+                double[,] S1 = !DIST_Sokal1958 ? null : new double[inds.Length, inds.Length];
+                double[,] S2 = !DIST_Rogers1960 ? null : new double[inds.Length, inds.Length];
+                double[,] S3 = !DIST_Jaccard1901 ? null : new double[inds.Length, inds.Length];
+                double[,] S4 = !DIST_Sorensen1948 ? null : new double[inds.Length, inds.Length];
+                double[,] S5 = !DIST_Sokal1963 ? null : new double[inds.Length, inds.Length];
+                double[,] S6 = !DIST_Russel1940 ? null : new double[inds.Length, inds.Length];
 
                 CallThread(CalcDistanceThreadInd, N_THREAD,
-                           new object[] { inds, D, Dch, Th, Da, Deu, mu2, Dm, Dr },
+                           new object[] { inds, D, Dch, Th, Da, Deu, mu2, Dm, Dr, S1, S2, S3, S4, S5, S6 },
                 ProgressValue + inds.Length * (inds.Length - 1) / 2, ref ProgressValue);
 
                 string[] names = new string[inds.Length];
@@ -10286,7 +10431,14 @@ Population	Individual
                 if (DIST_Euclidean) WriteDistance(Deu, "Individual: Euclidean distance", wt, names, color);
                 if (DIST_Goldstein1995) WriteDistance(mu2, "Individual: Goldstein 1995 distance", wt, names, color);
                 if (DIST_Nei1973) WriteDistance(Dm, "Individual: Nei 1973 minimum genetic distance", wt, names, color);
-                if (DIST_Roger1973) WriteDistance(Dr, "Individual: Roger 1972 distance", wt, names, color);
+                if (DIST_Rogers1973) WriteDistance(Dr, "Individual: Rogers 1972 distance", wt, names, color);
+
+                if (DIST_Sokal1958) WriteDistance(S1, "Individual: Sokal 1958 distance", wt, names, color);
+                if (DIST_Rogers1960) WriteDistance(S2, "Individual: Rogers 1960 distance", wt, names, color);
+                if (DIST_Jaccard1901) WriteDistance(S3, "Individual: Jaccard 1901 distance", wt, names, color);
+                if (DIST_Sorensen1948) WriteDistance(S4, "Individual: Sørensen 1948 distance", wt, names, color);
+                if (DIST_Sokal1963) WriteDistance(S5, "Individual: Sokal 1963 distance", wt, names, color);
+                if (DIST_Russel1940) WriteDistance(S6, "Individual: Russel 1940 distance", wt, names, color);
             }
 
             public void CalcDistance()
@@ -10581,7 +10733,8 @@ Population	Individual
                     for (int l = 0; l < L; ++l)
                     {
                         buf[l] = double.NaN;
-                        if (x.g[l].hash == 0) continue;
+                        if (x.g[l].hash == 0 && DISCARD_EMPTY) //ok, missing phenotype can have a heterozygosity
+                            continue;
                         buf[l] = x.g[l].GetHIndex();
                         th += buf[l];
                         tl++;
@@ -10636,7 +10789,7 @@ Population	Individual
                 FastLog flog = FastLog.Default;
                 for (int l = 0; l < L; ++l)
                 {
-                    if (x.g[l].hash == 0) continue;
+                    if (x.g[l].hash == 0) continue; //ok, can use missing data but in low quality
                     double pr = tp.PFZ(x.g[l], l);
                     double pr_total = total_pop.PFZ(x.g[l], l);
 
@@ -11124,7 +11277,8 @@ Population	Individual
 
                 for (int l = 0; l < L; ++l)
                 {
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0) IBS[l, 0] = 0;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0) //ok, can use missing data but in low quality
+                        IBS[l, 0] = 0;
 
                     int c = 0;
                     foreach (GENOTYPE gx in x.g[l].genotypes)
@@ -11269,7 +11423,7 @@ Population	Individual
                 int maxploidy = Math.Max(x.ploidy, y.ploidy);
                 int minploidy = Math.Min(x.ploidy, y.ploidy);
 
-                if (x.hash == 0 || y.hash == 0)
+                if (x.hash == 0 || y.hash == 0) //ok, can use missing data but in low quality
                     return 0;
 
                 int start = maxploidy - minploidy;
@@ -11381,7 +11535,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (R1 != null) { R1[l] = W1[l] = R2[l] = W2[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq;
                     var fy = y.g[l].freq;
                     var f = loc[l].freq;
@@ -11413,7 +11567,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (RLoc != null) { RLoc[l] = WLoc[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq;
                     var f = loc[l].freq;
@@ -11456,7 +11610,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (RLoc != null) { RLoc[l] = WLoc[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq; 
                     var f = loc[l].freq;
@@ -11487,7 +11641,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (R1 != null) { R1[l] = W1[l] = R2[l] = W2[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq;
                     var f = loc[l].freq;
@@ -11518,7 +11672,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (RLoc != null) { RLoc[l] = WLoc[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq;
                     var f = loc[l].freq;
@@ -11546,7 +11700,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (RLoc != null) { RLoc[l] = WLoc[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq;
                     var f = loc[l].freq;
@@ -11577,7 +11731,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (RLoc != null) { RLoc[l] = WLoc[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq;
                     var f = loc[l].freq;
@@ -11607,7 +11761,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (RLoc != null) { RLoc[l] = WLoc[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq;
                     var f = loc[l].freq;
@@ -11639,7 +11793,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (R1 != null) { R1[l] = W1[l] = R2[l] = W2[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq;
                     var f = loc[l].freq;
@@ -11678,7 +11832,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (RLoc != null) { RLoc[l] = WLoc[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq;
                     var f = loc[l].freq;
@@ -11708,7 +11862,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (RLoc != null) { RLoc[l] = WLoc[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq;
                     var f = loc[l].freq;
@@ -11736,7 +11890,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (RLoc != null) { RLoc[l] = WLoc[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq;
                     var f = loc[l].freq;
@@ -11774,7 +11928,7 @@ Population	Individual
                 for (int l = 0; l < loc.Length; ++l)
                 {
                     if (RLoc != null) { RLoc[l] = WLoc[l] = 0; }
-                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue;
+                    if (x.g[l].hash == 0 || y.g[l].hash == 0 || loc[l].freq.Count == 1) continue; //ok, can use missing data but in low quality
                     Dictionary<int, double> f1 = loc[l].freq2[0], f2 = loc[l].freq2[1];
                     var fx = x.g[l].freq; 
                     var fy = y.g[l].freq;
@@ -12937,6 +13091,7 @@ Population	Individual
 
                 for (int l = 0; l < L; ++l)
                 {
+                    //ok, can use missing data but in low quality
                     if (o.g[l].hash == 0) continue;
                     if (a.g[l].hash == 0 && m.g[l].hash == 0) continue;
                     ulong key = a.g[l].hash > m.g[l].hash ?
@@ -12949,13 +13104,13 @@ Population	Individual
                     {
                         if (CONSIDER_SELFING)
                         {
-                            if (m.g[l].hash == 0)
+                            if (m.g[l].hash == 0)//ok
                             {
                                 foreach (GENOTYPE go in o.g[l].genotypes)
                                     foreach (GENOTYPE ga in a.g[l].genotypes)
                                         lod1 += LH12sV1(s, total_pop.loc[l].freq, ALPHA[l, o.ploidy], go, ga) * (go.poster * ga.poster);
                             }
-                            else if (a.g[l].hash == 0)
+                            else if (a.g[l].hash == 0)//ok
                             {
                                 foreach (GENOTYPE go in o.g[l].genotypes)
                                     foreach (GENOTYPE gm in m.g[l].genotypes)
@@ -12976,13 +13131,13 @@ Population	Individual
                         }
                         else
                         {
-                            if (m.g[l].hash == 0)
+                            if (m.g[l].hash == 0)//ok
                             {
                                 foreach (GENOTYPE go in o.g[l].genotypes)
                                     foreach (GENOTYPE ga in a.g[l].genotypes)
                                         lod1 += LH12oV1(total_pop.loc[l].freq, ALPHA[l, o.ploidy], go, ga) * (go.poster * ga.poster);
                             }
-                            else if (a.g[l].hash == 0)
+                            else if (a.g[l].hash == 0)//ok
                             {
                                 foreach (GENOTYPE go in o.g[l].genotypes)
                                     foreach (GENOTYPE gm in m.g[l].genotypes)
@@ -13017,7 +13172,7 @@ Population	Individual
 
                 for (int l = 0; l < L; ++l)
                 {
-                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue;
+                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue; //ok, can use missing data but in low quality
                     ulong key = ((ulong)o.g[l].hash << 32) ^ ((ulong)a.g[l].hash << 16) ^ (ulong)m.g[l].hash;
                     key = issame ? key ^ 0x1234567812345678 : key;
 
@@ -13027,7 +13182,7 @@ Population	Individual
 
                         if (CONSIDER_SELFING)
                         {
-                            if (m.g[l].hash == 0)
+                            if (m.g[l].hash == 0)//ok
                             {
                                 foreach (GENOTYPE go in o.g[l].genotypes)
                                     foreach (GENOTYPE ga in a.g[l].genotypes)
@@ -13048,7 +13203,7 @@ Population	Individual
                         }
                         else
                         {
-                            if (m.g[l].hash == 0)
+                            if (m.g[l].hash == 0)//ok
                             {
                                 foreach (GENOTYPE go in o.g[l].genotypes)
                                     foreach (GENOTYPE ga in a.g[l].genotypes)
@@ -13082,7 +13237,7 @@ Population	Individual
 
                 for (int l = 0; l < L; ++l)
                 {
-                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue;
+                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue; //ok, can use missing data but in low quality
                     ulong key = ((ulong)o.g[l].hash << 32) ^ (ulong)a.g[l].hash;
                     if (!LOD2[l].ContainsKey(key))
                     {
@@ -13327,6 +13482,7 @@ Population	Individual
 
                 for (int l = 0; l < L; ++l)
                 {
+                    //ok, can use missing data but in low quality
                     if (o.g[l].hash == 0) continue;
                     if (a.g[l].hash == 0 && m.g[l].hash == 0) continue;
                     ulong key = a.g[l].hash > m.g[l].hash ?
@@ -13339,9 +13495,9 @@ Population	Individual
                     {
                         if (CONSIDER_SELFING)
                         {
-                            if (m.g[l].hash == 0)
+                            if (m.g[l].hash == 0)//ok
                                 lod1 += LH12sV2(l, s, total_pop.loc[l].freq, ALPHA[l, o.ploidy], o.g[l], a.g[l]);
-                            else if (a.g[l].hash == 0)
+                            else if (a.g[l].hash == 0)//ok
                                 lod1 += LH12sV2(l, s, total_pop.loc[l].freq, ALPHA[l, o.ploidy], o.g[l], m.g[l]);
                             else if (issame)
                                 lod1 += LH12sV2(l, s, issame, total_pop.loc[l].freq, ALPHA[l, o.ploidy], o.g[l], a.g[l], a.g[l], a.g[l]);
@@ -13350,9 +13506,9 @@ Population	Individual
                         }
                         else
                         {
-                            if (m.g[l].hash == 0)
+                            if (m.g[l].hash == 0)//ok
                                 lod1 += LH12oV2(l, total_pop.loc[l].freq, ALPHA[l, o.ploidy], o.g[l], a.g[l]);
-                            else if (a.g[l].hash == 0)
+                            else if (a.g[l].hash == 0)//ok
                                 lod1 += LH12oV2(l, total_pop.loc[l].freq, ALPHA[l, o.ploidy], o.g[l], m.g[l]);
                             else if (issame)
                                 lod1 += LH12oV2(l, total_pop.loc[l].freq, ALPHA[l, o.ploidy], o.g[l], a.g[l], a.g[l], a.g[l]);
@@ -13375,7 +13531,7 @@ Population	Individual
 
                 for (int l = 0; l < L; ++l)
                 {
-                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue;
+                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue; //ok, can use missing data but in low quality
                     ulong key = ((ulong)o.g[l].hash << 32) ^ ((ulong)a.g[l].hash << 16) ^ (ulong)m.g[l].hash;
                     key = issame ? key ^ 0x1234567812345678 : key;
 
@@ -13385,7 +13541,7 @@ Population	Individual
 
                         if (CONSIDER_SELFING)
                         {
-                            if (m.g[l].hash == 0)
+                            if (m.g[l].hash == 0)//ok
                                 lod1 += LH12sV2(l, s, total_pop.loc[l].freq, ALPHA[l, o.ploidy], o.g[l], a.g[l]);
                             else if (issame)
                                 lod1 += LH12sV2(l, s, issame, total_pop.loc[l].freq, ALPHA[l, o.ploidy], o.g[l], a.g[l], a.g[l]);
@@ -13394,7 +13550,7 @@ Population	Individual
                         }
                         else
                         {
-                            if (m.g[l].hash == 0)
+                            if (m.g[l].hash == 0)//ok
                                 lod1 += LH12oV2(l, total_pop.loc[l].freq, ALPHA[l, o.ploidy], o.g[l], a.g[l]);
                             else if (issame)
                                 lod1 += LH12oV2(l, total_pop.loc[l].freq, ALPHA[l, o.ploidy], o.g[l], a.g[l], a.g[l]);
@@ -13416,7 +13572,7 @@ Population	Individual
 
                 for (int l = 0; l < L; ++l)
                 {
-                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue;
+                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue; //ok, can use missing data but in low quality
                     ulong key = ((ulong)o.g[l].hash << 32) ^ (ulong)a.g[l].hash;
                     if (!LOD2[l].ContainsKey(key))
                     {
@@ -13533,6 +13689,7 @@ Population	Individual
 
                 for (int l = 0; l < L; ++l)
                 {
+                    //ok, can use missing data but in low quality
                     if (o.g[l].hash == 0) continue;
                     if (a.g[l].hash == 0 && m.g[l].hash == 0) continue;
                     ulong key = a.g[l].hash > m.g[l].hash ?
@@ -13543,10 +13700,10 @@ Population	Individual
 
                     if (!LOD4[l].ContainsKey(key))
                     {
-                        if (m.g[l].hash == 0)
+                        if (m.g[l].hash == 0)//ok
                             foreach (int k in freq_dominant[l].Keys)
                                 lod1 += LH12V4(freq_dominant[l][k], o.g[l].alleles.Contains(k), a.g[l].alleles.Contains(k));
-                        else if (a.g[l].hash == 0)
+                        else if (a.g[l].hash == 0)//ok
                             foreach (int k in freq_dominant[l].Keys)
                                 lod1 += LH12V4(freq_dominant[l][k], o.g[l].alleles.Contains(k), m.g[l].alleles.Contains(k));
                         else
@@ -13568,7 +13725,7 @@ Population	Individual
 
                 for (int l = 0; l < L; ++l)
                 {
-                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue;
+                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue; //ok, can use missing data but in low quality
                     ulong key = ((ulong)o.g[l].hash << 32) ^ ((ulong)a.g[l].hash << 16) ^ (ulong)m.g[l].hash;
                     key = issame ? key ^ 0x1234567812345678 : key;
 
@@ -13576,7 +13733,7 @@ Population	Individual
                     {
                         double lod1 = 0;
 
-                        if (m.g[l].hash == 0)
+                        if (m.g[l].hash == 0) //ok
                             foreach (int k in freq_dominant[l].Keys)
                                 lod1 += LH12V4(freq_dominant[l][k], o.g[l].alleles.Contains(k), a.g[l].alleles.Contains(k));
                         else
@@ -13598,7 +13755,7 @@ Population	Individual
 
                 for (int l = 0; l < L; ++l)
                 {
-                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue;
+                    if (o.g[l].hash == 0 || a.g[l].hash == 0) continue; //ok, can use missing data but in low quality
                     ulong key = ((ulong)o.g[l].hash << 32) ^ (ulong)a.g[l].hash;
                     if (!LOD2[l].ContainsKey(key))
                     {
@@ -16262,7 +16419,7 @@ Population	Individual
 
                         for (int l = 0; l < L; ++l)
                         {
-                            if (o.g[l].hash == 0 || f.g[l].hash == 0 || m.g[l].hash == 0) continue;
+                            if (o.g[l].hash == 0 || f.g[l].hash == 0 || m.g[l].hash == 0) continue;//zzz, estimating error type rate
                             if (PHENOTYPE.IsMismatch(o.g[l], f.g[l], m.g[l])) gamma1[l]++;
                             gamma2[l]++;
                         }
@@ -16284,7 +16441,7 @@ Population	Individual
 
                         for (int l = 0; l < L; ++l)
                         {
-                            if (o.g[l].hash == 0 || f.g[l].hash == 0 || m.g[l].hash == 0) continue;
+                            if (o.g[l].hash == 0 || f.g[l].hash == 0 || m.g[l].hash == 0) continue;//zzz, estimating error type rate
                             if (PHENOTYPE.IsMismatch(o.g[l], f.g[l], m.g[l])) gamma1[l]++;
                             gamma2[l]++;
                         }
@@ -16306,7 +16463,7 @@ Population	Individual
 
                         for (int l = 0; l < L; ++l)
                         {
-                            if (o.g[l].hash == 0 || f.g[l].hash == 0 || m.g[l].hash == 0) continue;
+                            if (o.g[l].hash == 0 || f.g[l].hash == 0 || m.g[l].hash == 0) continue;//zzz, estimating error type rate
                             if (PHENOTYPE.IsMismatch(o.g[l], f.g[l], m.g[l])) gamma1[l]++;
                             gamma2[l]++;
                         }
@@ -19393,7 +19550,7 @@ Population	Individual
                     return seq;
                 }
 
-                public Image Drawplot(ref byte[] VecFile, STRUCTURE[] pars)
+                public Image DrawBarplot(ref byte[] VecFile, STRUCTURE[] pars)
                 {
                     if (threadid == -1) return null;
 
@@ -19419,17 +19576,28 @@ Population	Individual
 
                     float picheight = 150, picwidth = 2400f / N, sepwidth = picwidth;
 
+                    Bitmap bmp = null; MemoryStream ms = null; Graphics gdc = null; Metafile mf = null; Graphics g = null;
+
                     if (STRUCTURE_STYLE == StructurePlotType.BarPlotOriginal)
                     {
                         Color[] co = GetColor(K, ColorMode.BarPlotWhiteBackground);
-                        Bitmap bmp = new Bitmap((int)(N * picwidth + 1), (int)picheight);
-                        Stream ms = new MemoryStream();
-                        Metafile mf = new Metafile(ms, Graphics.FromImage(bmp).GetHdc(),
-                            new Rectangle(0, 0, bmp.Width, bmp.Height), MetafileFrameUnit.Pixel, EmfType.EmfPlusDual);
-                        Graphics g = Graphics.FromImage(mf);
+                        Pen[] p = new Pen[K];
+                        bmp = new Bitmap((int)(N * picwidth + 1), (int)picheight);
+
+                        if (OS == OperationSystem.Windows)
+                        {
+                            //Vector image
+                            ms = new MemoryStream();
+                            gdc = Graphics.FromHwndInternal(IntPtr.Zero);
+                            mf = new Metafile(ms, gdc.GetHdc(), EmfType.EmfPlusOnly);
+                            gdc.ReleaseHdc();
+                            g = Graphics.FromImage(mf);
+                        }
+                        else
+                            g = Graphics.FromImage(bmp);
 
                         g.Clear(Color.White);
-                        Pen[] p = new Pen[K];
+
 
                         for (int j = 0; j < K; ++j)
                         {
@@ -19448,33 +19616,24 @@ Population	Individual
                             }
                             cx += picwidth;
                         }
-
-                        g.Dispose();
-                        ms.Seek(0, SeekOrigin.Begin);
-                        VecFile = new byte[ms.Length];
-                        ms.Read(VecFile, 0, (int)ms.Length);
-                        ms.Seek(0, SeekOrigin.Begin);
-
-                        g = Graphics.FromImage(bmp);
-                        g.DrawImage(mf, 0, 0, bmp.Width, bmp.Height);
-                        MemoryStream m = new MemoryStream();
-                        bmp.Save(m, ImageFormat.Png);
-
-                        mf.Dispose();
-                        ms.Dispose();
-                        g.Dispose();
-                        bmp.Dispose();
-
-                        return Image.FromStream(m);
                     }
                     else if (STRUCTURE_STYLE == StructurePlotType.BarPlotGroupByPop)
                     {
                         Color[] co = GetColor(K, ColorMode.BarPlotWhiteBackground);
                         int npops = subpopid.Max() + 1;
-                        Bitmap bmp = new Bitmap((int)(N * picwidth + (npops - 1) * sepwidth + 1), (int)picheight + 20);
-                        Stream ms = new MemoryStream();
-                        Metafile mf = new Metafile(ms, Graphics.FromImage(bmp).GetHdc(), new Rectangle(0, 0, bmp.Width, bmp.Height), MetafileFrameUnit.Pixel, EmfType.EmfPlusDual);
-                        Graphics g = Graphics.FromImage(mf);
+                        bmp = new Bitmap((int)(N * picwidth + (npops - 1) * sepwidth + 1), (int)picheight + 20);
+
+                        if (OS == OperationSystem.Windows)
+                        {
+                            //Vector image
+                            ms = new MemoryStream();
+                            gdc = Graphics.FromHwndInternal(IntPtr.Zero);
+                            mf = new Metafile(ms, gdc.GetHdc(), EmfType.EmfPlusOnly);
+                            gdc.ReleaseHdc();
+                            g = Graphics.FromImage(mf);
+                        }
+                        else
+                            g = Graphics.FromImage(bmp);
 
                         g.Clear(Color.White);
                         Pen[] p = new Pen[K];
@@ -19524,32 +19683,23 @@ Population	Individual
                             }
                             cx += sepwidth;
                         }
-
-                        g.Dispose();
-                        ms.Seek(0, SeekOrigin.Begin);
-                        VecFile = new byte[ms.Length];
-                        ms.Read(VecFile, 0, (int)ms.Length);
-                        ms.Seek(0, SeekOrigin.Begin);
-
-                        g = Graphics.FromImage(bmp);
-                        g.DrawImage(mf, 0, 0, bmp.Width, bmp.Height);
-                        MemoryStream m = new MemoryStream();
-                        bmp.Save(m, ImageFormat.Png);
-
-                        mf.Dispose();
-                        ms.Dispose();
-                        g.Dispose();
-                        bmp.Dispose();
-
-                        return Image.FromStream(m);
                     }
                     else if (STRUCTURE_STYLE == StructurePlotType.BarPlotSortByQ)
                     {
                         Color[] co = GetColor(K, ColorMode.BarPlotWhiteBackground);
-                        Bitmap bmp = new Bitmap((int)(N * picwidth + 1), (int)picheight);
-                        Stream ms = new MemoryStream();
-                        Metafile mf = new Metafile(ms, Graphics.FromImage(bmp).GetHdc(), new Rectangle(0, 0, bmp.Width, bmp.Height), MetafileFrameUnit.Pixel, EmfType.EmfPlusDual);
-                        Graphics g = Graphics.FromImage(mf);
+                        bmp = new Bitmap((int)(N * picwidth + 1), (int)picheight);
+
+                        if (OS == OperationSystem.Windows)
+                        {
+                            //Vector image
+                            ms = new MemoryStream();
+                            gdc = Graphics.FromHwndInternal(IntPtr.Zero);
+                            mf = new Metafile(ms, gdc.GetHdc(), EmfType.EmfPlusOnly);
+                            gdc.ReleaseHdc();
+                            g = Graphics.FromImage(mf);
+                        }
+                        else
+                            g = Graphics.FromImage(bmp);
 
                         g.Clear(Color.White);
                         Pen[] p = new Pen[K];
@@ -19601,26 +19751,31 @@ Population	Individual
                             }
                             cx += picwidth;
                         }
+                    }
+                    else return null;
 
+                    if (OS == OperationSystem.Windows)
+                    {
+                        //write VecFile
                         g.Dispose();
                         ms.Seek(0, SeekOrigin.Begin);
                         VecFile = new byte[ms.Length];
                         ms.Read(VecFile, 0, (int)ms.Length);
-                        ms.Seek(0, SeekOrigin.Begin);
 
+                        //draw bitmap
                         g = Graphics.FromImage(bmp);
                         g.DrawImage(mf, 0, 0, bmp.Width, bmp.Height);
-                        MemoryStream m = new MemoryStream();
-                        bmp.Save(m, ImageFormat.Png);
-
+                        g.Dispose();
                         mf.Dispose();
                         ms.Dispose();
-                        g.Dispose();
-                        bmp.Dispose();
-
-                        return Image.FromStream(m);
                     }
-                    return null;
+                    else
+                        VecFile = new byte[0];
+
+                    MemoryStream m = new MemoryStream();
+                    bmp.Save(m, ImageFormat.Png);
+                    bmp.Dispose();
+                    return Image.FromStream(m);
                 }
 
                 public void GetParamsString(StringBuilder re)
@@ -19663,7 +19818,6 @@ Population	Individual
 
                     re.Append("\r\n\r\nModel: " + (admix ? "ADMIXTURE" : "NO ADMIXTURE") + ", " + (locpriori ? "LOCPRIOR" : "NO LOCPRIOR") + ", " + (fmodel ? (fsame ? "F-MODEL (single F)" : "F-MODEL (multiple F)") : "NO FMODEL") + ", " + (allownull ? "NULLALLELE" : "NO NULLALLELE"));
                 }
-
 
                 public string GetRunString(STRUCTURE[] pars)
                 {
@@ -21640,7 +21794,7 @@ Population	Individual
                     }
                 }
 
-                public Image Drawplot(ref byte[] VecFile, BAYESASS[] pars)
+                public Image DrawBarplot(ref byte[] VecFile, BAYESASS[] pars)
                 {
                     if (threadid == -1) return null;
 
@@ -21672,17 +21826,25 @@ Population	Individual
                         }
                     }
 
-
                     bool group = BAYESASS_PLOTSTYLE == BayesAssPlotType.BarPlotAncestryGroupbyPop
                                       || BAYESASS_PLOTSTYLE == BayesAssPlotType.BarPlotAncestryxAgeGroupbyPop
                                       || BAYESASS_PLOTSTYLE == BayesAssPlotType.BarPlotAgeGroupbyPop;
                     float picheight = 150, groupheight = group ? 20 : 0, picwidth = 2400f / N, sepwidth = group ? picwidth : 0;
                     Bitmap bmp = new Bitmap((int)(N * picwidth + sepwidth * (P - 1) + 1), (int)(picheight + groupheight));
+                    MemoryStream ms = null; Graphics gdc = null; Metafile mf = null; Graphics g = null;
 
-                    Stream ms = new MemoryStream();
-                    Metafile mf = new Metafile(ms, Graphics.FromImage(bmp).GetHdc(),
-                        new Rectangle(0, 0, bmp.Width, bmp.Height), MetafileFrameUnit.Pixel, EmfType.EmfPlusDual);
-                    Graphics g = Graphics.FromImage(mf);
+                    if (OS == OperationSystem.Windows)
+                    {
+                        //Vector image
+                        ms = new MemoryStream();
+                        gdc = Graphics.FromHwndInternal(IntPtr.Zero);
+                        mf = new Metafile(ms, gdc.GetHdc(), EmfType.EmfPlusOnly);
+                        gdc.ReleaseHdc();
+                        g = Graphics.FromImage(mf);
+                    }
+                    else
+                        g = Graphics.FromImage(bmp);
+
                     g.Clear(Color.White);
 
                     int ncat = (BAYESASS_PLOTSTYLE == BayesAssPlotType.BarPlotAncestry || BAYESASS_PLOTSTYLE == BayesAssPlotType.BarPlotAncestryGroupbyPop) ? P :
@@ -21772,23 +21934,27 @@ Population	Individual
                         cx += picwidth;
                     }
 
+                    if (OS == OperationSystem.Windows)
+                    {
+                        //write VecFile
+                        g.Dispose();
+                        ms.Seek(0, SeekOrigin.Begin);
+                        VecFile = new byte[ms.Length];
+                        ms.Read(VecFile, 0, (int)ms.Length);
 
-                    g.Dispose();
-                    ms.Seek(0, SeekOrigin.Begin);
-                    VecFile = new byte[ms.Length];
-                    ms.Read(VecFile, 0, (int)ms.Length);
-                    ms.Seek(0, SeekOrigin.Begin);
+                        //draw bitmap
+                        g = Graphics.FromImage(bmp);
+                        g.DrawImage(mf, 0, 0, bmp.Width, bmp.Height);
+                        g.Dispose();
+                        mf.Dispose();
+                        ms.Dispose();
+                    }
+                    else
+                        VecFile = new byte[0];
 
-                    g = Graphics.FromImage(bmp);
-                    g.DrawImage(mf, 0, 0, bmp.Width, bmp.Height);
                     MemoryStream m = new MemoryStream();
                     bmp.Save(m, ImageFormat.Png);
-
-                    mf.Dispose();
-                    ms.Dispose();
-                    g.Dispose();
                     bmp.Dispose();
-
                     return Image.FromStream(m);
                 }
 
@@ -21808,10 +21974,19 @@ Population	Individual
                     float picheight = 150f, picwidth = 2400f;
 
                     Bitmap bmp = new Bitmap((int)picwidth, (int)picheight);
-                    Stream ms = new MemoryStream();
-                    Metafile mf = new Metafile(ms, Graphics.FromImage(bmp).GetHdc(),
-                        new Rectangle(0, 0, bmp.Width, bmp.Height), MetafileFrameUnit.Pixel, EmfType.EmfPlusDual);
-                    Graphics g = Graphics.FromImage(mf);
+                    MemoryStream ms = null; Graphics gdc = null; Metafile mf = null; Graphics g = null;
+
+                    if (OS == OperationSystem.Windows)
+                    {
+                        //Vector image
+                        ms = new MemoryStream();
+                        gdc = Graphics.FromHwndInternal(IntPtr.Zero);
+                        mf = new Metafile(ms, gdc.GetHdc(), EmfType.EmfPlusOnly);
+                        gdc.ReleaseHdc();
+                        g = Graphics.FromImage(mf);
+                    }
+                    else
+                        g = Graphics.FromImage(bmp);
 
                     g.FillRectangle(new SolidBrush(Color.Black), 0, 0, bmp.Width, bmp.Height);
 
@@ -21837,22 +22012,27 @@ Population	Individual
                         new PointF((float)(xadd + nburninrec * xcoef), 0),
                         new PointF((float)(xadd + nburninrec * xcoef), picheight));
 
-                    g.Dispose();
-                    ms.Seek(0, SeekOrigin.Begin);
-                    VecFile = new byte[ms.Length];
-                    ms.Read(VecFile, 0, (int)ms.Length);
-                    ms.Seek(0, SeekOrigin.Begin);
+                    if (OS == OperationSystem.Windows)
+                    {
+                        //write VecFile
+                        g.Dispose();
+                        ms.Seek(0, SeekOrigin.Begin);
+                        VecFile = new byte[ms.Length];
+                        ms.Read(VecFile, 0, (int)ms.Length);
 
-                    g = Graphics.FromImage(bmp);
-                    g.DrawImage(mf, 0, 0, bmp.Width, bmp.Height);
+                        //draw bitmap
+                        g = Graphics.FromImage(bmp);
+                        g.DrawImage(mf, 0, 0, bmp.Width, bmp.Height);
+                        g.Dispose();
+                        mf.Dispose();
+                        ms.Dispose();
+                    }
+                    else
+                        VecFile = new byte[0];
+
                     MemoryStream m = new MemoryStream();
                     bmp.Save(m, ImageFormat.Png);
-
-                    mf.Dispose();
-                    ms.Dispose();
-                    g.Dispose();
                     bmp.Dispose();
-
                     return Image.FromStream(m);
                 }
 
@@ -22384,7 +22564,7 @@ Population	Individual
 
                     for (int i = 0; i < inds.Length; ++i)
                         for (int l = 0; l < L; ++l)
-                            if (inds[i].g[l].hash == 0)
+                            if (inds[i].g[l].hash == 0)//ok, resample
                                 missing2.Add(((long)i << 32) | (long)l);
 
                     missing = new int[missing2.Count, 2];
@@ -22428,7 +22608,7 @@ Population	Individual
                         for (int l = 0; l < L; ++l)
                         {
                             PHENOTYPE ph = null;
-                            if (ind.g[l].hash == 0)
+                            if (ind.g[l].hash == 0)//ok, resample
                             {
                                 int[] als = GetRandGenotypeUniform((type == BayesAssType.FixedDummy || type == BayesAssType.VariableDummy ? 2 : V[i]), l);
                                 ph = new PHENOTYPE(als.Length, als, false);
@@ -22931,7 +23111,7 @@ Population	Individual
                     {
                         int i = rnd.Next(N), l = rnd.Next(L);
                         PHENOTYPE p = inds[i].g[l];
-                        if (p.hash == 0) continue;
+                        if (p.hash == 0) continue;//ok, resample
 
                         FastLog flog = FastLog.Default;
                         Likelihood(ref flog, false, i, l);
@@ -23159,6 +23339,5 @@ Population	Individual
             #endregion
         }
         #endregion
-
     }
 }

@@ -71,7 +71,8 @@
             0,
             0,
             0});
-            this.NFileBox.Location = new System.Drawing.Point(336, 72);
+            this.NFileBox.Location = new System.Drawing.Point(756, 162);
+            this.NFileBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.NFileBox.Maximum = new decimal(new int[] {
             65536000,
             0,
@@ -83,7 +84,7 @@
             0,
             0});
             this.NFileBox.Name = "NFileBox";
-            this.NFileBox.Size = new System.Drawing.Size(107, 23);
+            this.NFileBox.Size = new System.Drawing.Size(241, 43);
             this.NFileBox.TabIndex = 519;
             this.NFileBox.Value = new decimal(new int[] {
             100,
@@ -96,9 +97,10 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label40.Location = new System.Drawing.Point(7, 73);
+            this.label40.Location = new System.Drawing.Point(16, 164);
+            this.label40.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(50, 15);
+            this.label40.Size = new System.Drawing.Size(116, 37);
             this.label40.TabIndex = 518;
             this.label40.Text = "# repeat";
             // 
@@ -106,9 +108,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label1.Location = new System.Drawing.Point(243, 73);
+            this.label1.Location = new System.Drawing.Point(547, 164);
+            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.Size = new System.Drawing.Size(87, 37);
             this.label1.TabIndex = 518;
             this.label1.Text = "# files";
             // 
@@ -116,16 +119,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label2.Location = new System.Drawing.Point(7, 100);
+            this.label2.Location = new System.Drawing.Point(16, 225);
+            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 15);
+            this.label2.Size = new System.Drawing.Size(166, 37);
             this.label2.TabIndex = 518;
             this.label2.Text = "Null allele id";
             // 
             // NullBox
             // 
             this.NullBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NullBox.Location = new System.Drawing.Point(81, 97);
+            this.NullBox.Location = new System.Drawing.Point(182, 218);
+            this.NullBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.NullBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -137,7 +142,7 @@
             0,
             0});
             this.NullBox.Name = "NullBox";
-            this.NullBox.Size = new System.Drawing.Size(107, 23);
+            this.NullBox.Size = new System.Drawing.Size(241, 43);
             this.NullBox.TabIndex = 519;
             this.NullBox.Value = new decimal(new int[] {
             777,
@@ -160,9 +165,10 @@
             "Genodive",
             "Migrate",
             "BayesAss"});
-            this.FormatBox.Location = new System.Drawing.Point(81, 44);
+            this.FormatBox.Location = new System.Drawing.Point(182, 99);
+            this.FormatBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.FormatBox.Name = "FormatBox";
-            this.FormatBox.Size = new System.Drawing.Size(108, 23);
+            this.FormatBox.Size = new System.Drawing.Size(238, 45);
             this.FormatBox.TabIndex = 517;
             this.FormatBox.SelectedIndexChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -170,9 +176,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label3.Location = new System.Drawing.Point(7, 47);
+            this.label3.Location = new System.Drawing.Point(16, 106);
+            this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 15);
+            this.label3.Size = new System.Drawing.Size(101, 37);
             this.label3.TabIndex = 518;
             this.label3.Text = "Format";
             // 
@@ -181,12 +188,13 @@
             this.DirBox.AcceptsReturn = true;
             this.DirBox.AcceptsTab = true;
             this.DirBox.HideSelection = false;
-            this.DirBox.Location = new System.Drawing.Point(80, 124);
+            this.DirBox.Location = new System.Drawing.Point(180, 279);
+            this.DirBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.DirBox.Multiline = true;
             this.DirBox.Name = "DirBox";
             this.DirBox.ReadOnly = true;
             this.DirBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DirBox.Size = new System.Drawing.Size(364, 103);
+            this.DirBox.Size = new System.Drawing.Size(814, 227);
             this.DirBox.TabIndex = 520;
             this.DirBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -194,9 +202,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label4.Location = new System.Drawing.Point(9, 124);
+            this.label4.Location = new System.Drawing.Point(20, 279);
+            this.label4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 15);
+            this.label4.Size = new System.Drawing.Size(125, 37);
             this.label4.TabIndex = 518;
             this.label4.Text = "Directory";
             // 
@@ -209,9 +218,10 @@
             "n dummy diploid genotype (truncate)",
             "nv/2 dummy diploid genotype  (split)",
             "n polyploid genotype by posterior prob. (rand)"});
-            this.MethodBox.Location = new System.Drawing.Point(81, 17);
+            this.MethodBox.Location = new System.Drawing.Point(182, 38);
+            this.MethodBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.MethodBox.Name = "MethodBox";
-            this.MethodBox.Size = new System.Drawing.Size(363, 23);
+            this.MethodBox.Size = new System.Drawing.Size(812, 45);
             this.MethodBox.TabIndex = 517;
             this.MethodBox.SelectedIndexChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -219,16 +229,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label5.Location = new System.Drawing.Point(7, 19);
+            this.label5.Location = new System.Drawing.Point(16, 43);
+            this.label5.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 15);
+            this.label5.Size = new System.Drawing.Size(111, 37);
             this.label5.TabIndex = 518;
             this.label5.Text = "Method";
             // 
             // RepeatBox
             // 
             this.RepeatBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RepeatBox.Location = new System.Drawing.Point(81, 71);
+            this.RepeatBox.Location = new System.Drawing.Point(182, 160);
+            this.RepeatBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.RepeatBox.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -240,7 +252,7 @@
             0,
             0});
             this.RepeatBox.Name = "RepeatBox";
-            this.RepeatBox.Size = new System.Drawing.Size(107, 23);
+            this.RepeatBox.Size = new System.Drawing.Size(241, 43);
             this.RepeatBox.TabIndex = 519;
             this.RepeatBox.Value = new decimal(new int[] {
             1,
@@ -259,7 +271,8 @@
             this.toolStripProgressBar1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(455, 25);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1024, 56);
             this.toolStrip1.TabIndex = 521;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -270,7 +283,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(45, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(97, 50);
             this.toolStripButton2.Text = "&Export";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -281,25 +294,26 @@
             this.SaveStructureButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveStructureButton.Image")));
             this.SaveStructureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveStructureButton.Name = "SaveStructureButton";
-            this.SaveStructureButton.Size = new System.Drawing.Size(41, 22);
+            this.SaveStructureButton.Size = new System.Drawing.Size(88, 50);
             this.SaveStructureButton.Text = "&Abort";
             this.SaveStructureButton.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 56);
             // 
             // toolStripProgressBar1
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(320, 22);
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(320, 50);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(9, 143);
+            this.button1.Location = new System.Drawing.Point(20, 322);
+            this.button1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 25);
+            this.button1.Size = new System.Drawing.Size(119, 56);
             this.button1.TabIndex = 522;
             this.button1.Text = "&Change";
             this.button1.UseVisualStyleBackColor = true;
@@ -328,18 +342,21 @@
             this.groupBox1.Controls.Add(this.NFileBox);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.groupBox1.Location = new System.Drawing.Point(0, 25);
+            this.groupBox1.Location = new System.Drawing.Point(0, 56);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(455, 238);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox1.Size = new System.Drawing.Size(1024, 536);
             this.groupBox1.TabIndex = 523;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parameters";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(9, 201);
+            this.button3.Location = new System.Drawing.Point(20, 452);
+            this.button3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(53, 25);
+            this.button3.Size = new System.Drawing.Size(119, 56);
             this.button3.TabIndex = 522;
             this.button3.Text = "&Clear";
             this.button3.UseVisualStyleBackColor = true;
@@ -347,9 +364,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(9, 172);
+            this.button2.Location = new System.Drawing.Point(20, 387);
+            this.button2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(53, 25);
+            this.button2.Size = new System.Drawing.Size(119, 56);
             this.button2.TabIndex = 522;
             this.button2.Text = "&Open";
             this.button2.UseVisualStyleBackColor = true;
@@ -363,9 +381,10 @@
             this.FillMissingBox.Items.AddRange(new object[] {
             "No",
             "Yes"});
-            this.FillMissingBox.Location = new System.Drawing.Point(336, 44);
+            this.FillMissingBox.Location = new System.Drawing.Point(756, 99);
+            this.FillMissingBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.FillMissingBox.Name = "FillMissingBox";
-            this.FillMissingBox.Size = new System.Drawing.Size(108, 23);
+            this.FillMissingBox.Size = new System.Drawing.Size(238, 45);
             this.FillMissingBox.TabIndex = 517;
             this.FillMissingBox.SelectedIndexChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -373,9 +392,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label6.Location = new System.Drawing.Point(243, 47);
+            this.label6.Location = new System.Drawing.Point(547, 106);
+            this.label6.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 15);
+            this.label6.Size = new System.Drawing.Size(208, 37);
             this.label6.TabIndex = 518;
             this.label6.Text = "Fill missing data";
             // 
@@ -387,7 +407,8 @@
             0,
             0,
             0});
-            this.MaxNBox.Location = new System.Drawing.Point(336, 97);
+            this.MaxNBox.Location = new System.Drawing.Point(756, 218);
+            this.MaxNBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.MaxNBox.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -399,7 +420,7 @@
             0,
             0});
             this.MaxNBox.Name = "MaxNBox";
-            this.MaxNBox.Size = new System.Drawing.Size(107, 23);
+            this.MaxNBox.Size = new System.Drawing.Size(241, 43);
             this.MaxNBox.TabIndex = 519;
             this.MaxNBox.Value = new decimal(new int[] {
             999999,
@@ -412,21 +433,23 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label7.Location = new System.Drawing.Point(243, 99);
+            this.label7.Location = new System.Drawing.Point(547, 223);
+            this.label7.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 15);
+            this.label7.Size = new System.Drawing.Size(181, 37);
             this.label7.TabIndex = 518;
             this.label7.Text = "max(n) in pop";
             // 
             // Form5
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(455, 263);
+            this.ClientSize = new System.Drawing.Size(1024, 592);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.MaximizeBox = false;
             this.Name = "Form5";
             this.Text = "Export genotypes";

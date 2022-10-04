@@ -643,7 +643,9 @@ namespace PolyGene
         {
             HuangML,
             HardyFz,
-            Hardyg2z
+            Hardyg2z,
+            HardyFzEM,
+            Hardyg2zEM
         }
 
         public enum WaplesMatingSystem : int
@@ -929,6 +931,7 @@ namespace PolyGene
 
         //Allele frequency
         public static bool REMOVE_DUP_ALLELE = false;
+        public static bool DISCARD_EMPTY = true; //Genotype: discard; Phenotype: discard if not consider null allele or negative amplification
         public static bool CONSIDER_NULL = true;
         public static bool CONSIDER_NEGATIVE = true;
         public static bool CONSIDER_SELFING = true;
@@ -1003,7 +1006,13 @@ namespace PolyGene
         public static bool DIST_Euclidean = false;
         public static bool DIST_Goldstein1995 = false;
         public static bool DIST_Nei1973 = false;
-        public static bool DIST_Roger1973 = false;
+        public static bool DIST_Rogers1973 = false;
+        public static bool DIST_Sokal1958 = false;
+        public static bool DIST_Rogers1960 = false;
+        public static bool DIST_Jaccard1901 = false;
+        public static bool DIST_Sorensen1948 = false;
+        public static bool DIST_Sokal1963 = false;
+        public static bool DIST_Russel1940 = false;
         public static bool DIST_Reynolds1983 = false;
         public static bool DIST_Slatkin1995 = false;
 
@@ -1687,7 +1696,7 @@ namespace PolyGene
 
         private static double GetMissingFreq(IND ti, int l, int a)
         {
-            if (ti.g[l].hash == 0)
+            if (ti.g[l].hash == 0)//ok
                 return GetDictionaryValue(all.total_pop.loc[l].freq, a);
                 //return GetMissingFreq(ti.subpop, l, a);
             return GetDictionaryValue(ti.g[l].freq, a);
@@ -3508,10 +3517,19 @@ namespace PolyGene
             }
             picheight += header + footer;
             Bitmap bmp = new Bitmap(picwidth, picheight);
-            //Vector
-            Stream ms = new MemoryStream();
-            Metafile mf = new Metafile(ms, Graphics.FromImage(bmp).GetHdc());
-            Graphics g = Graphics.FromImage(mf);
+            MemoryStream ms = null; Graphics gdc = null; Metafile mf = null; Graphics g = null;
+
+            if (OS == OperationSystem.Windows)
+            {
+                //Vector image
+                ms = new MemoryStream();
+                gdc = Graphics.FromHwndInternal(IntPtr.Zero);
+                mf = new Metafile(ms, gdc.GetHdc(), EmfType.EmfPlusOnly);
+                gdc.ReleaseHdc();
+                g = Graphics.FromImage(mf);
+            }
+            else
+                g = Graphics.FromImage(bmp);
 
             g.Clear(Color.White);
 
@@ -3552,21 +3570,27 @@ namespace PolyGene
                 }
             }
 
-            g.Dispose();
-            ms.Seek(0, SeekOrigin.Begin);
-            VecFile = new byte[ms.Length];
-            ms.Read(VecFile, 0, (int)ms.Length);
-            ms.Seek(0, SeekOrigin.Begin);
+            if (OS == OperationSystem.Windows)
+            {
+                //write VecFile
+                g.Dispose();
+                ms.Seek(0, SeekOrigin.Begin);
+                VecFile = new byte[ms.Length];
+                ms.Read(VecFile, 0, (int)ms.Length);
 
-            g = Graphics.FromImage(bmp);
-            g.DrawImage(new Metafile(ms), 0, 0, bmp.Width, bmp.Height);
+                //draw bitmap
+                g = Graphics.FromImage(bmp);
+                g.DrawImage(mf, 0, 0, bmp.Width, bmp.Height);
+                g.Dispose();
+                mf.Dispose();
+                ms.Dispose();
+            }
+            else
+                VecFile = new byte[0];
+
             MemoryStream m = new MemoryStream();
             bmp.Save(m, ImageFormat.Png);
-
-            ms.Dispose();
-            g.Dispose();
             bmp.Dispose();
-
             return Image.FromStream(m);
         }
 
@@ -5480,7 +5504,13 @@ pop4	36215.94	31643.91	27984.49	0.00";
                 DistEuclideanBox.Checked = bool.Parse(a[c++]);
                 DistGoldstein1995Box.Checked = bool.Parse(a[c++]);
                 DistNei1973Box.Checked = bool.Parse(a[c++]);
-                DistRoger1973Box.Checked = bool.Parse(a[c++]);
+                DistRogers1973Box.Checked = bool.Parse(a[c++]);
+                DistSokal1958Box.Checked = bool.Parse(a[c++]);
+                DistRogers1960Box.Checked = bool.Parse(a[c++]);
+                DistJaccard1901Box.Checked = bool.Parse(a[c++]);
+                DistSorensen1948Box.Checked = bool.Parse(a[c++]);
+                DistSokal1963Box.Checked = bool.Parse(a[c++]);
+                DistRussel1940Box.Checked = bool.Parse(a[c++]);
                 DistReynolds1983Box.Checked = bool.Parse(a[c++]);
                 DistSlatkinBox.Checked = bool.Parse(a[c++]);
                 DistResBox.Text = a[c++];
@@ -5833,6 +5863,7 @@ pop4	36215.94	31643.91	27984.49	0.00";
             CONSIDER_NULL = FrequencyNullAlleleBox.Checked;
             CONSIDER_NEGATIVE = FrequencyNegPCRBox.Checked;
             CONSIDER_SELFING = FrequencySelfingBox.Checked && DR_MODE != DoubleReductionModel.PESRS;
+            DISCARD_EMPTY = ISGENOTYPE || (!CONSIDER_NULL && !CONSIDER_NEGATIVE && !ISGENOTYPE);
             SELFING_ESTIMATOR = (SelfingRateEstimator)FrequencySelfingRateEstimatorBox.SelectedIndex;
             DR_MODE = (DoubleReductionModel)FrequencyInheritanceModeBox.SelectedIndex;
             NRRATE = (double)FrequencyNrRateBox.Value;
@@ -5892,7 +5923,13 @@ pop4	36215.94	31643.91	27984.49	0.00";
             DIST_Euclidean = DistEuclideanBox.Checked;
             DIST_Goldstein1995 = DistGoldstein1995Box.Checked;
             DIST_Nei1973 = DistNei1973Box.Checked;
-            DIST_Roger1973 = DistRoger1973Box.Checked;
+            DIST_Rogers1973 = DistRogers1973Box.Checked;
+            DIST_Sokal1958 = DistSokal1958Box.Checked;
+            DIST_Rogers1960 = DistRogers1960Box.Checked;
+            DIST_Jaccard1901 = DistJaccard1901Box.Checked;
+            DIST_Sorensen1948 = DistSorensen1948Box.Checked;
+            DIST_Sokal1963 = DistSokal1963Box.Checked;
+            DIST_Russel1940 = DistRussel1940Box.Checked;
             DIST_Reynolds1983 = DistReynolds1983Box.Checked;
             DIST_Slatkin1995 = DistSlatkinBox.Checked;
 
@@ -6160,7 +6197,13 @@ pop4	36215.94	31643.91	27984.49	0.00";
             DistEuclideanBox.Checked = false;
             DistGoldstein1995Box.Checked = false;
             DistNei1973Box.Checked = false;
-            DistRoger1973Box.Checked = false;
+            DistRogers1973Box.Checked = false;
+            DistSokal1958Box.Checked = false;
+            DistRogers1960Box.Checked = false;
+            DistJaccard1901Box.Checked = false;
+            DistSorensen1948Box.Checked = false;
+            DistSokal1963Box.Checked = false;
+            DistRussel1940Box.Checked = false;
             DistReynolds1983Box.Checked = false;
             DistSlatkinBox.Checked = false;
 
@@ -6438,7 +6481,13 @@ pop4	36215.94	31643.91	27984.49	0.00";
                     re.Append(IDENTIFIER + DistEuclideanBox.Checked);
                     re.Append(IDENTIFIER + DistGoldstein1995Box.Checked);
                     re.Append(IDENTIFIER + DistNei1973Box.Checked);
-                    re.Append(IDENTIFIER + DistRoger1973Box.Checked);
+                    re.Append(IDENTIFIER + DistRogers1973Box.Checked);
+                    re.Append(IDENTIFIER + DistSokal1958Box.Checked);
+                    re.Append(IDENTIFIER + DistRogers1960Box.Checked);
+                    re.Append(IDENTIFIER + DistJaccard1901Box.Checked);
+                    re.Append(IDENTIFIER + DistSorensen1948Box.Checked);
+                    re.Append(IDENTIFIER + DistSokal1963Box.Checked);
+                    re.Append(IDENTIFIER + DistRussel1940Box.Checked);
                     re.Append(IDENTIFIER + DistReynolds1983Box.Checked);
                     re.Append(IDENTIFIER + DistSlatkinBox.Checked);
                     re.Append(IDENTIFIER + DistResBox.Text);
@@ -7371,6 +7420,7 @@ pop4	36215.94	31643.91	27984.49	0.00";
                         TaskLabel.Text = "";
                         toolStripProgressBar1.Value = toolStripProgressBar1.Maximum;
                         SaveSettings();
+                        ShowControls();
                         break;
 
                     case GlobalRunState.simulating:
@@ -7401,6 +7451,7 @@ pop4	36215.94	31643.91	27984.49	0.00";
                         FstLabel.Text = "Fst: " + fst.ToString(DECIMAL);
 
                         ApplySettings();
+                        ShowControls();
                         break;
 
                     case GlobalRunState.mantelrunning:
@@ -7420,6 +7471,7 @@ pop4	36215.94	31643.91	27984.49	0.00";
                         SetText(f1.MantelResBox, GetFileSize("o_mantel.txt") < MAX_OUTPUT ? File.ReadAllText("o_mantel.txt") : "Can not display Mantel test results for output size > 10Mb, Mantel test output is saved in file 'o_mantel.txt'.");
                         runstate = GlobalRunState.notstart;
                         SaveSettings();
+                        ShowControls();
                         break;
 
                     case GlobalRunState.mantelbreak:
@@ -7431,6 +7483,7 @@ pop4	36215.94	31643.91	27984.49	0.00";
                         MantelResBox.Text = "Error";
                         runstate = GlobalRunState.notstart;
                         ApplySettings();
+                        ShowControls();
                         break;
                 }
             }
@@ -8025,7 +8078,7 @@ pop4	36215.94	31643.91	27984.49	0.00";
                 par.Summary(pars);
                 StructureRunDetailBox.Text = par.GetRunString(pars);
                 byte[] VecFile = null;
-                StructurePicBox.Image = par.Drawplot(ref VecFile, pars);
+                StructurePicBox.Image = par.DrawBarplot(ref VecFile, pars);
                 StructurePicBox.Tag = VecFile;
             }
         }
@@ -8049,7 +8102,7 @@ pop4	36215.94	31643.91	27984.49	0.00";
                     POP.STRUCTURE p = (POP.STRUCTURE)StructureRunListBox.SelectedItems[0].Tag;
                     StructureRunDetailBox.Text = p.GetRunString(null);
                     byte[] VecFile = null;
-                    StructurePicBox.Image = p.Drawplot(ref VecFile, null);
+                    StructurePicBox.Image = p.DrawBarplot(ref VecFile, null);
                     StructurePicBox.Tag = VecFile;
                 }
                 else if (StructureRunListBox.SelectedItems.Count > 1)
@@ -8241,7 +8294,7 @@ pop4	36215.94	31643.91	27984.49	0.00";
                 par.Summary(pars);
                 BayesAssRunDetailBox.Text = par.GetRunString(pars);
                 byte[] VecFile = null;
-                BayesAssPicBox.Image = par.Drawplot(ref VecFile, pars);
+                BayesAssPicBox.Image = par.DrawBarplot(ref VecFile, pars);
                 BayesAssPicBox.Tag = VecFile;
             }
         }
@@ -8267,7 +8320,7 @@ pop4	36215.94	31643.91	27984.49	0.00";
                     POP.BAYESASS p = (POP.BAYESASS)BayesAssRunListBox.SelectedItems[0].Tag;
                     BayesAssRunDetailBox.Text = p.GetRunString(null);
                     byte[] VecFile = null;
-                    BayesAssPicBox.Image = p.Drawplot(ref VecFile, null);
+                    BayesAssPicBox.Image = p.DrawBarplot(ref VecFile, null);
                     BayesAssPicBox.Tag = VecFile;
                 }
                 else if (BayesAssRunListBox.SelectedItems.Count > 1)

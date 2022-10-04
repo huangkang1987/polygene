@@ -44,19 +44,21 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label7.Location = new System.Drawing.Point(481, 9);
+            this.label7.Location = new System.Drawing.Point(321, 6);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 25);
+            this.label7.Size = new System.Drawing.Size(80, 15);
             this.label7.TabIndex = 13;
-            this.label7.Text = "V1.5 2022.9.1";
+            this.label7.Text = "V1.6 2022.10.3";
             // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.linkLabel2.Location = new System.Drawing.Point(301, 193);
+            this.linkLabel2.Location = new System.Drawing.Point(201, 129);
+            this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(207, 25);
+            this.linkLabel2.Size = new System.Drawing.Size(140, 15);
             this.linkLabel2.TabIndex = 11;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "huangkang@nwu.edu.cn";
@@ -65,9 +67,10 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.linkLabel1.Location = new System.Drawing.Point(154, 165);
+            this.linkLabel1.Location = new System.Drawing.Point(103, 110);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(379, 25);
+            this.linkLabel1.Size = new System.Drawing.Size(252, 15);
             this.linkLabel1.TabIndex = 12;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "https://github.com/huangkang1987/polygene";
@@ -76,9 +79,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label8.Location = new System.Drawing.Point(49, 193);
+            this.label8.Location = new System.Drawing.Point(33, 129);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(226, 25);
+            this.label8.Size = new System.Drawing.Size(148, 15);
             this.label8.TabIndex = 9;
             this.label8.Text = "Bug report && suggestions: ";
             // 
@@ -86,9 +90,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label5.Location = new System.Drawing.Point(49, 165);
+            this.label5.Location = new System.Drawing.Point(33, 110);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 25);
+            this.label5.Size = new System.Drawing.Size(69, 15);
             this.label5.TabIndex = 10;
             this.label5.Text = "Homepage:";
             // 
@@ -96,9 +101,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label4.Location = new System.Drawing.Point(49, 135);
+            this.label4.Location = new System.Drawing.Point(33, 90);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 25);
+            this.label4.Size = new System.Drawing.Size(117, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "Northwest University";
             // 
@@ -106,9 +112,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label3.Location = new System.Drawing.Point(49, 109);
+            this.label3.Location = new System.Drawing.Point(33, 73);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(303, 25);
+            this.label3.Size = new System.Drawing.Size(198, 15);
             this.label3.TabIndex = 7;
             this.label3.Text = "PhD of Zoology, Associate Professor";
             // 
@@ -116,9 +123,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label2.Location = new System.Drawing.Point(49, 81);
+            this.label2.Location = new System.Drawing.Point(33, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 25);
+            this.label2.Size = new System.Drawing.Size(89, 15);
             this.label2.TabIndex = 8;
             this.label2.Text = "By Kang Huang";
             // 
@@ -126,9 +134,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label6.Location = new System.Drawing.Point(49, 44);
+            this.label6.Location = new System.Drawing.Point(33, 29);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(553, 25);
+            this.label6.Size = new System.Drawing.Size(364, 15);
             this.label6.TabIndex = 4;
             this.label6.Text = "A versatile population genetics software for diploids and polyploids.";
             // 
@@ -136,17 +145,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label1.Location = new System.Drawing.Point(19, 9);
+            this.label1.Location = new System.Drawing.Point(13, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 25);
+            this.label1.Size = new System.Drawing.Size(57, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "PolyGene";
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(642, 245);
+            this.ClientSize = new System.Drawing.Size(428, 163);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
@@ -159,6 +169,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "About";

@@ -362,8 +362,14 @@
             this.label50 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.DistSlatkinBox = new System.Windows.Forms.CheckBox();
-            this.DistRoger1973Box = new System.Windows.Forms.CheckBox();
+            this.DistRussel1940Box = new System.Windows.Forms.CheckBox();
+            this.DistSorensen1948Box = new System.Windows.Forms.CheckBox();
+            this.DistRogers1960Box = new System.Windows.Forms.CheckBox();
+            this.DistRogers1973Box = new System.Windows.Forms.CheckBox();
             this.DistNei1983Box = new System.Windows.Forms.CheckBox();
+            this.DistSokal1963Box = new System.Windows.Forms.CheckBox();
+            this.DistJaccard1901Box = new System.Windows.Forms.CheckBox();
+            this.DistSokal1958Box = new System.Windows.Forms.CheckBox();
             this.DistReynolds1983Box = new System.Windows.Forms.CheckBox();
             this.DistNei1973Box = new System.Windows.Forms.CheckBox();
             this.DistReynold1993Box = new System.Windows.Forms.CheckBox();
@@ -932,7 +938,8 @@
             this.toolStripButton2});
             this.MainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.MainToolStrip.Name = "MainToolStrip";
-            this.MainToolStrip.Size = new System.Drawing.Size(1427, 31);
+            this.MainToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.MainToolStrip.Size = new System.Drawing.Size(889, 27);
             this.MainToolStrip.TabIndex = 0;
             this.MainToolStrip.Text = "toolStrip1";
             // 
@@ -942,7 +949,7 @@
             this.CalcButton.Image = ((System.Drawing.Image)(resources.GetObject("CalcButton.Image")));
             this.CalcButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CalcButton.Name = "CalcButton";
-            this.CalcButton.Size = new System.Drawing.Size(41, 28);
+            this.CalcButton.Size = new System.Drawing.Size(41, 24);
             this.CalcButton.Text = "&Calc";
             this.CalcButton.Click += new System.EventHandler(this.BeginCalculation);
             // 
@@ -952,7 +959,7 @@
             this.PauseButton.Image = ((System.Drawing.Image)(resources.GetObject("PauseButton.Image")));
             this.PauseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PauseButton.Name = "PauseButton";
-            this.PauseButton.Size = new System.Drawing.Size(50, 28);
+            this.PauseButton.Size = new System.Drawing.Size(50, 24);
             this.PauseButton.Text = "&Pause";
             this.PauseButton.Click += new System.EventHandler(this.Pause);
             // 
@@ -962,14 +969,14 @@
             this.AbortButton.Image = ((System.Drawing.Image)(resources.GetObject("AbortButton.Image")));
             this.AbortButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AbortButton.Name = "AbortButton";
-            this.AbortButton.Size = new System.Drawing.Size(51, 28);
+            this.AbortButton.Size = new System.Drawing.Size(51, 24);
             this.AbortButton.Text = "&Abort";
             this.AbortButton.Click += new System.EventHandler(this.Abort);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripDropDownButton1
             // 
@@ -984,7 +991,7 @@
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(68, 28);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(68, 24);
             this.toolStripDropDownButton1.Text = "&Import";
             // 
             // genepopToolStripMenuItem
@@ -1036,14 +1043,14 @@
             this.ExportButton.Image = ((System.Drawing.Image)(resources.GetObject("ExportButton.Image")));
             this.ExportButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(56, 28);
+            this.ExportButton.Size = new System.Drawing.Size(56, 24);
             this.ExportButton.Text = "&Export";
             this.ExportButton.Click += new System.EventHandler(this.toolStripButton11_Click);
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 27);
             // 
             // ModelTestButton
             // 
@@ -1051,14 +1058,14 @@
             this.ModelTestButton.Image = ((System.Drawing.Image)(resources.GetObject("ModelTestButton.Image")));
             this.ModelTestButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ModelTestButton.Name = "ModelTestButton";
-            this.ModelTestButton.Size = new System.Drawing.Size(82, 28);
+            this.ModelTestButton.Size = new System.Drawing.Size(82, 24);
             this.ModelTestButton.Text = "Model&Test";
             this.ModelTestButton.Click += new System.EventHandler(this.ModelTestButton_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
             // 
             // AboutButton
             // 
@@ -1066,7 +1073,7 @@
             this.AboutButton.Image = ((System.Drawing.Image)(resources.GetObject("AboutButton.Image")));
             this.AboutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AboutButton.Name = "AboutButton";
-            this.AboutButton.Size = new System.Drawing.Size(54, 28);
+            this.AboutButton.Size = new System.Drawing.Size(54, 24);
             this.AboutButton.Text = "A&bout";
             this.AboutButton.Click += new System.EventHandler(this.ShowAbout);
             // 
@@ -1077,24 +1084,24 @@
             this.ManualButton.Image = ((System.Drawing.Image)(resources.GetObject("ManualButton.Image")));
             this.ManualButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ManualButton.Name = "ManualButton";
-            this.ManualButton.Size = new System.Drawing.Size(62, 28);
+            this.ManualButton.Size = new System.Drawing.Size(62, 24);
             this.ManualButton.Text = "&Manual";
             this.ManualButton.Click += new System.EventHandler(this.ShowManual);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripProgressBar1
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(375, 28);
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(300, 24);
             // 
             // TaskLabel
             // 
             this.TaskLabel.Name = "TaskLabel";
-            this.TaskLabel.Size = new System.Drawing.Size(0, 28);
+            this.TaskLabel.Size = new System.Drawing.Size(0, 24);
             // 
             // SimRunButton
             // 
@@ -1102,7 +1109,7 @@
             this.SimRunButton.Image = ((System.Drawing.Image)(resources.GetObject("SimRunButton.Image")));
             this.SimRunButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SimRunButton.Name = "SimRunButton";
-            this.SimRunButton.Size = new System.Drawing.Size(38, 28);
+            this.SimRunButton.Size = new System.Drawing.Size(38, 24);
             this.SimRunButton.Text = "&Run";
             this.SimRunButton.Visible = false;
             this.SimRunButton.Click += new System.EventHandler(this.RunCommand);
@@ -1113,7 +1120,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(97, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(97, 24);
             this.toolStripButton2.Text = "StructureSim";
             this.toolStripButton2.Visible = false;
             this.toolStripButton2.Click += new System.EventHandler(this.StructureSim);
@@ -1145,11 +1152,12 @@
             this.tabControl1.Controls.Add(this.MantelPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tabControl1.Location = new System.Drawing.Point(0, 31);
+            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1427, 752);
+            this.tabControl1.Size = new System.Drawing.Size(889, 495);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -1157,8 +1165,9 @@
             // 
             this.InputPage.Controls.Add(this.splitContainer14);
             this.InputPage.Location = new System.Drawing.Point(4, 54);
+            this.InputPage.Margin = new System.Windows.Forms.Padding(2);
             this.InputPage.Name = "InputPage";
-            this.InputPage.Size = new System.Drawing.Size(1419, 694);
+            this.InputPage.Size = new System.Drawing.Size(881, 437);
             this.InputPage.TabIndex = 0;
             this.InputPage.Text = "Input";
             this.InputPage.UseVisualStyleBackColor = true;
@@ -1168,6 +1177,7 @@
             this.splitContainer14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer14.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer14.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer14.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer14.Name = "splitContainer14";
             // 
             // splitContainer14.Panel1
@@ -1177,8 +1187,8 @@
             // splitContainer14.Panel2
             // 
             this.splitContainer14.Panel2.Controls.Add(this.groupBox14);
-            this.splitContainer14.Size = new System.Drawing.Size(1419, 694);
-            this.splitContainer14.SplitterDistance = 1308;
+            this.splitContainer14.Size = new System.Drawing.Size(881, 437);
+            this.splitContainer14.SplitterDistance = 600;
             this.splitContainer14.SplitterWidth = 5;
             this.splitContainer14.TabIndex = 3;
             // 
@@ -1187,6 +1197,7 @@
             this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer8.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer8.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer8.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer8.Name = "splitContainer8";
             this.splitContainer8.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1198,7 +1209,7 @@
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer8.Size = new System.Drawing.Size(1308, 694);
+            this.splitContainer8.Size = new System.Drawing.Size(600, 437);
             this.splitContainer8.SplitterDistance = 232;
             this.splitContainer8.SplitterWidth = 5;
             this.splitContainer8.TabIndex = 2;
@@ -1208,8 +1219,10 @@
             this.groupBox8.Controls.Add(this.SimPop_AlleleFrequencyBox);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(0, 28);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(1308, 204);
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox8.Size = new System.Drawing.Size(600, 204);
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Simulation: Population and allele frequencies";
@@ -1220,12 +1233,13 @@
             this.SimPop_AlleleFrequencyBox.AcceptsTab = true;
             this.SimPop_AlleleFrequencyBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SimPop_AlleleFrequencyBox.HideSelection = false;
-            this.SimPop_AlleleFrequencyBox.Location = new System.Drawing.Point(3, 23);
+            this.SimPop_AlleleFrequencyBox.Location = new System.Drawing.Point(2, 22);
+            this.SimPop_AlleleFrequencyBox.Margin = new System.Windows.Forms.Padding(2);
             this.SimPop_AlleleFrequencyBox.MaxLength = 32767000;
             this.SimPop_AlleleFrequencyBox.Multiline = true;
             this.SimPop_AlleleFrequencyBox.Name = "SimPop_AlleleFrequencyBox";
             this.SimPop_AlleleFrequencyBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.SimPop_AlleleFrequencyBox.Size = new System.Drawing.Size(1302, 178);
+            this.SimPop_AlleleFrequencyBox.Size = new System.Drawing.Size(596, 180);
             this.SimPop_AlleleFrequencyBox.TabIndex = 2;
             this.SimPop_AlleleFrequencyBox.Text = resources.GetString("SimPop_AlleleFrequencyBox.Text");
             this.SimPop_AlleleFrequencyBox.WordWrap = false;
@@ -1250,7 +1264,8 @@
             this.toolStripSeparator10});
             this.SimulationToolStrip.Location = new System.Drawing.Point(0, 0);
             this.SimulationToolStrip.Name = "SimulationToolStrip";
-            this.SimulationToolStrip.Size = new System.Drawing.Size(1308, 28);
+            this.SimulationToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.SimulationToolStrip.Size = new System.Drawing.Size(600, 28);
             this.SimulationToolStrip.TabIndex = 0;
             this.SimulationToolStrip.Text = "toolStrip2";
             // 
@@ -1352,7 +1367,7 @@
             "0.12",
             "0.15"});
             this.SimPop_FstTerminalBox.Name = "SimPop_FstTerminalBox";
-            this.SimPop_FstTerminalBox.Size = new System.Drawing.Size(92, 28);
+            this.SimPop_FstTerminalBox.Size = new System.Drawing.Size(75, 28);
             this.SimPop_FstTerminalBox.Text = "0.05";
             this.SimPop_FstTerminalBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -1373,14 +1388,14 @@
             // 
             this.FstLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FstLabel.Name = "FstLabel";
-            this.FstLabel.Size = new System.Drawing.Size(34, 25);
+            this.FstLabel.Size = new System.Drawing.Size(34, 20);
             this.FstLabel.Text = "Fst: ";
             this.FstLabel.TextChanged += new System.EventHandler(this.PreSaveSettings);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 28);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
             // 
             // groupBox1
             // 
@@ -1388,8 +1403,10 @@
             this.groupBox1.Controls.Add(this.PhenotypeBox);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1308, 457);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(600, 200);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input data                                           Format:";
@@ -1403,10 +1420,10 @@
             "Genotype",
             "One-digit genotype with deliminator",
             "One-digit genotype without deliminator"});
-            this.FormatBox.Location = new System.Drawing.Point(317, -3);
+            this.FormatBox.Location = new System.Drawing.Point(318, -2);
             this.FormatBox.Margin = new System.Windows.Forms.Padding(2);
             this.FormatBox.Name = "FormatBox";
-            this.FormatBox.Size = new System.Drawing.Size(307, 28);
+            this.FormatBox.Size = new System.Drawing.Size(306, 28);
             this.FormatBox.TabIndex = 1;
             // 
             // PhenotypeBox
@@ -1415,12 +1432,13 @@
             this.PhenotypeBox.AcceptsTab = true;
             this.PhenotypeBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PhenotypeBox.HideSelection = false;
-            this.PhenotypeBox.Location = new System.Drawing.Point(3, 23);
+            this.PhenotypeBox.Location = new System.Drawing.Point(2, 22);
+            this.PhenotypeBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhenotypeBox.MaxLength = 134217728;
             this.PhenotypeBox.Multiline = true;
             this.PhenotypeBox.Name = "PhenotypeBox";
             this.PhenotypeBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.PhenotypeBox.Size = new System.Drawing.Size(1302, 431);
+            this.PhenotypeBox.Size = new System.Drawing.Size(596, 176);
             this.PhenotypeBox.TabIndex = 0;
             this.PhenotypeBox.WordWrap = false;
             this.PhenotypeBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -1443,8 +1461,10 @@
             this.groupBox14.Controls.Add(this.label39);
             this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox14.Location = new System.Drawing.Point(0, 0);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(106, 694);
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox14.Size = new System.Drawing.Size(276, 437);
             this.groupBox14.TabIndex = 2;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Simulation parameters";
@@ -1452,6 +1472,7 @@
             // SimRandomizeDistanceToCentermereButton
             // 
             this.SimRandomizeDistanceToCentermereButton.Location = new System.Drawing.Point(38, 352);
+            this.SimRandomizeDistanceToCentermereButton.Margin = new System.Windows.Forms.Padding(2);
             this.SimRandomizeDistanceToCentermereButton.Name = "SimRandomizeDistanceToCentermereButton";
             this.SimRandomizeDistanceToCentermereButton.Size = new System.Drawing.Size(135, 28);
             this.SimRandomizeDistanceToCentermereButton.TabIndex = 404;
@@ -1463,7 +1484,8 @@
             // 
             this.SimPop_DistBox.AcceptsReturn = true;
             this.SimPop_DistBox.HideSelection = false;
-            this.SimPop_DistBox.Location = new System.Drawing.Point(38, 387);
+            this.SimPop_DistBox.Location = new System.Drawing.Point(38, 388);
+            this.SimPop_DistBox.Margin = new System.Windows.Forms.Padding(2);
             this.SimPop_DistBox.Multiline = true;
             this.SimPop_DistBox.Name = "SimPop_DistBox";
             this.SimPop_DistBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -1476,6 +1498,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.Location = new System.Drawing.Point(35, 572);
+            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(150, 40);
             this.label46.TabIndex = 402;
@@ -1485,6 +1508,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Location = new System.Drawing.Point(12, 308);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(144, 40);
             this.label42.TabIndex = 402;
@@ -1494,6 +1518,7 @@
             // 
             this.SimPop_OutputGenotypeBox.AutoSize = true;
             this.SimPop_OutputGenotypeBox.Location = new System.Drawing.Point(15, 52);
+            this.SimPop_OutputGenotypeBox.Margin = new System.Windows.Forms.Padding(2);
             this.SimPop_OutputGenotypeBox.Name = "SimPop_OutputGenotypeBox";
             this.SimPop_OutputGenotypeBox.Size = new System.Drawing.Size(144, 24);
             this.SimPop_OutputGenotypeBox.TabIndex = 203;
@@ -1504,7 +1529,8 @@
             // SimPop_DioeciousBox
             // 
             this.SimPop_DioeciousBox.AutoSize = true;
-            this.SimPop_DioeciousBox.Location = new System.Drawing.Point(15, 27);
+            this.SimPop_DioeciousBox.Location = new System.Drawing.Point(15, 28);
+            this.SimPop_DioeciousBox.Margin = new System.Windows.Forms.Padding(2);
             this.SimPop_DioeciousBox.Name = "SimPop_DioeciousBox";
             this.SimPop_DioeciousBox.Size = new System.Drawing.Size(97, 24);
             this.SimPop_DioeciousBox.TabIndex = 200;
@@ -1516,6 +1542,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 248);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 0;
@@ -1530,6 +1557,7 @@
             0,
             131072});
             this.SimPop_NegPCRBox.Location = new System.Drawing.Point(38, 272);
+            this.SimPop_NegPCRBox.Margin = new System.Windows.Forms.Padding(2);
             this.SimPop_NegPCRBox.Name = "SimPop_NegPCRBox";
             this.SimPop_NegPCRBox.Size = new System.Drawing.Size(122, 27);
             this.SimPop_NegPCRBox.TabIndex = 205;
@@ -1544,6 +1572,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Location = new System.Drawing.Point(12, 192);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(102, 20);
             this.label37.TabIndex = 0;
@@ -1557,7 +1586,8 @@
             0,
             0,
             131072});
-            this.SimPop_SamplingRateBox.Location = new System.Drawing.Point(38, 213);
+            this.SimPop_SamplingRateBox.Location = new System.Drawing.Point(38, 212);
+            this.SimPop_SamplingRateBox.Margin = new System.Windows.Forms.Padding(2);
             this.SimPop_SamplingRateBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -1587,6 +1617,7 @@
             0,
             131072});
             this.SimPop_SelfingRateBox.Location = new System.Drawing.Point(38, 158);
+            this.SimPop_SelfingRateBox.Margin = new System.Windows.Forms.Padding(2);
             this.SimPop_SelfingRateBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -1601,6 +1632,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Location = new System.Drawing.Point(12, 132);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(85, 20);
             this.label36.TabIndex = 0;
@@ -1615,6 +1647,7 @@
             0,
             131072});
             this.SimPop_FemaleRateBox.Location = new System.Drawing.Point(38, 102);
+            this.SimPop_FemaleRateBox.Margin = new System.Windows.Forms.Padding(2);
             this.SimPop_FemaleRateBox.Maximum = new decimal(new int[] {
             95,
             0,
@@ -1639,6 +1672,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Location = new System.Drawing.Point(12, 78);
+            this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(87, 20);
             this.label39.TabIndex = 0;
@@ -1647,9 +1681,10 @@
             // ParametersPage
             // 
             this.ParametersPage.Controls.Add(this.splitContainer20);
-            this.ParametersPage.Location = new System.Drawing.Point(4, 54);
+            this.ParametersPage.Location = new System.Drawing.Point(4, 79);
+            this.ParametersPage.Margin = new System.Windows.Forms.Padding(2);
             this.ParametersPage.Name = "ParametersPage";
-            this.ParametersPage.Size = new System.Drawing.Size(1419, 694);
+            this.ParametersPage.Size = new System.Drawing.Size(881, 406);
             this.ParametersPage.TabIndex = 1;
             this.ParametersPage.Text = "Parameters";
             this.ParametersPage.UseVisualStyleBackColor = true;
@@ -1671,9 +1706,9 @@
             // splitContainer20.Panel2
             // 
             this.splitContainer20.Panel2.Controls.Add(this.ParametersPanel);
-            this.splitContainer20.Size = new System.Drawing.Size(1419, 694);
+            this.splitContainer20.Size = new System.Drawing.Size(881, 406);
             this.splitContainer20.SplitterDistance = 330;
-            this.splitContainer20.SplitterWidth = 3;
+            this.splitContainer20.SplitterWidth = 2;
             this.splitContainer20.TabIndex = 8;
             // 
             // panel1
@@ -1686,7 +1721,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(330, 694);
+            this.panel1.Size = new System.Drawing.Size(330, 406);
             this.panel1.TabIndex = 0;
             // 
             // GroupBoxMethods
@@ -1711,7 +1746,9 @@
             this.GroupBoxMethods.Controls.Add(this.CalcDiffBox);
             this.GroupBoxMethods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxMethods.Location = new System.Drawing.Point(2, 2);
+            this.GroupBoxMethods.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxMethods.Name = "GroupBoxMethods";
+            this.GroupBoxMethods.Padding = new System.Windows.Forms.Padding(2);
             this.GroupBoxMethods.Size = new System.Drawing.Size(370, 255);
             this.GroupBoxMethods.TabIndex = 6;
             this.GroupBoxMethods.TabStop = false;
@@ -1722,6 +1759,7 @@
             this.CalcLinkageBox.AutoSize = true;
             this.CalcLinkageBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CalcLinkageBox.Location = new System.Drawing.Point(192, 25);
+            this.CalcLinkageBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcLinkageBox.Name = "CalcLinkageBox";
             this.CalcLinkageBox.Size = new System.Drawing.Size(77, 24);
             this.CalcLinkageBox.TabIndex = 0;
@@ -1734,6 +1772,7 @@
             this.CalcInbreedingBox.AutoSize = true;
             this.CalcInbreedingBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcInbreedingBox.Location = new System.Drawing.Point(192, 100);
+            this.CalcInbreedingBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcInbreedingBox.Name = "CalcInbreedingBox";
             this.CalcInbreedingBox.Size = new System.Drawing.Size(172, 24);
             this.CalcInbreedingBox.TabIndex = 0;
@@ -1746,6 +1785,7 @@
             this.CalcNeBox.AutoSize = true;
             this.CalcNeBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CalcNeBox.Location = new System.Drawing.Point(15, 48);
+            this.CalcNeBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcNeBox.Name = "CalcNeBox";
             this.CalcNeBox.Size = new System.Drawing.Size(50, 24);
             this.CalcNeBox.TabIndex = 2;
@@ -1758,6 +1798,7 @@
             this.CalcParentageBox.AutoSize = true;
             this.CalcParentageBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcParentageBox.Location = new System.Drawing.Point(15, 200);
+            this.CalcParentageBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcParentageBox.Name = "CalcParentageBox";
             this.CalcParentageBox.Size = new System.Drawing.Size(152, 24);
             this.CalcParentageBox.TabIndex = 1;
@@ -1770,6 +1811,7 @@
             this.CalcSpatialBox.AutoSize = true;
             this.CalcSpatialBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcSpatialBox.Location = new System.Drawing.Point(15, 150);
+            this.CalcSpatialBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcSpatialBox.Name = "CalcSpatialBox";
             this.CalcSpatialBox.Size = new System.Drawing.Size(129, 24);
             this.CalcSpatialBox.TabIndex = 0;
@@ -1782,6 +1824,7 @@
             this.CalcQstBox.AutoSize = true;
             this.CalcQstBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcQstBox.Location = new System.Drawing.Point(192, 175);
+            this.CalcQstBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcQstBox.Name = "CalcQstBox";
             this.CalcQstBox.Size = new System.Drawing.Size(53, 24);
             this.CalcQstBox.TabIndex = 0;
@@ -1794,6 +1837,7 @@
             this.CalcAMOVABox.AutoSize = true;
             this.CalcAMOVABox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcAMOVABox.Location = new System.Drawing.Point(192, 200);
+            this.CalcAMOVABox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcAMOVABox.Name = "CalcAMOVABox";
             this.CalcAMOVABox.Size = new System.Drawing.Size(83, 24);
             this.CalcAMOVABox.TabIndex = 0;
@@ -1806,6 +1850,7 @@
             this.CalcDistBox.AutoSize = true;
             this.CalcDistBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcDistBox.Location = new System.Drawing.Point(15, 75);
+            this.CalcDistBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcDistBox.Name = "CalcDistBox";
             this.CalcDistBox.Size = new System.Drawing.Size(140, 24);
             this.CalcDistBox.TabIndex = 0;
@@ -1818,6 +1863,7 @@
             this.CalcClusteringBox.AutoSize = true;
             this.CalcClusteringBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcClusteringBox.Location = new System.Drawing.Point(15, 100);
+            this.CalcClusteringBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcClusteringBox.Name = "CalcClusteringBox";
             this.CalcClusteringBox.Size = new System.Drawing.Size(178, 24);
             this.CalcClusteringBox.TabIndex = 0;
@@ -1830,6 +1876,7 @@
             this.CalcHeritabilityBox.AutoSize = true;
             this.CalcHeritabilityBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcHeritabilityBox.Location = new System.Drawing.Point(15, 175);
+            this.CalcHeritabilityBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcHeritabilityBox.Name = "CalcHeritabilityBox";
             this.CalcHeritabilityBox.Size = new System.Drawing.Size(105, 24);
             this.CalcHeritabilityBox.TabIndex = 0;
@@ -1842,6 +1889,7 @@
             this.CalcOrdinationBox.AutoSize = true;
             this.CalcOrdinationBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcOrdinationBox.Location = new System.Drawing.Point(192, 75);
+            this.CalcOrdinationBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcOrdinationBox.Name = "CalcOrdinationBox";
             this.CalcOrdinationBox.Size = new System.Drawing.Size(102, 24);
             this.CalcOrdinationBox.TabIndex = 0;
@@ -1854,6 +1902,7 @@
             this.CalcBayesAssBox.AutoSize = true;
             this.CalcBayesAssBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcBayesAssBox.Location = new System.Drawing.Point(192, 225);
+            this.CalcBayesAssBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcBayesAssBox.Name = "CalcBayesAssBox";
             this.CalcBayesAssBox.Size = new System.Drawing.Size(91, 24);
             this.CalcBayesAssBox.TabIndex = 0;
@@ -1866,6 +1915,7 @@
             this.CalcStructureBox.AutoSize = true;
             this.CalcStructureBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcStructureBox.Location = new System.Drawing.Point(15, 225);
+            this.CalcStructureBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcStructureBox.Name = "CalcStructureBox";
             this.CalcStructureBox.Size = new System.Drawing.Size(90, 24);
             this.CalcStructureBox.TabIndex = 0;
@@ -1878,6 +1928,7 @@
             this.CalcRelationshipBox.AutoSize = true;
             this.CalcRelationshipBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcRelationshipBox.Location = new System.Drawing.Point(192, 150);
+            this.CalcRelationshipBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcRelationshipBox.Name = "CalcRelationshipBox";
             this.CalcRelationshipBox.Size = new System.Drawing.Size(149, 24);
             this.CalcRelationshipBox.TabIndex = 0;
@@ -1890,6 +1941,7 @@
             this.CalcAssignmentBox.AutoSize = true;
             this.CalcAssignmentBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcAssignmentBox.Location = new System.Drawing.Point(192, 125);
+            this.CalcAssignmentBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcAssignmentBox.Name = "CalcAssignmentBox";
             this.CalcAssignmentBox.Size = new System.Drawing.Size(181, 24);
             this.CalcAssignmentBox.TabIndex = 0;
@@ -1902,6 +1954,7 @@
             this.CalcHIndexBox.AutoSize = true;
             this.CalcHIndexBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcHIndexBox.Location = new System.Drawing.Point(15, 125);
+            this.CalcHIndexBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcHIndexBox.Name = "CalcHIndexBox";
             this.CalcHIndexBox.Size = new System.Drawing.Size(153, 24);
             this.CalcHIndexBox.TabIndex = 0;
@@ -1914,6 +1967,7 @@
             this.CalcDistributionBox.AutoSize = true;
             this.CalcDistributionBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CalcDistributionBox.Location = new System.Drawing.Point(15, 25);
+            this.CalcDistributionBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcDistributionBox.Name = "CalcDistributionBox";
             this.CalcDistributionBox.Size = new System.Drawing.Size(180, 24);
             this.CalcDistributionBox.TabIndex = 0;
@@ -1926,6 +1980,7 @@
             this.CalcDiffBox.AutoSize = true;
             this.CalcDiffBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcDiffBox.Location = new System.Drawing.Point(192, 50);
+            this.CalcDiffBox.Margin = new System.Windows.Forms.Padding(2);
             this.CalcDiffBox.Name = "CalcDiffBox";
             this.CalcDiffBox.Size = new System.Drawing.Size(176, 24);
             this.CalcDiffBox.TabIndex = 0;
@@ -1946,7 +2001,9 @@
             this.GroupBoxAlleleFrequency.Controls.Add(this.label43);
             this.GroupBoxAlleleFrequency.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxAlleleFrequency.Location = new System.Drawing.Point(2, 548);
+            this.GroupBoxAlleleFrequency.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxAlleleFrequency.Name = "GroupBoxAlleleFrequency";
+            this.GroupBoxAlleleFrequency.Padding = new System.Windows.Forms.Padding(2);
             this.GroupBoxAlleleFrequency.Size = new System.Drawing.Size(370, 145);
             this.GroupBoxAlleleFrequency.TabIndex = 3;
             this.GroupBoxAlleleFrequency.TabStop = false;
@@ -1961,7 +2018,8 @@
             0,
             0,
             131072});
-            this.FrequencyNrRateBox.Location = new System.Drawing.Point(267, 110);
+            this.FrequencyNrRateBox.Location = new System.Drawing.Point(268, 110);
+            this.FrequencyNrRateBox.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencyNrRateBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -1973,7 +2031,7 @@
             0,
             65536});
             this.FrequencyNrRateBox.Name = "FrequencyNrRateBox";
-            this.FrequencyNrRateBox.Size = new System.Drawing.Size(93, 27);
+            this.FrequencyNrRateBox.Size = new System.Drawing.Size(92, 27);
             this.FrequencyNrRateBox.TabIndex = 518;
             this.FrequencyNrRateBox.Value = new decimal(new int[] {
             75,
@@ -1986,6 +2044,7 @@
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label35.Location = new System.Drawing.Point(8, 112);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(185, 20);
             this.label35.TabIndex = 517;
@@ -1998,11 +2057,14 @@
             this.FrequencySelfingRateEstimatorBox.FormattingEnabled = true;
             this.FrequencySelfingRateEstimatorBox.Items.AddRange(new object[] {
             "Maximum-likelihood",
-            "Hardy 2016 Fz-based ",
-            "Hardy 2016 g2z-based "});
+            "Hardy 2016 Fz-based",
+            "Hardy 2016 g2z-based",
+            "Hardy 2016 Fz-based (iterative)",
+            "Hardy 2016 g2z-based (iterative)"});
             this.FrequencySelfingRateEstimatorBox.Location = new System.Drawing.Point(160, 52);
+            this.FrequencySelfingRateEstimatorBox.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencySelfingRateEstimatorBox.Name = "FrequencySelfingRateEstimatorBox";
-            this.FrequencySelfingRateEstimatorBox.Size = new System.Drawing.Size(201, 28);
+            this.FrequencySelfingRateEstimatorBox.Size = new System.Drawing.Size(202, 28);
             this.FrequencySelfingRateEstimatorBox.TabIndex = 516;
             this.FrequencySelfingRateEstimatorBox.SelectedIndexChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -2011,6 +2073,7 @@
             this.FrequencySelfingBox.AutoSize = true;
             this.FrequencySelfingBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FrequencySelfingBox.Location = new System.Drawing.Point(275, 25);
+            this.FrequencySelfingBox.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencySelfingBox.Name = "FrequencySelfingBox";
             this.FrequencySelfingBox.Size = new System.Drawing.Size(77, 24);
             this.FrequencySelfingBox.TabIndex = 300;
@@ -2023,6 +2086,7 @@
             this.FrequencyNegPCRBox.AutoSize = true;
             this.FrequencyNegPCRBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FrequencyNegPCRBox.Location = new System.Drawing.Point(132, 25);
+            this.FrequencyNegPCRBox.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencyNegPCRBox.Name = "FrequencyNegPCRBox";
             this.FrequencyNegPCRBox.Size = new System.Drawing.Size(121, 24);
             this.FrequencyNegPCRBox.TabIndex = 300;
@@ -2035,6 +2099,7 @@
             this.FrequencyNullAlleleBox.AutoSize = true;
             this.FrequencyNullAlleleBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FrequencyNullAlleleBox.Location = new System.Drawing.Point(8, 25);
+            this.FrequencyNullAlleleBox.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencyNullAlleleBox.Name = "FrequencyNullAlleleBox";
             this.FrequencyNullAlleleBox.Size = new System.Drawing.Size(104, 24);
             this.FrequencyNullAlleleBox.TabIndex = 300;
@@ -2055,8 +2120,9 @@
             "Polysomic (PES rs = 0.5)",
             "Polysomic (PES estimate rs)"});
             this.FrequencyInheritanceModeBox.Location = new System.Drawing.Point(160, 80);
+            this.FrequencyInheritanceModeBox.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencyInheritanceModeBox.Name = "FrequencyInheritanceModeBox";
-            this.FrequencyInheritanceModeBox.Size = new System.Drawing.Size(201, 28);
+            this.FrequencyInheritanceModeBox.Size = new System.Drawing.Size(202, 28);
             this.FrequencyInheritanceModeBox.TabIndex = 400;
             this.FrequencyInheritanceModeBox.SelectedIndexChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -2064,7 +2130,8 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label17.Location = new System.Drawing.Point(8, 57);
+            this.label17.Location = new System.Drawing.Point(8, 58);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(152, 20);
             this.label17.TabIndex = 5;
@@ -2074,7 +2141,8 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label43.Location = new System.Drawing.Point(8, 83);
+            this.label43.Location = new System.Drawing.Point(8, 82);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(129, 20);
             this.label43.TabIndex = 5;
@@ -2096,9 +2164,11 @@
             this.GroupBoxGeneralSettings.Controls.Add(this.label20);
             this.GroupBoxGeneralSettings.Controls.Add(this.label7);
             this.GroupBoxGeneralSettings.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxGeneralSettings.Location = new System.Drawing.Point(2, 263);
+            this.GroupBoxGeneralSettings.Location = new System.Drawing.Point(2, 262);
+            this.GroupBoxGeneralSettings.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxGeneralSettings.Name = "GroupBoxGeneralSettings";
-            this.GroupBoxGeneralSettings.Size = new System.Drawing.Size(370, 277);
+            this.GroupBoxGeneralSettings.Padding = new System.Windows.Forms.Padding(2);
+            this.GroupBoxGeneralSettings.Size = new System.Drawing.Size(370, 278);
             this.GroupBoxGeneralSettings.TabIndex = 5;
             this.GroupBoxGeneralSettings.TabStop = false;
             this.GroupBoxGeneralSettings.Text = "General settings";
@@ -2107,7 +2177,8 @@
             // 
             this.GlobalWarningBox.AutoSize = true;
             this.GlobalWarningBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GlobalWarningBox.Location = new System.Drawing.Point(210, 107);
+            this.GlobalWarningBox.Location = new System.Drawing.Point(210, 108);
+            this.GlobalWarningBox.Margin = new System.Windows.Forms.Padding(2);
             this.GlobalWarningBox.Name = "GlobalWarningBox";
             this.GlobalWarningBox.Size = new System.Drawing.Size(156, 24);
             this.GlobalWarningBox.TabIndex = 505;
@@ -2118,9 +2189,10 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button5.Location = new System.Drawing.Point(207, 52);
+            this.button5.Location = new System.Drawing.Point(208, 52);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(157, 30);
+            this.button5.Size = new System.Drawing.Size(158, 30);
             this.button5.TabIndex = 507;
             this.button5.Text = "Default settings";
             this.button5.UseVisualStyleBackColor = true;
@@ -2130,6 +2202,7 @@
             // 
             this.GlobalRandomizeSeedButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GlobalRandomizeSeedButton.Location = new System.Drawing.Point(10, 52);
+            this.GlobalRandomizeSeedButton.Margin = new System.Windows.Forms.Padding(2);
             this.GlobalRandomizeSeedButton.Name = "GlobalRandomizeSeedButton";
             this.GlobalRandomizeSeedButton.Size = new System.Drawing.Size(82, 30);
             this.GlobalRandomizeSeedButton.TabIndex = 507;
@@ -2142,6 +2215,7 @@
             this.GlobalFoldControlBox.AutoSize = true;
             this.GlobalFoldControlBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GlobalFoldControlBox.Location = new System.Drawing.Point(12, 82);
+            this.GlobalFoldControlBox.Margin = new System.Windows.Forms.Padding(2);
             this.GlobalFoldControlBox.Name = "GlobalFoldControlBox";
             this.GlobalFoldControlBox.Size = new System.Drawing.Size(117, 24);
             this.GlobalFoldControlBox.TabIndex = 300;
@@ -2153,7 +2227,8 @@
             // 
             this.FrequencyRemoveDupAlleleBox.AutoSize = true;
             this.FrequencyRemoveDupAlleleBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.FrequencyRemoveDupAlleleBox.Location = new System.Drawing.Point(12, 107);
+            this.FrequencyRemoveDupAlleleBox.Location = new System.Drawing.Point(12, 108);
+            this.FrequencyRemoveDupAlleleBox.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencyRemoveDupAlleleBox.Name = "FrequencyRemoveDupAlleleBox";
             this.FrequencyRemoveDupAlleleBox.Size = new System.Drawing.Size(197, 24);
             this.FrequencyRemoveDupAlleleBox.TabIndex = 300;
@@ -2165,6 +2240,7 @@
             // 
             this.GlobalSeedBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GlobalSeedBox.Location = new System.Drawing.Point(100, 52);
+            this.GlobalSeedBox.Margin = new System.Windows.Forms.Padding(2);
             this.GlobalSeedBox.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -2179,6 +2255,7 @@
             // 
             this.GlobalThreadBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GlobalThreadBox.Location = new System.Drawing.Point(100, 25);
+            this.GlobalThreadBox.Margin = new System.Windows.Forms.Padding(2);
             this.GlobalThreadBox.Maximum = new decimal(new int[] {
             4096,
             0,
@@ -2204,6 +2281,7 @@
             this.GlobalRefreshSeedBox.AutoSize = true;
             this.GlobalRefreshSeedBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GlobalRefreshSeedBox.Location = new System.Drawing.Point(210, 82);
+            this.GlobalRefreshSeedBox.Margin = new System.Windows.Forms.Padding(2);
             this.GlobalRefreshSeedBox.Name = "GlobalRefreshSeedBox";
             this.GlobalRefreshSeedBox.Size = new System.Drawing.Size(149, 24);
             this.GlobalRefreshSeedBox.TabIndex = 505;
@@ -2217,11 +2295,12 @@
             this.GlobalRegionBox.AcceptsTab = true;
             this.GlobalRegionBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GlobalRegionBox.HideSelection = false;
-            this.GlobalRegionBox.Location = new System.Drawing.Point(27, 157);
+            this.GlobalRegionBox.Location = new System.Drawing.Point(28, 158);
+            this.GlobalRegionBox.Margin = new System.Windows.Forms.Padding(2);
             this.GlobalRegionBox.Multiline = true;
             this.GlobalRegionBox.Name = "GlobalRegionBox";
             this.GlobalRegionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.GlobalRegionBox.Size = new System.Drawing.Size(334, 111);
+            this.GlobalRegionBox.Size = new System.Drawing.Size(334, 112);
             this.GlobalRegionBox.TabIndex = 403;
             this.GlobalRegionBox.Text = "A1:pop1,pop2\r\nA2:pop3\r\nNEXTLEVEL\r\nB1:A1,A2";
             this.GlobalRegionBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -2230,6 +2309,7 @@
             // 
             this.GlobalDecimalPlaceBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GlobalDecimalPlaceBox.Location = new System.Drawing.Point(312, 25);
+            this.GlobalDecimalPlaceBox.Margin = new System.Windows.Forms.Padding(2);
             this.GlobalDecimalPlaceBox.Maximum = new decimal(new int[] {
             15,
             0,
@@ -2255,6 +2335,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label10.Location = new System.Drawing.Point(22, 28);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 20);
             this.label10.TabIndex = 5;
@@ -2265,6 +2346,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label20.Location = new System.Drawing.Point(202, 28);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(110, 20);
             this.label20.TabIndex = 0;
@@ -2275,6 +2357,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label7.Location = new System.Drawing.Point(10, 135);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 20);
             this.label7.TabIndex = 402;
@@ -2303,7 +2386,7 @@
             this.ParametersPanel.Location = new System.Drawing.Point(0, 0);
             this.ParametersPanel.Margin = new System.Windows.Forms.Padding(0);
             this.ParametersPanel.Name = "ParametersPanel";
-            this.ParametersPanel.Size = new System.Drawing.Size(1086, 694);
+            this.ParametersPanel.Size = new System.Drawing.Size(549, 406);
             this.ParametersPanel.TabIndex = 1;
             // 
             // GroupBoxHeritability
@@ -2317,8 +2400,10 @@
             this.GroupBoxHeritability.Controls.Add(this.HeritabilityRitland1996Box);
             this.GroupBoxHeritability.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxHeritability.Location = new System.Drawing.Point(378, 518);
+            this.GroupBoxHeritability.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxHeritability.Name = "GroupBoxHeritability";
-            this.GroupBoxHeritability.Size = new System.Drawing.Size(370, 147);
+            this.GroupBoxHeritability.Padding = new System.Windows.Forms.Padding(2);
+            this.GroupBoxHeritability.Size = new System.Drawing.Size(370, 148);
             this.GroupBoxHeritability.TabIndex = 10;
             this.GroupBoxHeritability.TabStop = false;
             this.GroupBoxHeritability.Text = "Heritability";
@@ -2327,7 +2412,8 @@
             // 
             this.HeritabilityJackknifeBox.AutoSize = true;
             this.HeritabilityJackknifeBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.HeritabilityJackknifeBox.Location = new System.Drawing.Point(13, 117);
+            this.HeritabilityJackknifeBox.Location = new System.Drawing.Point(12, 118);
+            this.HeritabilityJackknifeBox.Margin = new System.Windows.Forms.Padding(2);
             this.HeritabilityJackknifeBox.Name = "HeritabilityJackknifeBox";
             this.HeritabilityJackknifeBox.Size = new System.Drawing.Size(247, 24);
             this.HeritabilityJackknifeBox.TabIndex = 409;
@@ -2338,7 +2424,8 @@
             // 
             this.HeritabilityHuangMLBox.AutoSize = true;
             this.HeritabilityHuangMLBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.HeritabilityHuangMLBox.Location = new System.Drawing.Point(187, 67);
+            this.HeritabilityHuangMLBox.Location = new System.Drawing.Point(188, 68);
+            this.HeritabilityHuangMLBox.Margin = new System.Windows.Forms.Padding(2);
             this.HeritabilityHuangMLBox.Name = "HeritabilityHuangMLBox";
             this.HeritabilityHuangMLBox.Size = new System.Drawing.Size(145, 24);
             this.HeritabilityHuangMLBox.TabIndex = 403;
@@ -2350,7 +2437,8 @@
             // 
             this.HeritabilityThomas2000Box.AutoSize = true;
             this.HeritabilityThomas2000Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.HeritabilityThomas2000Box.Location = new System.Drawing.Point(25, 67);
+            this.HeritabilityThomas2000Box.Location = new System.Drawing.Point(25, 68);
+            this.HeritabilityThomas2000Box.Margin = new System.Windows.Forms.Padding(2);
             this.HeritabilityThomas2000Box.Name = "HeritabilityThomas2000Box";
             this.HeritabilityThomas2000Box.Size = new System.Drawing.Size(143, 24);
             this.HeritabilityThomas2000Box.TabIndex = 403;
@@ -2362,7 +2450,8 @@
             // 
             this.HeritabilityMousseau1998Box.AutoSize = true;
             this.HeritabilityMousseau1998Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.HeritabilityMousseau1998Box.Location = new System.Drawing.Point(187, 42);
+            this.HeritabilityMousseau1998Box.Location = new System.Drawing.Point(188, 42);
+            this.HeritabilityMousseau1998Box.Margin = new System.Windows.Forms.Padding(2);
             this.HeritabilityMousseau1998Box.Name = "HeritabilityMousseau1998Box";
             this.HeritabilityMousseau1998Box.Size = new System.Drawing.Size(157, 24);
             this.HeritabilityMousseau1998Box.TabIndex = 403;
@@ -2375,6 +2464,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label16.Location = new System.Drawing.Point(10, 22);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 20);
             this.label16.TabIndex = 407;
@@ -2385,6 +2475,7 @@
             this.HeritabilityHuangMOMBox.AutoSize = true;
             this.HeritabilityHuangMOMBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.HeritabilityHuangMOMBox.Location = new System.Drawing.Point(25, 92);
+            this.HeritabilityHuangMOMBox.Margin = new System.Windows.Forms.Padding(2);
             this.HeritabilityHuangMOMBox.Name = "HeritabilityHuangMOMBox";
             this.HeritabilityHuangMOMBox.Size = new System.Drawing.Size(162, 24);
             this.HeritabilityHuangMOMBox.TabIndex = 405;
@@ -2397,6 +2488,7 @@
             this.HeritabilityRitland1996Box.AutoSize = true;
             this.HeritabilityRitland1996Box.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.HeritabilityRitland1996Box.Location = new System.Drawing.Point(25, 42);
+            this.HeritabilityRitland1996Box.Margin = new System.Windows.Forms.Padding(2);
             this.HeritabilityRitland1996Box.Name = "HeritabilityRitland1996Box";
             this.HeritabilityRitland1996Box.Size = new System.Drawing.Size(155, 24);
             this.HeritabilityRitland1996Box.TabIndex = 405;
@@ -2414,9 +2506,11 @@
             this.GroupBoxNe.Controls.Add(this.label111);
             this.GroupBoxNe.Controls.Add(this.Label109);
             this.GroupBoxNe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxNe.Location = new System.Drawing.Point(757, 2);
+            this.GroupBoxNe.Location = new System.Drawing.Point(758, 2);
+            this.GroupBoxNe.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxNe.Name = "GroupBoxNe";
-            this.GroupBoxNe.Size = new System.Drawing.Size(370, 133);
+            this.GroupBoxNe.Padding = new System.Windows.Forms.Padding(2);
+            this.GroupBoxNe.Size = new System.Drawing.Size(370, 132);
             this.GroupBoxNe.TabIndex = 11;
             this.GroupBoxNe.TabStop = false;
             this.GroupBoxNe.Text = "Effective population size";
@@ -2425,7 +2519,8 @@
             // 
             this.NeWaplesFBox.DecimalPlaces = 4;
             this.NeWaplesFBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NeWaplesFBox.Location = new System.Drawing.Point(267, 95);
+            this.NeWaplesFBox.Location = new System.Drawing.Point(268, 95);
+            this.NeWaplesFBox.Margin = new System.Windows.Forms.Padding(2);
             this.NeWaplesFBox.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -2458,6 +2553,7 @@
             "DR: dioecious with random pairing",
             "DH: dioecious with lifetime pairing"});
             this.NeWaplesMSBox.Location = new System.Drawing.Point(42, 95);
+            this.NeWaplesMSBox.Margin = new System.Windows.Forms.Padding(2);
             this.NeWaplesMSBox.Name = "NeWaplesMSBox";
             this.NeWaplesMSBox.Size = new System.Drawing.Size(196, 28);
             this.NeWaplesMSBox.TabIndex = 204;
@@ -2468,6 +2564,7 @@
             this.NeWaples2010Box.AutoSize = true;
             this.NeWaples2010Box.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NeWaples2010Box.Location = new System.Drawing.Point(15, 48);
+            this.NeWaples2010Box.Margin = new System.Windows.Forms.Padding(2);
             this.NeWaples2010Box.Name = "NeWaples2010Box";
             this.NeWaples2010Box.Size = new System.Drawing.Size(155, 24);
             this.NeWaples2010Box.TabIndex = 203;
@@ -2480,6 +2577,7 @@
             this.NePudovkin1996Box.AutoSize = true;
             this.NePudovkin1996Box.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NePudovkin1996Box.Location = new System.Drawing.Point(15, 25);
+            this.NePudovkin1996Box.Margin = new System.Windows.Forms.Padding(2);
             this.NePudovkin1996Box.Name = "NePudovkin1996Box";
             this.NePudovkin1996Box.Size = new System.Drawing.Size(127, 24);
             this.NePudovkin1996Box.TabIndex = 203;
@@ -2492,6 +2590,7 @@
             this.NeNomura2008Box.AutoSize = true;
             this.NeNomura2008Box.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NeNomura2008Box.Location = new System.Drawing.Point(218, 22);
+            this.NeNomura2008Box.Margin = new System.Windows.Forms.Padding(2);
             this.NeNomura2008Box.Name = "NeNomura2008Box";
             this.NeNomura2008Box.Size = new System.Drawing.Size(121, 24);
             this.NeNomura2008Box.TabIndex = 203;
@@ -2503,7 +2602,8 @@
             // 
             this.label111.AutoSize = true;
             this.label111.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label111.Location = new System.Drawing.Point(260, 73);
+            this.label111.Location = new System.Drawing.Point(260, 72);
+            this.label111.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label111.Name = "label111";
             this.label111.Size = new System.Drawing.Size(104, 20);
             this.label111.TabIndex = 0;
@@ -2513,7 +2613,8 @@
             // 
             this.Label109.AutoSize = true;
             this.Label109.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Label109.Location = new System.Drawing.Point(30, 73);
+            this.Label109.Location = new System.Drawing.Point(30, 72);
+            this.Label109.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Label109.Name = "Label109";
             this.Label109.Size = new System.Drawing.Size(105, 20);
             this.Label109.TabIndex = 0;
@@ -2527,7 +2628,9 @@
             this.GroupBoxDistribution.Controls.Add(this.label98);
             this.GroupBoxDistribution.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxDistribution.Location = new System.Drawing.Point(2, 2);
+            this.GroupBoxDistribution.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxDistribution.Name = "GroupBoxDistribution";
+            this.GroupBoxDistribution.Padding = new System.Windows.Forms.Padding(2);
             this.GroupBoxDistribution.Size = new System.Drawing.Size(370, 58);
             this.GroupBoxDistribution.TabIndex = 10;
             this.GroupBoxDistribution.TabStop = false;
@@ -2538,6 +2641,7 @@
             this.PhenotypeTestTotBox.AutoSize = true;
             this.PhenotypeTestTotBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PhenotypeTestTotBox.Location = new System.Drawing.Point(262, 25);
+            this.PhenotypeTestTotBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhenotypeTestTotBox.Name = "PhenotypeTestTotBox";
             this.PhenotypeTestTotBox.Size = new System.Drawing.Size(98, 24);
             this.PhenotypeTestTotBox.TabIndex = 3;
@@ -2550,6 +2654,7 @@
             this.PhenotypeTestRegBox.AutoSize = true;
             this.PhenotypeTestRegBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PhenotypeTestRegBox.Location = new System.Drawing.Point(178, 25);
+            this.PhenotypeTestRegBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhenotypeTestRegBox.Name = "PhenotypeTestRegBox";
             this.PhenotypeTestRegBox.Size = new System.Drawing.Size(78, 24);
             this.PhenotypeTestRegBox.TabIndex = 2;
@@ -2562,6 +2667,7 @@
             this.PhenotypeTestPopBox.AutoSize = true;
             this.PhenotypeTestPopBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PhenotypeTestPopBox.Location = new System.Drawing.Point(65, 25);
+            this.PhenotypeTestPopBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhenotypeTestPopBox.Name = "PhenotypeTestPopBox";
             this.PhenotypeTestPopBox.Size = new System.Drawing.Size(102, 24);
             this.PhenotypeTestPopBox.TabIndex = 1;
@@ -2574,6 +2680,7 @@
             this.label98.AutoSize = true;
             this.label98.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label98.Location = new System.Drawing.Point(10, 25);
+            this.label98.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(51, 20);
             this.label98.TabIndex = 514;
@@ -2643,8 +2750,10 @@
             this.GroupBoxStructure.Controls.Add(this.StructureInferLambdaBox);
             this.GroupBoxStructure.Controls.Add(this.StructureFSameBox);
             this.GroupBoxStructure.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxStructure.Location = new System.Drawing.Point(757, 678);
+            this.GroupBoxStructure.Location = new System.Drawing.Point(758, 749);
+            this.GroupBoxStructure.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxStructure.Name = "GroupBoxStructure";
+            this.GroupBoxStructure.Padding = new System.Windows.Forms.Padding(2);
             this.GroupBoxStructure.Size = new System.Drawing.Size(370, 672);
             this.GroupBoxStructure.TabIndex = 6;
             this.GroupBoxStructure.TabStop = false;
@@ -2655,6 +2764,7 @@
             this.label106.AutoSize = true;
             this.label106.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label106.Location = new System.Drawing.Point(10, 22);
+            this.label106.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label106.Name = "label106";
             this.label106.Size = new System.Drawing.Size(214, 20);
             this.label106.TabIndex = 512;
@@ -2668,7 +2778,8 @@
             0,
             0,
             65536});
-            this.StructureADMBurninBox.Location = new System.Drawing.Point(277, 288);
+            this.StructureADMBurninBox.Location = new System.Drawing.Point(278, 288);
+            this.StructureADMBurninBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureADMBurninBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -2687,7 +2798,8 @@
             // StructureKmaxBox
             // 
             this.StructureKmaxBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StructureKmaxBox.Location = new System.Drawing.Point(277, 117);
+            this.StructureKmaxBox.Location = new System.Drawing.Point(278, 118);
+            this.StructureKmaxBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureKmaxBox.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -2712,6 +2824,7 @@
             // 
             this.StructureNThinningBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StructureNThinningBox.Location = new System.Drawing.Point(102, 202);
+            this.StructureNThinningBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureNThinningBox.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2736,6 +2849,7 @@
             0,
             0});
             this.StructureBurninBox.Location = new System.Drawing.Point(102, 175);
+            this.StructureBurninBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureBurninBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -2764,7 +2878,8 @@
             0,
             0,
             0});
-            this.StructureNRepsBox.Location = new System.Drawing.Point(277, 175);
+            this.StructureNRepsBox.Location = new System.Drawing.Point(278, 175);
+            this.StructureNRepsBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureNRepsBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -2790,6 +2905,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(200, 552);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(50, 20);
             this.label26.TabIndex = 507;
@@ -2800,6 +2916,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(20, 552);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(51, 20);
             this.label25.TabIndex = 507;
@@ -2810,6 +2927,7 @@
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Location = new System.Drawing.Point(192, 612);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(65, 20);
             this.label34.TabIndex = 507;
@@ -2819,7 +2937,8 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(203, 525);
+            this.label24.Location = new System.Drawing.Point(202, 525);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(44, 20);
             this.label24.TabIndex = 507;
@@ -2830,6 +2949,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.Location = new System.Drawing.Point(30, 638);
+            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(46, 20);
             this.label41.TabIndex = 507;
@@ -2840,6 +2960,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(8, 612);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(82, 20);
             this.label33.TabIndex = 507;
@@ -2850,6 +2971,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(20, 525);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(52, 20);
             this.label23.TabIndex = 507;
@@ -2859,7 +2981,8 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(187, 408);
+            this.label49.Location = new System.Drawing.Point(188, 408);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(78, 20);
             this.label49.TabIndex = 507;
@@ -2869,7 +2992,8 @@
             // 
             this.label100.AutoSize = true;
             this.label100.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label100.Location = new System.Drawing.Point(22, 437);
+            this.label100.Location = new System.Drawing.Point(22, 438);
+            this.label100.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(68, 20);
             this.label100.TabIndex = 507;
@@ -2880,6 +3004,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(198, 382);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(48, 20);
             this.label22.TabIndex = 507;
@@ -2894,7 +3019,8 @@
             0,
             0,
             131072});
-            this.StructureEpsGammaBox.Location = new System.Drawing.Point(277, 548);
+            this.StructureEpsGammaBox.Location = new System.Drawing.Point(278, 548);
+            this.StructureEpsGammaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureEpsGammaBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -2925,6 +3051,7 @@
             0,
             131072});
             this.StructureEpsEtaBox.Location = new System.Drawing.Point(102, 548);
+            this.StructureEpsEtaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureEpsEtaBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -2954,7 +3081,8 @@
             0,
             0,
             65536});
-            this.StructureFPriorStdBox.Location = new System.Drawing.Point(277, 607);
+            this.StructureFPriorStdBox.Location = new System.Drawing.Point(278, 608);
+            this.StructureFPriorStdBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureFPriorStdBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -2979,7 +3107,8 @@
             0,
             0,
             131072});
-            this.StructureEpsRBox.Location = new System.Drawing.Point(277, 522);
+            this.StructureEpsRBox.Location = new System.Drawing.Point(278, 522);
+            this.StructureEpsRBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureEpsRBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -3004,7 +3133,8 @@
             // 
             this.label99.AutoSize = true;
             this.label99.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label99.Location = new System.Drawing.Point(187, 437);
+            this.label99.Location = new System.Drawing.Point(188, 438);
+            this.label99.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(67, 20);
             this.label99.TabIndex = 507;
@@ -3015,6 +3145,7 @@
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label48.Location = new System.Drawing.Point(22, 408);
+            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(56, 20);
             this.label48.TabIndex = 507;
@@ -3025,6 +3156,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(22, 382);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(26, 20);
             this.label21.TabIndex = 507;
@@ -3040,6 +3172,7 @@
             0,
             131072});
             this.StructureFStdFBox.Location = new System.Drawing.Point(102, 635);
+            this.StructureFStdFBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureFStdFBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -3069,7 +3202,8 @@
             0,
             0,
             65536});
-            this.StructureFPriorMeanBox.Location = new System.Drawing.Point(102, 607);
+            this.StructureFPriorMeanBox.Location = new System.Drawing.Point(102, 608);
+            this.StructureFPriorMeanBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureFPriorMeanBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -3095,6 +3229,7 @@
             0,
             65536});
             this.StructureMaxRBox.Location = new System.Drawing.Point(102, 522);
+            this.StructureMaxRBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureMaxRBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -3115,6 +3250,7 @@
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label47.Location = new System.Drawing.Point(188, 292);
+            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(83, 20);
             this.label47.TabIndex = 507;
@@ -3125,6 +3261,7 @@
             this.label97.AutoSize = true;
             this.label97.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label97.Location = new System.Drawing.Point(22, 292);
+            this.label97.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label97.Name = "label97";
             this.label97.Size = new System.Drawing.Size(54, 20);
             this.label97.TabIndex = 507;
@@ -3134,7 +3271,8 @@
             // 
             this.label96.AutoSize = true;
             this.label96.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label96.Location = new System.Drawing.Point(197, 265);
+            this.label96.Location = new System.Drawing.Point(198, 265);
+            this.label96.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(46, 20);
             this.label96.TabIndex = 507;
@@ -3145,6 +3283,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(22, 265);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(16, 20);
             this.label19.TabIndex = 507;
@@ -3158,7 +3297,8 @@
             0,
             0,
             65536});
-            this.StructureUpdateQBox.Location = new System.Drawing.Point(277, 405);
+            this.StructureUpdateQBox.Location = new System.Drawing.Point(278, 405);
+            this.StructureUpdateQBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureUpdateQBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -3184,6 +3324,7 @@
             0,
             65536});
             this.StructureAlphaPrioriABox.Location = new System.Drawing.Point(102, 432);
+            this.StructureAlphaPrioriABox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureAlphaPrioriABox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -3208,7 +3349,8 @@
             0,
             0,
             65536});
-            this.StructureAlphaPrioriBBox.Location = new System.Drawing.Point(277, 432);
+            this.StructureAlphaPrioriBBox.Location = new System.Drawing.Point(278, 432);
+            this.StructureAlphaPrioriBBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureAlphaPrioriBBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -3233,7 +3375,8 @@
             0,
             0,
             65536});
-            this.StructureStdAlphaBox.Location = new System.Drawing.Point(277, 377);
+            this.StructureStdAlphaBox.Location = new System.Drawing.Point(278, 378);
+            this.StructureStdAlphaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureStdAlphaBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -3264,6 +3407,7 @@
             0,
             65536});
             this.StructureMaxAlphaBox.Location = new System.Drawing.Point(102, 405);
+            this.StructureMaxAlphaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureMaxAlphaBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -3288,7 +3432,8 @@
             0,
             0,
             65536});
-            this.StructureAlpha0Box.Location = new System.Drawing.Point(102, 377);
+            this.StructureAlpha0Box.Location = new System.Drawing.Point(102, 378);
+            this.StructureAlpha0Box.Margin = new System.Windows.Forms.Padding(2);
             this.StructureAlpha0Box.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -3314,6 +3459,7 @@
             0,
             65536});
             this.StructureMaxLambdaBox.Location = new System.Drawing.Point(102, 288);
+            this.StructureMaxLambdaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureMaxLambdaBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -3338,7 +3484,8 @@
             0,
             0,
             131072});
-            this.StructureStdLambdaBox.Location = new System.Drawing.Point(277, 262);
+            this.StructureStdLambdaBox.Location = new System.Drawing.Point(278, 262);
+            this.StructureStdLambdaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureStdLambdaBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -3369,6 +3516,7 @@
             0,
             65536});
             this.StructureLambdaBox.Location = new System.Drawing.Point(102, 262);
+            this.StructureLambdaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureLambdaBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -3388,7 +3536,8 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(197, 207);
+            this.label15.Location = new System.Drawing.Point(198, 208);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(49, 20);
             this.label15.TabIndex = 507;
@@ -3397,7 +3546,8 @@
             // StructureNRunsBox
             // 
             this.StructureNRunsBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StructureNRunsBox.Location = new System.Drawing.Point(277, 202);
+            this.StructureNRunsBox.Location = new System.Drawing.Point(278, 202);
+            this.StructureNRunsBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureNRunsBox.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -3421,7 +3571,8 @@
             // StructureKminBox
             // 
             this.StructureKminBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StructureKminBox.Location = new System.Drawing.Point(137, 117);
+            this.StructureKminBox.Location = new System.Drawing.Point(138, 118);
+            this.StructureKminBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureKminBox.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -3446,7 +3597,8 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(197, 178);
+            this.label27.Location = new System.Drawing.Point(198, 178);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(50, 20);
             this.label27.TabIndex = 507;
@@ -3457,6 +3609,7 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(10, 585);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(142, 20);
             this.label32.TabIndex = 507;
@@ -3467,6 +3620,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(10, 498);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(206, 20);
             this.label31.TabIndex = 507;
@@ -3477,6 +3631,7 @@
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(10, 355);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(217, 20);
             this.label30.TabIndex = 507;
@@ -3487,6 +3642,7 @@
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.Location = new System.Drawing.Point(10, 238);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(249, 20);
             this.label29.TabIndex = 507;
@@ -3497,6 +3653,7 @@
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(10, 152);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(132, 20);
             this.label28.TabIndex = 507;
@@ -3507,6 +3664,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(22, 178);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(60, 20);
             this.label14.TabIndex = 507;
@@ -3517,6 +3675,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(228, 118);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(23, 20);
             this.label12.TabIndex = 507;
@@ -3526,7 +3685,8 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(22, 207);
+            this.label13.Location = new System.Drawing.Point(22, 208);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 20);
             this.label13.TabIndex = 507;
@@ -3537,6 +3697,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(22, 120);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(85, 20);
             this.label11.TabIndex = 507;
@@ -3547,6 +3708,7 @@
             this.StructureADMBox.AutoSize = true;
             this.StructureADMBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StructureADMBox.Location = new System.Drawing.Point(25, 42);
+            this.StructureADMBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureADMBox.Name = "StructureADMBox";
             this.StructureADMBox.Size = new System.Drawing.Size(243, 24);
             this.StructureADMBox.TabIndex = 0;
@@ -3559,6 +3721,7 @@
             this.StructureFmodelBox.AutoSize = true;
             this.StructureFmodelBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StructureFmodelBox.Location = new System.Drawing.Point(25, 92);
+            this.StructureFmodelBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureFmodelBox.Name = "StructureFmodelBox";
             this.StructureFmodelBox.Size = new System.Drawing.Size(278, 24);
             this.StructureFmodelBox.TabIndex = 0;
@@ -3570,7 +3733,8 @@
             // 
             this.StructureLOCPRIORIBox.AutoSize = true;
             this.StructureLOCPRIORIBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StructureLOCPRIORIBox.Location = new System.Drawing.Point(25, 67);
+            this.StructureLOCPRIORIBox.Location = new System.Drawing.Point(25, 68);
+            this.StructureLOCPRIORIBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureLOCPRIORIBox.Name = "StructureLOCPRIORIBox";
             this.StructureLOCPRIORIBox.Size = new System.Drawing.Size(250, 24);
             this.StructureLOCPRIORIBox.TabIndex = 0;
@@ -3583,6 +3747,7 @@
             this.StructureDiffAlphaBox.AutoSize = true;
             this.StructureDiffAlphaBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StructureDiffAlphaBox.Location = new System.Drawing.Point(145, 465);
+            this.StructureDiffAlphaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureDiffAlphaBox.Name = "StructureDiffAlphaBox";
             this.StructureDiffAlphaBox.Size = new System.Drawing.Size(69, 24);
             this.StructureDiffAlphaBox.TabIndex = 511;
@@ -3594,7 +3759,8 @@
             // 
             this.StructureDiffLambdaBox.AutoSize = true;
             this.StructureDiffLambdaBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StructureDiffLambdaBox.Location = new System.Drawing.Point(147, 322);
+            this.StructureDiffLambdaBox.Location = new System.Drawing.Point(148, 322);
+            this.StructureDiffLambdaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureDiffLambdaBox.Name = "StructureDiffLambdaBox";
             this.StructureDiffLambdaBox.Size = new System.Drawing.Size(67, 24);
             this.StructureDiffLambdaBox.TabIndex = 511;
@@ -3607,6 +3773,7 @@
             this.StructureUniformAlphaBox.AutoSize = true;
             this.StructureUniformAlphaBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StructureUniformAlphaBox.Location = new System.Drawing.Point(252, 465);
+            this.StructureUniformAlphaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureUniformAlphaBox.Name = "StructureUniformAlphaBox";
             this.StructureUniformAlphaBox.Size = new System.Drawing.Size(98, 24);
             this.StructureUniformAlphaBox.TabIndex = 511;
@@ -3618,7 +3785,8 @@
             // 
             this.StructureInferAlphaBox.AutoSize = true;
             this.StructureInferAlphaBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StructureInferAlphaBox.Location = new System.Drawing.Point(27, 465);
+            this.StructureInferAlphaBox.Location = new System.Drawing.Point(28, 465);
+            this.StructureInferAlphaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureInferAlphaBox.Name = "StructureInferAlphaBox";
             this.StructureInferAlphaBox.Size = new System.Drawing.Size(74, 24);
             this.StructureInferAlphaBox.TabIndex = 511;
@@ -3630,7 +3798,8 @@
             // 
             this.StructureInferLambdaBox.AutoSize = true;
             this.StructureInferLambdaBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StructureInferLambdaBox.Location = new System.Drawing.Point(27, 322);
+            this.StructureInferLambdaBox.Location = new System.Drawing.Point(28, 322);
+            this.StructureInferLambdaBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureInferLambdaBox.Name = "StructureInferLambdaBox";
             this.StructureInferLambdaBox.Size = new System.Drawing.Size(72, 24);
             this.StructureInferLambdaBox.TabIndex = 511;
@@ -3642,7 +3811,8 @@
             // 
             this.StructureFSameBox.AutoSize = true;
             this.StructureFSameBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StructureFSameBox.Location = new System.Drawing.Point(197, 638);
+            this.StructureFSameBox.Location = new System.Drawing.Point(198, 638);
+            this.StructureFSameBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureFSameBox.Name = "StructureFSameBox";
             this.StructureFSameBox.Size = new System.Drawing.Size(175, 24);
             this.StructureFSameBox.TabIndex = 0;
@@ -3668,7 +3838,9 @@
             this.GroupBoxLinkage.Controls.Add(this.LinkageRaymondTestBox);
             this.GroupBoxLinkage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxLinkage.Location = new System.Drawing.Point(378, 2);
+            this.GroupBoxLinkage.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxLinkage.Name = "GroupBoxLinkage";
+            this.GroupBoxLinkage.Padding = new System.Windows.Forms.Padding(2);
             this.GroupBoxLinkage.Size = new System.Drawing.Size(370, 180);
             this.GroupBoxLinkage.TabIndex = 6;
             this.GroupBoxLinkage.TabStop = false;
@@ -3679,6 +3851,7 @@
             this.LinkageTestTotBox.AutoSize = true;
             this.LinkageTestTotBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LinkageTestTotBox.Location = new System.Drawing.Point(265, 25);
+            this.LinkageTestTotBox.Margin = new System.Windows.Forms.Padding(2);
             this.LinkageTestTotBox.Name = "LinkageTestTotBox";
             this.LinkageTestTotBox.Size = new System.Drawing.Size(98, 24);
             this.LinkageTestTotBox.TabIndex = 0;
@@ -3691,6 +3864,7 @@
             this.LinkageTestRegBox.AutoSize = true;
             this.LinkageTestRegBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LinkageTestRegBox.Location = new System.Drawing.Point(178, 25);
+            this.LinkageTestRegBox.Margin = new System.Windows.Forms.Padding(2);
             this.LinkageTestRegBox.Name = "LinkageTestRegBox";
             this.LinkageTestRegBox.Size = new System.Drawing.Size(78, 24);
             this.LinkageTestRegBox.TabIndex = 0;
@@ -3703,6 +3877,7 @@
             this.LinkageTestPopBox.AutoSize = true;
             this.LinkageTestPopBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LinkageTestPopBox.Location = new System.Drawing.Point(65, 25);
+            this.LinkageTestPopBox.Margin = new System.Windows.Forms.Padding(2);
             this.LinkageTestPopBox.Name = "LinkageTestPopBox";
             this.LinkageTestPopBox.Size = new System.Drawing.Size(102, 24);
             this.LinkageTestPopBox.TabIndex = 0;
@@ -3715,6 +3890,7 @@
             this.label104.AutoSize = true;
             this.label104.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label104.Location = new System.Drawing.Point(10, 50);
+            this.label104.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(114, 20);
             this.label104.TabIndex = 523;
@@ -3725,6 +3901,7 @@
             this.LinkageBurrowsTestBox.AutoSize = true;
             this.LinkageBurrowsTestBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LinkageBurrowsTestBox.Location = new System.Drawing.Point(178, 72);
+            this.LinkageBurrowsTestBox.Margin = new System.Windows.Forms.Padding(2);
             this.LinkageBurrowsTestBox.Name = "LinkageBurrowsTestBox";
             this.LinkageBurrowsTestBox.Size = new System.Drawing.Size(135, 24);
             this.LinkageBurrowsTestBox.TabIndex = 521;
@@ -3737,6 +3914,7 @@
             this.LinkageFisherTestBox.AutoSize = true;
             this.LinkageFisherTestBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LinkageFisherTestBox.Location = new System.Drawing.Point(25, 72);
+            this.LinkageFisherTestBox.Margin = new System.Windows.Forms.Padding(2);
             this.LinkageFisherTestBox.Name = "LinkageFisherTestBox";
             this.LinkageFisherTestBox.Size = new System.Drawing.Size(120, 24);
             this.LinkageFisherTestBox.TabIndex = 522;
@@ -3749,6 +3927,7 @@
             this.label101.AutoSize = true;
             this.label101.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label101.Location = new System.Drawing.Point(10, 25);
+            this.label101.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(51, 20);
             this.label101.TabIndex = 519;
@@ -3762,7 +3941,8 @@
             0,
             0,
             0});
-            this.LinkageIterationsBox.Location = new System.Drawing.Point(267, 142);
+            this.LinkageIterationsBox.Location = new System.Drawing.Point(268, 142);
+            this.LinkageIterationsBox.Margin = new System.Windows.Forms.Padding(2);
             this.LinkageIterationsBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -3792,6 +3972,7 @@
             0,
             0});
             this.LinkageBurninBox.Location = new System.Drawing.Point(40, 142);
+            this.LinkageBurninBox.Margin = new System.Windows.Forms.Padding(2);
             this.LinkageBurninBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -3820,7 +4001,8 @@
             0,
             0,
             0});
-            this.LinkageBatchesBox.Location = new System.Drawing.Point(157, 142);
+            this.LinkageBatchesBox.Location = new System.Drawing.Point(158, 142);
+            this.LinkageBatchesBox.Margin = new System.Windows.Forms.Padding(2);
             this.LinkageBatchesBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -3846,6 +4028,7 @@
             this.label84.AutoSize = true;
             this.label84.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label84.Location = new System.Drawing.Point(262, 122);
+            this.label84.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(80, 20);
             this.label84.TabIndex = 514;
@@ -3856,6 +4039,7 @@
             this.label85.AutoSize = true;
             this.label85.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label85.Location = new System.Drawing.Point(38, 122);
+            this.label85.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(60, 20);
             this.label85.TabIndex = 513;
@@ -3866,6 +4050,7 @@
             this.label86.AutoSize = true;
             this.label86.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label86.Location = new System.Drawing.Point(152, 122);
+            this.label86.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(69, 20);
             this.label86.TabIndex = 515;
@@ -3875,7 +4060,8 @@
             // 
             this.LinkageRaymondTestBox.AutoSize = true;
             this.LinkageRaymondTestBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LinkageRaymondTestBox.Location = new System.Drawing.Point(25, 97);
+            this.LinkageRaymondTestBox.Location = new System.Drawing.Point(25, 98);
+            this.LinkageRaymondTestBox.Margin = new System.Windows.Forms.Padding(2);
             this.LinkageRaymondTestBox.Name = "LinkageRaymondTestBox";
             this.LinkageRaymondTestBox.Size = new System.Drawing.Size(255, 24);
             this.LinkageRaymondTestBox.TabIndex = 0;
@@ -3892,8 +4078,10 @@
             this.GroupBoxOrdination.Controls.Add(this.OrdinationPCoABox);
             this.GroupBoxOrdination.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxOrdination.Location = new System.Drawing.Point(378, 188);
+            this.GroupBoxOrdination.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxOrdination.Name = "GroupBoxOrdination";
-            this.GroupBoxOrdination.Size = new System.Drawing.Size(370, 87);
+            this.GroupBoxOrdination.Padding = new System.Windows.Forms.Padding(2);
+            this.GroupBoxOrdination.Size = new System.Drawing.Size(370, 88);
             this.GroupBoxOrdination.TabIndex = 10;
             this.GroupBoxOrdination.TabStop = false;
             this.GroupBoxOrdination.Text = "Ordination";
@@ -3903,6 +4091,7 @@
             this.OrdinationPCABox.AutoSize = true;
             this.OrdinationPCABox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.OrdinationPCABox.Location = new System.Drawing.Point(288, 25);
+            this.OrdinationPCABox.Margin = new System.Windows.Forms.Padding(2);
             this.OrdinationPCABox.Name = "OrdinationPCABox";
             this.OrdinationPCABox.Size = new System.Drawing.Size(58, 24);
             this.OrdinationPCABox.TabIndex = 516;
@@ -3914,6 +4103,7 @@
             // 
             this.label91.AutoSize = true;
             this.label91.Location = new System.Drawing.Point(128, 52);
+            this.label91.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(0, 20);
             this.label91.TabIndex = 515;
@@ -3922,6 +4112,7 @@
             // 
             this.OrdinationDimBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.OrdinationDimBox.Location = new System.Drawing.Point(118, 50);
+            this.OrdinationDimBox.Margin = new System.Windows.Forms.Padding(2);
             this.OrdinationDimBox.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3941,7 +4132,8 @@
             // 
             this.label90.AutoSize = true;
             this.label90.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label90.Location = new System.Drawing.Point(10, 53);
+            this.label90.Location = new System.Drawing.Point(10, 52);
+            this.label90.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(98, 20);
             this.label90.TabIndex = 513;
@@ -3951,7 +4143,8 @@
             // 
             this.OrdinationPCoABox.AutoSize = true;
             this.OrdinationPCoABox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.OrdinationPCoABox.Location = new System.Drawing.Point(17, 25);
+            this.OrdinationPCoABox.Location = new System.Drawing.Point(18, 25);
+            this.OrdinationPCoABox.Margin = new System.Windows.Forms.Padding(2);
             this.OrdinationPCoABox.Name = "OrdinationPCoABox";
             this.OrdinationPCoABox.Size = new System.Drawing.Size(232, 24);
             this.OrdinationPCoABox.TabIndex = 516;
@@ -3985,9 +4178,11 @@
             this.GroupBoxDiff.Controls.Add(this.DiffSlatkin1995Box);
             this.GroupBoxDiff.Controls.Add(this.DiffHuang2018IAMBox);
             this.GroupBoxDiff.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxDiff.Location = new System.Drawing.Point(2, 67);
+            this.GroupBoxDiff.Location = new System.Drawing.Point(2, 68);
+            this.GroupBoxDiff.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxDiff.Name = "GroupBoxDiff";
-            this.GroupBoxDiff.Size = new System.Drawing.Size(370, 327);
+            this.GroupBoxDiff.Padding = new System.Windows.Forms.Padding(2);
+            this.GroupBoxDiff.Size = new System.Drawing.Size(370, 328);
             this.GroupBoxDiff.TabIndex = 6;
             this.GroupBoxDiff.TabStop = false;
             this.GroupBoxDiff.Text = "Genetic differentiation";
@@ -3997,6 +4192,7 @@
             this.label87.AutoSize = true;
             this.label87.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label87.Location = new System.Drawing.Point(10, 172);
+            this.label87.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(114, 20);
             this.label87.TabIndex = 517;
@@ -4007,6 +4203,7 @@
             this.DiffRegBox.AutoSize = true;
             this.DiffRegBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DiffRegBox.Location = new System.Drawing.Point(178, 25);
+            this.DiffRegBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffRegBox.Name = "DiffRegBox";
             this.DiffRegBox.Size = new System.Drawing.Size(78, 24);
             this.DiffRegBox.TabIndex = 516;
@@ -4019,6 +4216,7 @@
             this.DiffTotBox.AutoSize = true;
             this.DiffTotBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DiffTotBox.Location = new System.Drawing.Point(265, 25);
+            this.DiffTotBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffTotBox.Name = "DiffTotBox";
             this.DiffTotBox.Size = new System.Drawing.Size(98, 24);
             this.DiffTotBox.TabIndex = 515;
@@ -4031,6 +4229,7 @@
             this.DiffPopBox.AutoSize = true;
             this.DiffPopBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DiffPopBox.Location = new System.Drawing.Point(65, 25);
+            this.DiffPopBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffPopBox.Name = "DiffPopBox";
             this.DiffPopBox.Size = new System.Drawing.Size(102, 24);
             this.DiffPopBox.TabIndex = 515;
@@ -4043,6 +4242,7 @@
             this.label66.AutoSize = true;
             this.label66.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label66.Location = new System.Drawing.Point(10, 50);
+            this.label66.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(78, 20);
             this.label66.TabIndex = 513;
@@ -4053,6 +4253,7 @@
             this.label65.AutoSize = true;
             this.label65.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label65.Location = new System.Drawing.Point(10, 25);
+            this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(51, 20);
             this.label65.TabIndex = 513;
@@ -4066,7 +4267,8 @@
             0,
             0,
             0});
-            this.DiffIterationsBox.Location = new System.Drawing.Point(265, 287);
+            this.DiffIterationsBox.Location = new System.Drawing.Point(265, 288);
+            this.DiffIterationsBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffIterationsBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -4095,7 +4297,8 @@
             0,
             0,
             0});
-            this.DiffBurninBox.Location = new System.Drawing.Point(40, 287);
+            this.DiffBurninBox.Location = new System.Drawing.Point(40, 288);
+            this.DiffBurninBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffBurninBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -4124,7 +4327,8 @@
             0,
             0,
             0});
-            this.DiffBatchesBox.Location = new System.Drawing.Point(153, 287);
+            this.DiffBatchesBox.Location = new System.Drawing.Point(152, 288);
+            this.DiffBatchesBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffBatchesBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -4149,7 +4353,8 @@
             // 
             this.label83.AutoSize = true;
             this.label83.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label83.Location = new System.Drawing.Point(262, 267);
+            this.label83.Location = new System.Drawing.Point(262, 268);
+            this.label83.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(80, 20);
             this.label83.TabIndex = 511;
@@ -4159,7 +4364,8 @@
             // 
             this.label68.AutoSize = true;
             this.label68.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label68.Location = new System.Drawing.Point(38, 267);
+            this.label68.Location = new System.Drawing.Point(38, 268);
+            this.label68.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(60, 20);
             this.label68.TabIndex = 511;
@@ -4169,7 +4375,8 @@
             // 
             this.label67.AutoSize = true;
             this.label67.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label67.Location = new System.Drawing.Point(150, 267);
+            this.label67.Location = new System.Drawing.Point(150, 268);
+            this.label67.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(69, 20);
             this.label67.TabIndex = 511;
@@ -4179,7 +4386,8 @@
             // 
             this.DiffHuang2019Box.AutoSize = true;
             this.DiffHuang2019Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DiffHuang2019Box.Location = new System.Drawing.Point(188, 147);
+            this.DiffHuang2019Box.Location = new System.Drawing.Point(188, 148);
+            this.DiffHuang2019Box.Margin = new System.Windows.Forms.Padding(2);
             this.DiffHuang2019Box.Name = "DiffHuang2019Box";
             this.DiffHuang2019Box.Size = new System.Drawing.Size(121, 24);
             this.DiffHuang2019Box.TabIndex = 0;
@@ -4191,7 +4399,8 @@
             // 
             this.DiffJost2008Box.AutoSize = true;
             this.DiffJost2008Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DiffJost2008Box.Location = new System.Drawing.Point(25, 147);
+            this.DiffJost2008Box.Location = new System.Drawing.Point(25, 148);
+            this.DiffJost2008Box.Margin = new System.Windows.Forms.Padding(2);
             this.DiffJost2008Box.Name = "DiffJost2008Box";
             this.DiffJost2008Box.Size = new System.Drawing.Size(117, 24);
             this.DiffJost2008Box.TabIndex = 0;
@@ -4204,6 +4413,7 @@
             this.DiffHedrick2005Box.AutoSize = true;
             this.DiffHedrick2005Box.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DiffHedrick2005Box.Location = new System.Drawing.Point(188, 122);
+            this.DiffHedrick2005Box.Margin = new System.Windows.Forms.Padding(2);
             this.DiffHedrick2005Box.Name = "DiffHedrick2005Box";
             this.DiffHedrick2005Box.Size = new System.Drawing.Size(156, 24);
             this.DiffHedrick2005Box.TabIndex = 0;
@@ -4216,6 +4426,7 @@
             this.DiffHudson1992Box.AutoSize = true;
             this.DiffHudson1992Box.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DiffHudson1992Box.Location = new System.Drawing.Point(25, 122);
+            this.DiffHudson1992Box.Margin = new System.Windows.Forms.Padding(2);
             this.DiffHudson1992Box.Name = "DiffHudson1992Box";
             this.DiffHudson1992Box.Size = new System.Drawing.Size(154, 24);
             this.DiffHudson1992Box.TabIndex = 0;
@@ -4228,6 +4439,7 @@
             this.DiffTestPermBox.AutoSize = true;
             this.DiffTestPermBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DiffTestPermBox.Location = new System.Drawing.Point(25, 242);
+            this.DiffTestPermBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffTestPermBox.Name = "DiffTestPermBox";
             this.DiffTestPermBox.Size = new System.Drawing.Size(255, 24);
             this.DiffTestPermBox.TabIndex = 0;
@@ -4239,7 +4451,8 @@
             // 
             this.DiffTestAlleleBox.AutoSize = true;
             this.DiffTestAlleleBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DiffTestAlleleBox.Location = new System.Drawing.Point(25, 217);
+            this.DiffTestAlleleBox.Location = new System.Drawing.Point(25, 218);
+            this.DiffTestAlleleBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffTestAlleleBox.Name = "DiffTestAlleleBox";
             this.DiffTestAlleleBox.Size = new System.Drawing.Size(170, 24);
             this.DiffTestAlleleBox.TabIndex = 0;
@@ -4251,7 +4464,8 @@
             // 
             this.DiffNei1973Box.AutoSize = true;
             this.DiffNei1973Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DiffNei1973Box.Location = new System.Drawing.Point(188, 97);
+            this.DiffNei1973Box.Location = new System.Drawing.Point(188, 98);
+            this.DiffNei1973Box.Margin = new System.Windows.Forms.Padding(2);
             this.DiffNei1973Box.Name = "DiffNei1973Box";
             this.DiffNei1973Box.Size = new System.Drawing.Size(125, 24);
             this.DiffNei1973Box.TabIndex = 0;
@@ -4264,6 +4478,7 @@
             this.DiffTestPhenoBox.AutoSize = true;
             this.DiffTestPhenoBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DiffTestPhenoBox.Location = new System.Drawing.Point(25, 192);
+            this.DiffTestPhenoBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffTestPhenoBox.Name = "DiffTestPhenoBox";
             this.DiffTestPhenoBox.Size = new System.Drawing.Size(216, 24);
             this.DiffTestPhenoBox.TabIndex = 0;
@@ -4276,6 +4491,7 @@
             this.DiffHuang2018SMMBox.AutoSize = true;
             this.DiffHuang2018SMMBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DiffHuang2018SMMBox.Location = new System.Drawing.Point(188, 72);
+            this.DiffHuang2018SMMBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffHuang2018SMMBox.Name = "DiffHuang2018SMMBox";
             this.DiffHuang2018SMMBox.Size = new System.Drawing.Size(159, 24);
             this.DiffHuang2018SMMBox.TabIndex = 0;
@@ -4287,7 +4503,8 @@
             // 
             this.DiffSlatkin1995Box.AutoSize = true;
             this.DiffSlatkin1995Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DiffSlatkin1995Box.Location = new System.Drawing.Point(25, 97);
+            this.DiffSlatkin1995Box.Location = new System.Drawing.Point(25, 98);
+            this.DiffSlatkin1995Box.Margin = new System.Windows.Forms.Padding(2);
             this.DiffSlatkin1995Box.Name = "DiffSlatkin1995Box";
             this.DiffSlatkin1995Box.Size = new System.Drawing.Size(145, 24);
             this.DiffSlatkin1995Box.TabIndex = 0;
@@ -4300,6 +4517,7 @@
             this.DiffHuang2018IAMBox.AutoSize = true;
             this.DiffHuang2018IAMBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DiffHuang2018IAMBox.Location = new System.Drawing.Point(25, 72);
+            this.DiffHuang2018IAMBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffHuang2018IAMBox.Name = "DiffHuang2018IAMBox";
             this.DiffHuang2018IAMBox.Size = new System.Drawing.Size(152, 24);
             this.DiffHuang2018IAMBox.TabIndex = 0;
@@ -4313,8 +4531,10 @@
             this.GroupBoxAssignment.Controls.Add(this.AssignmentPloidyBox);
             this.GroupBoxAssignment.Controls.Add(this.label8);
             this.GroupBoxAssignment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxAssignment.Location = new System.Drawing.Point(757, 378);
+            this.GroupBoxAssignment.Location = new System.Drawing.Point(758, 449);
+            this.GroupBoxAssignment.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxAssignment.Name = "GroupBoxAssignment";
+            this.GroupBoxAssignment.Padding = new System.Windows.Forms.Padding(2);
             this.GroupBoxAssignment.Size = new System.Drawing.Size(370, 58);
             this.GroupBoxAssignment.TabIndex = 6;
             this.GroupBoxAssignment.TabStop = false;
@@ -4330,6 +4550,7 @@
             0,
             131072});
             this.AssignmentErrorBox.Location = new System.Drawing.Point(288, 22);
+            this.AssignmentErrorBox.Margin = new System.Windows.Forms.Padding(2);
             this.AssignmentErrorBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -4349,7 +4570,8 @@
             // 
             this.AssignmentPloidyBox.AutoSize = true;
             this.AssignmentPloidyBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AssignmentPloidyBox.Location = new System.Drawing.Point(15, 23);
+            this.AssignmentPloidyBox.Location = new System.Drawing.Point(15, 22);
+            this.AssignmentPloidyBox.Margin = new System.Windows.Forms.Padding(2);
             this.AssignmentPloidyBox.Name = "AssignmentPloidyBox";
             this.AssignmentPloidyBox.Size = new System.Drawing.Size(151, 24);
             this.AssignmentPloidyBox.TabIndex = 0;
@@ -4362,6 +4584,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label8.Location = new System.Drawing.Point(192, 25);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 20);
             this.label8.TabIndex = 0;
@@ -4376,9 +4599,11 @@
             this.GroupBoxSpatial.Controls.Add(this.SpatialJackknifeBox);
             this.GroupBoxSpatial.Controls.Add(this.SpatialHaversineBox);
             this.GroupBoxSpatial.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxSpatial.Location = new System.Drawing.Point(2, 397);
+            this.GroupBoxSpatial.Location = new System.Drawing.Point(2, 398);
+            this.GroupBoxSpatial.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxSpatial.Name = "GroupBoxSpatial";
-            this.GroupBoxSpatial.Size = new System.Drawing.Size(370, 137);
+            this.GroupBoxSpatial.Padding = new System.Windows.Forms.Padding(2);
+            this.GroupBoxSpatial.Size = new System.Drawing.Size(370, 138);
             this.GroupBoxSpatial.TabIndex = 10;
             this.GroupBoxSpatial.TabStop = false;
             this.GroupBoxSpatial.Text = "Spatial pattern analysis";
@@ -4410,8 +4635,9 @@
             "19",
             "20"});
             this.SpatialDistClassBox.Location = new System.Drawing.Point(142, 22);
+            this.SpatialDistClassBox.Margin = new System.Windows.Forms.Padding(2);
             this.SpatialDistClassBox.Name = "SpatialDistClassBox";
-            this.SpatialDistClassBox.Size = new System.Drawing.Size(217, 28);
+            this.SpatialDistClassBox.Size = new System.Drawing.Size(216, 28);
             this.SpatialDistClassBox.TabIndex = 517;
             this.SpatialDistClassBox.SelectedIndexChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -4420,6 +4646,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label6.Location = new System.Drawing.Point(10, 55);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 20);
             this.label6.TabIndex = 406;
@@ -4429,7 +4656,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label5.Location = new System.Drawing.Point(10, 27);
+            this.label5.Location = new System.Drawing.Point(10, 28);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 20);
             this.label5.TabIndex = 406;
@@ -4442,8 +4670,9 @@
             this.SpatialDistIntervalBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SpatialDistIntervalBox.HideSelection = false;
             this.SpatialDistIntervalBox.Location = new System.Drawing.Point(142, 52);
+            this.SpatialDistIntervalBox.Margin = new System.Windows.Forms.Padding(2);
             this.SpatialDistIntervalBox.Name = "SpatialDistIntervalBox";
-            this.SpatialDistIntervalBox.Size = new System.Drawing.Size(217, 27);
+            this.SpatialDistIntervalBox.Size = new System.Drawing.Size(216, 27);
             this.SpatialDistIntervalBox.TabIndex = 405;
             this.SpatialDistIntervalBox.Text = "1,2,3,4";
             this.SpatialDistIntervalBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -4452,7 +4681,8 @@
             // 
             this.SpatialJackknifeBox.AutoSize = true;
             this.SpatialJackknifeBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SpatialJackknifeBox.Location = new System.Drawing.Point(15, 107);
+            this.SpatialJackknifeBox.Location = new System.Drawing.Point(15, 108);
+            this.SpatialJackknifeBox.Margin = new System.Windows.Forms.Padding(2);
             this.SpatialJackknifeBox.Name = "SpatialJackknifeBox";
             this.SpatialJackknifeBox.Size = new System.Drawing.Size(247, 24);
             this.SpatialJackknifeBox.TabIndex = 0;
@@ -4465,6 +4695,7 @@
             this.SpatialHaversineBox.AutoSize = true;
             this.SpatialHaversineBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SpatialHaversineBox.Location = new System.Drawing.Point(15, 82);
+            this.SpatialHaversineBox.Margin = new System.Windows.Forms.Padding(2);
             this.SpatialHaversineBox.Name = "SpatialHaversineBox";
             this.SpatialHaversineBox.Size = new System.Drawing.Size(258, 24);
             this.SpatialHaversineBox.TabIndex = 0;
@@ -4494,8 +4725,10 @@
             this.GroupBoxBayesAss.Controls.Add(this.label74);
             this.GroupBoxBayesAss.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxBayesAss.Location = new System.Drawing.Point(378, 884);
+            this.GroupBoxBayesAss.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxBayesAss.Name = "GroupBoxBayesAss";
-            this.GroupBoxBayesAss.Size = new System.Drawing.Size(370, 193);
+            this.GroupBoxBayesAss.Padding = new System.Windows.Forms.Padding(2);
+            this.GroupBoxBayesAss.Size = new System.Drawing.Size(370, 192);
             this.GroupBoxBayesAss.TabIndex = 6;
             this.GroupBoxBayesAss.TabStop = false;
             this.GroupBoxBayesAss.Text = "BayesAss";
@@ -4504,7 +4737,8 @@
             // 
             this.label94.AutoSize = true;
             this.label94.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label94.Location = new System.Drawing.Point(198, 133);
+            this.label94.Location = new System.Drawing.Point(198, 132);
+            this.label94.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(50, 20);
             this.label94.TabIndex = 521;
@@ -4514,7 +4748,8 @@
             // 
             this.label95.AutoSize = true;
             this.label95.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label95.Location = new System.Drawing.Point(23, 162);
+            this.label95.Location = new System.Drawing.Point(22, 162);
+            this.label95.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(56, 20);
             this.label95.TabIndex = 521;
@@ -4524,7 +4759,8 @@
             // 
             this.label93.AutoSize = true;
             this.label93.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label93.Location = new System.Drawing.Point(23, 133);
+            this.label93.Location = new System.Drawing.Point(22, 132);
+            this.label93.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(53, 20);
             this.label93.TabIndex = 521;
@@ -4539,7 +4775,8 @@
             0,
             0,
             131072});
-            this.BayesAssDeltaMBox.Location = new System.Drawing.Point(102, 157);
+            this.BayesAssDeltaMBox.Location = new System.Drawing.Point(102, 158);
+            this.BayesAssDeltaMBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssDeltaMBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -4568,7 +4805,8 @@
             0,
             0,
             131072});
-            this.BayesAssDeltaFBox.Location = new System.Drawing.Point(277, 130);
+            this.BayesAssDeltaFBox.Location = new System.Drawing.Point(278, 130);
+            this.BayesAssDeltaFBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssDeltaFBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -4598,6 +4836,7 @@
             0,
             131072});
             this.BayesAssDeltaABox.Location = new System.Drawing.Point(102, 130);
+            this.BayesAssDeltaABox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssDeltaABox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -4621,7 +4860,8 @@
             // 
             this.BayesAssNoLikelihoodBox.AutoSize = true;
             this.BayesAssNoLikelihoodBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BayesAssNoLikelihoodBox.Location = new System.Drawing.Point(203, 160);
+            this.BayesAssNoLikelihoodBox.Location = new System.Drawing.Point(202, 160);
+            this.BayesAssNoLikelihoodBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssNoLikelihoodBox.Name = "BayesAssNoLikelihoodBox";
             this.BayesAssNoLikelihoodBox.Size = new System.Drawing.Size(149, 24);
             this.BayesAssNoLikelihoodBox.TabIndex = 520;
@@ -4640,6 +4880,7 @@
             "Variable Genotype",
             "Phenotype"});
             this.BayesAssMethodBox.Location = new System.Drawing.Point(92, 22);
+            this.BayesAssMethodBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssMethodBox.Name = "BayesAssMethodBox";
             this.BayesAssMethodBox.Size = new System.Drawing.Size(266, 28);
             this.BayesAssMethodBox.TabIndex = 519;
@@ -4649,6 +4890,7 @@
             this.label88.AutoSize = true;
             this.label88.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label88.Location = new System.Drawing.Point(10, 25);
+            this.label88.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(61, 20);
             this.label88.TabIndex = 518;
@@ -4658,6 +4900,7 @@
             // 
             this.BayesAssNThinningBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BayesAssNThinningBox.Location = new System.Drawing.Point(102, 102);
+            this.BayesAssNThinningBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssNThinningBox.Minimum = new decimal(new int[] {
             1,
             0,
@@ -4681,6 +4924,7 @@
             0,
             0});
             this.BayesAssBurninBox.Location = new System.Drawing.Point(102, 75);
+            this.BayesAssBurninBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssBurninBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -4708,7 +4952,8 @@
             0,
             0,
             0});
-            this.BayesAssNRepsBox.Location = new System.Drawing.Point(277, 75);
+            this.BayesAssNRepsBox.Location = new System.Drawing.Point(278, 75);
+            this.BayesAssNRepsBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssNRepsBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -4732,7 +4977,8 @@
             // 
             this.label69.AutoSize = true;
             this.label69.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(197, 107);
+            this.label69.Location = new System.Drawing.Point(198, 108);
+            this.label69.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(49, 20);
             this.label69.TabIndex = 509;
@@ -4741,7 +4987,8 @@
             // BayesAssNRunsBox
             // 
             this.BayesAssNRunsBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BayesAssNRunsBox.Location = new System.Drawing.Point(277, 102);
+            this.BayesAssNRunsBox.Location = new System.Drawing.Point(278, 102);
+            this.BayesAssNRunsBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssNRunsBox.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -4765,7 +5012,8 @@
             // 
             this.label70.AutoSize = true;
             this.label70.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.Location = new System.Drawing.Point(197, 78);
+            this.label70.Location = new System.Drawing.Point(198, 78);
+            this.label70.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(50, 20);
             this.label70.TabIndex = 510;
@@ -4776,6 +5024,7 @@
             this.label71.AutoSize = true;
             this.label71.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label71.Location = new System.Drawing.Point(10, 55);
+            this.label71.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(132, 20);
             this.label71.TabIndex = 511;
@@ -4786,6 +5035,7 @@
             this.label73.AutoSize = true;
             this.label73.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label73.Location = new System.Drawing.Point(22, 78);
+            this.label73.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(60, 20);
             this.label73.TabIndex = 512;
@@ -4795,7 +5045,8 @@
             // 
             this.label74.AutoSize = true;
             this.label74.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.Location = new System.Drawing.Point(22, 107);
+            this.label74.Location = new System.Drawing.Point(22, 108);
+            this.label74.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(75, 20);
             this.label74.TabIndex = 513;
@@ -4813,9 +5064,11 @@
             this.GroupBoxClustering.Controls.Add(this.ClusteringNearestBox);
             this.GroupBoxClustering.Controls.Add(this.label92);
             this.GroupBoxClustering.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxClustering.Location = new System.Drawing.Point(378, 283);
+            this.GroupBoxClustering.Location = new System.Drawing.Point(378, 282);
+            this.GroupBoxClustering.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxClustering.Name = "GroupBoxClustering";
-            this.GroupBoxClustering.Size = new System.Drawing.Size(370, 97);
+            this.GroupBoxClustering.Padding = new System.Windows.Forms.Padding(2);
+            this.GroupBoxClustering.Size = new System.Drawing.Size(370, 98);
             this.GroupBoxClustering.TabIndex = 10;
             this.GroupBoxClustering.TabStop = false;
             this.GroupBoxClustering.Text = "Hierarchical clustering";
@@ -4825,6 +5078,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label3.Location = new System.Drawing.Point(10, 22);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 20);
             this.label3.TabIndex = 402;
@@ -4834,7 +5088,8 @@
             // 
             this.ClusteringWPGMABox.AutoSize = true;
             this.ClusteringWPGMABox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ClusteringWPGMABox.Location = new System.Drawing.Point(25, 67);
+            this.ClusteringWPGMABox.Location = new System.Drawing.Point(25, 68);
+            this.ClusteringWPGMABox.Margin = new System.Windows.Forms.Padding(2);
             this.ClusteringWPGMABox.Name = "ClusteringWPGMABox";
             this.ClusteringWPGMABox.Size = new System.Drawing.Size(86, 24);
             this.ClusteringWPGMABox.TabIndex = 0;
@@ -4846,7 +5101,8 @@
             // 
             this.ClusteringWARDBox.AutoSize = true;
             this.ClusteringWARDBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ClusteringWARDBox.Location = new System.Drawing.Point(292, 67);
+            this.ClusteringWARDBox.Location = new System.Drawing.Point(292, 68);
+            this.ClusteringWARDBox.Margin = new System.Windows.Forms.Padding(2);
             this.ClusteringWARDBox.Name = "ClusteringWARDBox";
             this.ClusteringWARDBox.Size = new System.Drawing.Size(74, 24);
             this.ClusteringWARDBox.TabIndex = 0;
@@ -4859,6 +5115,7 @@
             this.ClusteringUPGMABox.AutoSize = true;
             this.ClusteringUPGMABox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ClusteringUPGMABox.Location = new System.Drawing.Point(202, 42);
+            this.ClusteringUPGMABox.Margin = new System.Windows.Forms.Padding(2);
             this.ClusteringUPGMABox.Name = "ClusteringUPGMABox";
             this.ClusteringUPGMABox.Size = new System.Drawing.Size(82, 24);
             this.ClusteringUPGMABox.TabIndex = 0;
@@ -4870,7 +5127,8 @@
             // 
             this.ClusteringWPGMCBox.AutoSize = true;
             this.ClusteringWPGMCBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ClusteringWPGMCBox.Location = new System.Drawing.Point(202, 67);
+            this.ClusteringWPGMCBox.Location = new System.Drawing.Point(202, 68);
+            this.ClusteringWPGMCBox.Margin = new System.Windows.Forms.Padding(2);
             this.ClusteringWPGMCBox.Name = "ClusteringWPGMCBox";
             this.ClusteringWPGMCBox.Size = new System.Drawing.Size(85, 24);
             this.ClusteringWPGMCBox.TabIndex = 0;
@@ -4883,6 +5141,7 @@
             this.ClusteringFurthestBox.AutoSize = true;
             this.ClusteringFurthestBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ClusteringFurthestBox.Location = new System.Drawing.Point(115, 42);
+            this.ClusteringFurthestBox.Margin = new System.Windows.Forms.Padding(2);
             this.ClusteringFurthestBox.Name = "ClusteringFurthestBox";
             this.ClusteringFurthestBox.Size = new System.Drawing.Size(83, 24);
             this.ClusteringFurthestBox.TabIndex = 0;
@@ -4894,7 +5153,8 @@
             // 
             this.ClusteringUPGMCBox.AutoSize = true;
             this.ClusteringUPGMCBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ClusteringUPGMCBox.Location = new System.Drawing.Point(115, 67);
+            this.ClusteringUPGMCBox.Location = new System.Drawing.Point(115, 68);
+            this.ClusteringUPGMCBox.Margin = new System.Windows.Forms.Padding(2);
             this.ClusteringUPGMCBox.Name = "ClusteringUPGMCBox";
             this.ClusteringUPGMCBox.Size = new System.Drawing.Size(81, 24);
             this.ClusteringUPGMCBox.TabIndex = 0;
@@ -4907,6 +5167,7 @@
             this.ClusteringNearestBox.AutoSize = true;
             this.ClusteringNearestBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ClusteringNearestBox.Location = new System.Drawing.Point(25, 42);
+            this.ClusteringNearestBox.Margin = new System.Windows.Forms.Padding(2);
             this.ClusteringNearestBox.Name = "ClusteringNearestBox";
             this.ClusteringNearestBox.Size = new System.Drawing.Size(82, 24);
             this.ClusteringNearestBox.TabIndex = 0;
@@ -4919,6 +5180,7 @@
             this.label92.AutoSize = true;
             this.label92.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label92.Location = new System.Drawing.Point(128, 22);
+            this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(227, 20);
             this.label92.TabIndex = 516;
@@ -4940,8 +5202,10 @@
             this.GroupBoxAMOVA.Controls.Add(this.label58);
             this.GroupBoxAMOVA.Controls.Add(this.label2);
             this.GroupBoxAMOVA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxAMOVA.Location = new System.Drawing.Point(378, 673);
+            this.GroupBoxAMOVA.Location = new System.Drawing.Point(378, 672);
+            this.GroupBoxAMOVA.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxAMOVA.Name = "GroupBoxAMOVA";
+            this.GroupBoxAMOVA.Padding = new System.Windows.Forms.Padding(2);
             this.GroupBoxAMOVA.Size = new System.Drawing.Size(370, 205);
             this.GroupBoxAMOVA.TabIndex = 6;
             this.GroupBoxAMOVA.TabStop = false;
@@ -4951,7 +5215,8 @@
             // 
             this.AMOVAMLBox.AutoSize = true;
             this.AMOVAMLBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AMOVAMLBox.Location = new System.Drawing.Point(23, 175);
+            this.AMOVAMLBox.Location = new System.Drawing.Point(22, 175);
+            this.AMOVAMLBox.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVAMLBox.Name = "AMOVAMLBox";
             this.AMOVAMLBox.Size = new System.Drawing.Size(210, 24);
             this.AMOVAMLBox.TabIndex = 509;
@@ -4964,6 +5229,7 @@
             this.AMOVAGenotypeBox.AutoSize = true;
             this.AMOVAGenotypeBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AMOVAGenotypeBox.Location = new System.Drawing.Point(185, 150);
+            this.AMOVAGenotypeBox.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVAGenotypeBox.Name = "AMOVAGenotypeBox";
             this.AMOVAGenotypeBox.Size = new System.Drawing.Size(145, 24);
             this.AMOVAGenotypeBox.TabIndex = 509;
@@ -4975,7 +5241,8 @@
             // 
             this.AMOVAAnisoBox.AutoSize = true;
             this.AMOVAAnisoBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AMOVAAnisoBox.Location = new System.Drawing.Point(23, 150);
+            this.AMOVAAnisoBox.Location = new System.Drawing.Point(22, 150);
+            this.AMOVAAnisoBox.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVAAnisoBox.Name = "AMOVAAnisoBox";
             this.AMOVAAnisoBox.Size = new System.Drawing.Size(103, 24);
             this.AMOVAAnisoBox.TabIndex = 509;
@@ -4987,7 +5254,8 @@
             // 
             this.AMOVAHomoCorrBox.AutoSize = true;
             this.AMOVAHomoCorrBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AMOVAHomoCorrBox.Location = new System.Drawing.Point(137, 125);
+            this.AMOVAHomoCorrBox.Location = new System.Drawing.Point(138, 125);
+            this.AMOVAHomoCorrBox.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVAHomoCorrBox.Name = "AMOVAHomoCorrBox";
             this.AMOVAHomoCorrBox.Size = new System.Drawing.Size(193, 24);
             this.AMOVAHomoCorrBox.TabIndex = 509;
@@ -4999,7 +5267,8 @@
             // 
             this.AMOVAHomoBox.AutoSize = true;
             this.AMOVAHomoBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AMOVAHomoBox.Location = new System.Drawing.Point(23, 125);
+            this.AMOVAHomoBox.Location = new System.Drawing.Point(22, 125);
+            this.AMOVAHomoBox.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVAHomoBox.Name = "AMOVAHomoBox";
             this.AMOVAHomoBox.Size = new System.Drawing.Size(108, 24);
             this.AMOVAHomoBox.TabIndex = 509;
@@ -5012,6 +5281,7 @@
             this.AMOVASMMBox.AutoSize = true;
             this.AMOVASMMBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AMOVASMMBox.Location = new System.Drawing.Point(258, 25);
+            this.AMOVASMMBox.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVASMMBox.Name = "AMOVASMMBox";
             this.AMOVASMMBox.Size = new System.Drawing.Size(65, 24);
             this.AMOVASMMBox.TabIndex = 508;
@@ -5023,7 +5293,8 @@
             // 
             this.AMOVAIAMBox.AutoSize = true;
             this.AMOVAIAMBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AMOVAIAMBox.Location = new System.Drawing.Point(147, 25);
+            this.AMOVAIAMBox.Location = new System.Drawing.Point(148, 25);
+            this.AMOVAIAMBox.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVAIAMBox.Name = "AMOVAIAMBox";
             this.AMOVAIAMBox.Size = new System.Drawing.Size(58, 24);
             this.AMOVAIAMBox.TabIndex = 508;
@@ -5035,7 +5306,8 @@
             // 
             this.AMOVAIgnoreIndBox.AutoSize = true;
             this.AMOVAIgnoreIndBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AMOVAIgnoreIndBox.Location = new System.Drawing.Point(17, 50);
+            this.AMOVAIgnoreIndBox.Location = new System.Drawing.Point(18, 50);
+            this.AMOVAIgnoreIndBox.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVAIgnoreIndBox.Name = "AMOVAIgnoreIndBox";
             this.AMOVAIgnoreIndBox.Size = new System.Drawing.Size(137, 24);
             this.AMOVAIgnoreIndBox.TabIndex = 507;
@@ -5047,7 +5319,8 @@
             // 
             this.AMOVAOutputSSBox.AutoSize = true;
             this.AMOVAOutputSSBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AMOVAOutputSSBox.Location = new System.Drawing.Point(17, 75);
+            this.AMOVAOutputSSBox.Location = new System.Drawing.Point(18, 75);
+            this.AMOVAOutputSSBox.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVAOutputSSBox.Name = "AMOVAOutputSSBox";
             this.AMOVAOutputSSBox.Size = new System.Drawing.Size(184, 24);
             this.AMOVAOutputSSBox.TabIndex = 507;
@@ -5063,7 +5336,8 @@
             0,
             0,
             0});
-            this.AMOVANPermBox.Location = new System.Drawing.Point(273, 50);
+            this.AMOVANPermBox.Location = new System.Drawing.Point(272, 50);
+            this.AMOVANPermBox.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVANPermBox.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -5083,7 +5357,8 @@
             // 
             this.label102.AutoSize = true;
             this.label102.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label102.Location = new System.Drawing.Point(10, 103);
+            this.label102.Location = new System.Drawing.Point(10, 102);
+            this.label102.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(67, 20);
             this.label102.TabIndex = 402;
@@ -5094,6 +5369,7 @@
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label58.Location = new System.Drawing.Point(10, 25);
+            this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(113, 20);
             this.label58.TabIndex = 402;
@@ -5103,7 +5379,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label2.Location = new System.Drawing.Point(172, 53);
+            this.label2.Location = new System.Drawing.Point(172, 52);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 20);
             this.label2.TabIndex = 5;
@@ -5144,8 +5421,10 @@
             this.GroupBoxParentage.Controls.Add(this.label82);
             this.GroupBoxParentage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxParentage.Location = new System.Drawing.Point(2, 542);
+            this.GroupBoxParentage.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxParentage.Name = "GroupBoxParentage";
-            this.GroupBoxParentage.Size = new System.Drawing.Size(370, 473);
+            this.GroupBoxParentage.Padding = new System.Windows.Forms.Padding(2);
+            this.GroupBoxParentage.Size = new System.Drawing.Size(370, 472);
             this.GroupBoxParentage.TabIndex = 9;
             this.GroupBoxParentage.TabStop = false;
             this.GroupBoxParentage.Text = "Parentage analysis";
@@ -5154,7 +5433,8 @@
             // 
             this.ParentageRedoBox.AutoSize = true;
             this.ParentageRedoBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ParentageRedoBox.Location = new System.Drawing.Point(203, 410);
+            this.ParentageRedoBox.Location = new System.Drawing.Point(202, 410);
+            this.ParentageRedoBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageRedoBox.Name = "ParentageRedoBox";
             this.ParentageRedoBox.Size = new System.Drawing.Size(125, 24);
             this.ParentageRedoBox.TabIndex = 66;
@@ -5167,6 +5447,7 @@
             this.ParentageEstSampleBox.AutoSize = true;
             this.ParentageEstSampleBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ParentageEstSampleBox.Location = new System.Drawing.Point(10, 410);
+            this.ParentageEstSampleBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageEstSampleBox.Name = "ParentageEstSampleBox";
             this.ParentageEstSampleBox.Size = new System.Drawing.Size(170, 24);
             this.ParentageEstSampleBox.TabIndex = 66;
@@ -5179,6 +5460,7 @@
             this.ParentageUnknownBox.AutoSize = true;
             this.ParentageUnknownBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ParentageUnknownBox.Location = new System.Drawing.Point(92, 82);
+            this.ParentageUnknownBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageUnknownBox.Name = "ParentageUnknownBox";
             this.ParentageUnknownBox.Size = new System.Drawing.Size(200, 24);
             this.ParentageUnknownBox.TabIndex = 65;
@@ -5190,7 +5472,8 @@
             // 
             this.ParentageParentPairBox.AutoSize = true;
             this.ParentageParentPairBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ParentageParentPairBox.Location = new System.Drawing.Point(208, 57);
+            this.ParentageParentPairBox.Location = new System.Drawing.Point(208, 58);
+            this.ParentageParentPairBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageParentPairBox.Name = "ParentageParentPairBox";
             this.ParentageParentPairBox.Size = new System.Drawing.Size(102, 24);
             this.ParentageParentPairBox.TabIndex = 65;
@@ -5202,7 +5485,8 @@
             // 
             this.ParentageSkipSimBox.AutoSize = true;
             this.ParentageSkipSimBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ParentageSkipSimBox.Location = new System.Drawing.Point(203, 132);
+            this.ParentageSkipSimBox.Location = new System.Drawing.Point(202, 132);
+            this.ParentageSkipSimBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageSkipSimBox.Name = "ParentageSkipSimBox";
             this.ParentageSkipSimBox.Size = new System.Drawing.Size(132, 24);
             this.ParentageSkipSimBox.TabIndex = 65;
@@ -5216,7 +5500,8 @@
             this.ParentagePaternityBox.Checked = true;
             this.ParentagePaternityBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ParentagePaternityBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ParentagePaternityBox.Location = new System.Drawing.Point(92, 57);
+            this.ParentagePaternityBox.Location = new System.Drawing.Point(92, 58);
+            this.ParentagePaternityBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentagePaternityBox.Name = "ParentagePaternityBox";
             this.ParentagePaternityBox.Size = new System.Drawing.Size(88, 24);
             this.ParentagePaternityBox.TabIndex = 65;
@@ -5228,7 +5513,8 @@
             // 
             this.label81.AutoSize = true;
             this.label81.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label81.Location = new System.Drawing.Point(10, 327);
+            this.label81.Location = new System.Drawing.Point(10, 328);
+            this.label81.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(212, 20);
             this.label81.TabIndex = 63;
@@ -5245,7 +5531,8 @@
             "95% confidence level",
             "99% confidence level",
             "99.9% confidence level"});
-            this.ParentageEstErrorBox.Location = new System.Drawing.Point(33, 350);
+            this.ParentageEstErrorBox.Location = new System.Drawing.Point(32, 350);
+            this.ParentageEstErrorBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageEstErrorBox.Name = "ParentageEstErrorBox";
             this.ParentageEstErrorBox.Size = new System.Drawing.Size(304, 28);
             this.ParentageEstErrorBox.TabIndex = 64;
@@ -5257,6 +5544,7 @@
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label51.Location = new System.Drawing.Point(10, 442);
+            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(89, 20);
             this.label51.TabIndex = 63;
@@ -5272,6 +5560,7 @@
             "Exclusion (Zwart et al. 2016)",
             "Dominant (Rodzen et al. 2004)"});
             this.ParentageMethodBox.Location = new System.Drawing.Point(92, 22);
+            this.ParentageMethodBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageMethodBox.Name = "ParentageMethodBox";
             this.ParentageMethodBox.Size = new System.Drawing.Size(266, 28);
             this.ParentageMethodBox.TabIndex = 64;
@@ -5289,7 +5578,8 @@
             "Top 5 LOD parents",
             "All positive LOD parents",
             "All candidate parents"});
-            this.ParentageOutputBox.Location = new System.Drawing.Point(115, 437);
+            this.ParentageOutputBox.Location = new System.Drawing.Point(115, 438);
+            this.ParentageOutputBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageOutputBox.Name = "ParentageOutputBox";
             this.ParentageOutputBox.Size = new System.Drawing.Size(222, 28);
             this.ParentageOutputBox.TabIndex = 64;
@@ -5305,6 +5595,7 @@
             0,
             0});
             this.ParentageErrorNSimBox.Location = new System.Drawing.Point(258, 378);
+            this.ParentageErrorNSimBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageErrorNSimBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -5330,6 +5621,7 @@
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label45.Location = new System.Drawing.Point(10, 58);
+            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(46, 20);
             this.label45.TabIndex = 60;
@@ -5340,6 +5632,7 @@
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label52.Location = new System.Drawing.Point(10, 25);
+            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(61, 20);
             this.label52.TabIndex = 60;
@@ -5350,6 +5643,7 @@
             this.label72.AutoSize = true;
             this.label72.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label72.Location = new System.Drawing.Point(10, 108);
+            this.label72.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(159, 20);
             this.label72.TabIndex = 60;
@@ -5360,6 +5654,7 @@
             this.label103.AutoSize = true;
             this.label103.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label103.Location = new System.Drawing.Point(98, 382);
+            this.label103.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(158, 20);
             this.label103.TabIndex = 51;
@@ -5374,6 +5669,7 @@
             0,
             0});
             this.ParentageNSimBox.Location = new System.Drawing.Point(118, 130);
+            this.ParentageNSimBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageNSimBox.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -5398,6 +5694,7 @@
             // 
             this.ParentageUnknownNCandidateBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ParentageUnknownNCandidateBox.Location = new System.Drawing.Point(258, 295);
+            this.ParentageUnknownNCandidateBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageUnknownNCandidateBox.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -5423,6 +5720,7 @@
             this.label75.AutoSize = true;
             this.label75.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label75.Location = new System.Drawing.Point(198, 162);
+            this.label75.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(91, 20);
             this.label75.TabIndex = 50;
@@ -5432,6 +5730,7 @@
             // 
             this.ParentageParentPairNMotherBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ParentageParentPairNMotherBox.Location = new System.Drawing.Point(258, 240);
+            this.ParentageParentPairNMotherBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageParentPairNMotherBox.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -5456,6 +5755,7 @@
             // 
             this.ParentageParentPairNFatherBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ParentageParentPairNFatherBox.Location = new System.Drawing.Point(258, 212);
+            this.ParentageParentPairNFatherBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageParentPairNFatherBox.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -5480,7 +5780,8 @@
             // 
             this.label76.AutoSize = true;
             this.label76.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label76.Location = new System.Drawing.Point(22, 133);
+            this.label76.Location = new System.Drawing.Point(22, 132);
+            this.label76.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(95, 20);
             this.label76.TabIndex = 52;
@@ -5490,6 +5791,7 @@
             // 
             this.ParentagePaternityNFatherBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ParentagePaternityNFatherBox.Location = new System.Drawing.Point(258, 185);
+            this.ParentagePaternityNFatherBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentagePaternityNFatherBox.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -5519,7 +5821,8 @@
             0,
             0,
             131072});
-            this.ParentageSamplingRateBox.Location = new System.Drawing.Point(118, 157);
+            this.ParentageSamplingRateBox.Location = new System.Drawing.Point(118, 158);
+            this.ParentageSamplingRateBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageSamplingRateBox.Maximum = new decimal(new int[] {
             1,
             0,
@@ -5545,6 +5848,7 @@
             this.label77.AutoSize = true;
             this.label77.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label77.Location = new System.Drawing.Point(22, 272);
+            this.label77.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(181, 20);
             this.label77.TabIndex = 57;
@@ -5555,6 +5859,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label18.Location = new System.Drawing.Point(108, 298);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(139, 20);
             this.label18.TabIndex = 58;
@@ -5564,7 +5869,8 @@
             // 
             this.label78.AutoSize = true;
             this.label78.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label78.Location = new System.Drawing.Point(102, 243);
+            this.label78.Location = new System.Drawing.Point(102, 242);
+            this.label78.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(144, 20);
             this.label78.TabIndex = 58;
@@ -5574,7 +5880,8 @@
             // 
             this.label79.AutoSize = true;
             this.label79.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label79.Location = new System.Drawing.Point(22, 217);
+            this.label79.Location = new System.Drawing.Point(22, 218);
+            this.label79.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(213, 20);
             this.label79.TabIndex = 55;
@@ -5589,7 +5896,8 @@
             0,
             0,
             131072});
-            this.ParentageMistypeRateBox.Location = new System.Drawing.Point(295, 157);
+            this.ParentageMistypeRateBox.Location = new System.Drawing.Point(295, 158);
+            this.ParentageMistypeRateBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageMistypeRateBox.Maximum = new decimal(new int[] {
             5,
             0,
@@ -5610,6 +5918,7 @@
             this.label80.AutoSize = true;
             this.label80.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label80.Location = new System.Drawing.Point(22, 188);
+            this.label80.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(211, 20);
             this.label80.TabIndex = 56;
@@ -5620,6 +5929,7 @@
             this.label82.AutoSize = true;
             this.label82.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label82.Location = new System.Drawing.Point(22, 162);
+            this.label82.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(89, 20);
             this.label82.TabIndex = 49;
@@ -5636,8 +5946,14 @@
             this.GroupBoxDist.Controls.Add(this.label50);
             this.GroupBoxDist.Controls.Add(this.label38);
             this.GroupBoxDist.Controls.Add(this.DistSlatkinBox);
-            this.GroupBoxDist.Controls.Add(this.DistRoger1973Box);
+            this.GroupBoxDist.Controls.Add(this.DistRussel1940Box);
+            this.GroupBoxDist.Controls.Add(this.DistSorensen1948Box);
+            this.GroupBoxDist.Controls.Add(this.DistRogers1960Box);
+            this.GroupBoxDist.Controls.Add(this.DistRogers1973Box);
             this.GroupBoxDist.Controls.Add(this.DistNei1983Box);
+            this.GroupBoxDist.Controls.Add(this.DistSokal1963Box);
+            this.GroupBoxDist.Controls.Add(this.DistJaccard1901Box);
+            this.GroupBoxDist.Controls.Add(this.DistSokal1958Box);
             this.GroupBoxDist.Controls.Add(this.DistReynolds1983Box);
             this.GroupBoxDist.Controls.Add(this.DistNei1973Box);
             this.GroupBoxDist.Controls.Add(this.DistReynold1993Box);
@@ -5645,9 +5961,11 @@
             this.GroupBoxDist.Controls.Add(this.DistCavalli1967Box);
             this.GroupBoxDist.Controls.Add(this.DistEuclideanBox);
             this.GroupBoxDist.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxDist.Location = new System.Drawing.Point(757, 142);
+            this.GroupBoxDist.Location = new System.Drawing.Point(758, 142);
+            this.GroupBoxDist.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxDist.Name = "GroupBoxDist";
-            this.GroupBoxDist.Size = new System.Drawing.Size(370, 227);
+            this.GroupBoxDist.Padding = new System.Windows.Forms.Padding(2);
+            this.GroupBoxDist.Size = new System.Drawing.Size(370, 301);
             this.GroupBoxDist.TabIndex = 6;
             this.GroupBoxDist.TabStop = false;
             this.GroupBoxDist.Text = "Genetic distance";
@@ -5657,6 +5975,7 @@
             this.DistNei1972Box.AutoSize = true;
             this.DistNei1972Box.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DistNei1972Box.Location = new System.Drawing.Point(218, 72);
+            this.DistNei1972Box.Margin = new System.Windows.Forms.Padding(2);
             this.DistNei1972Box.Name = "DistNei1972Box";
             this.DistNei1972Box.Size = new System.Drawing.Size(113, 24);
             this.DistNei1972Box.TabIndex = 0;
@@ -5669,6 +5988,7 @@
             this.DistRegBox.AutoSize = true;
             this.DistRegBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DistRegBox.Location = new System.Drawing.Point(280, 25);
+            this.DistRegBox.Margin = new System.Windows.Forms.Padding(2);
             this.DistRegBox.Name = "DistRegBox";
             this.DistRegBox.Size = new System.Drawing.Size(78, 24);
             this.DistRegBox.TabIndex = 406;
@@ -5681,6 +6001,7 @@
             this.DistPopBox.AutoSize = true;
             this.DistPopBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DistPopBox.Location = new System.Drawing.Point(175, 25);
+            this.DistPopBox.Margin = new System.Windows.Forms.Padding(2);
             this.DistPopBox.Name = "DistPopBox";
             this.DistPopBox.Size = new System.Drawing.Size(102, 24);
             this.DistPopBox.TabIndex = 405;
@@ -5693,6 +6014,7 @@
             this.DistIndBox.AutoSize = true;
             this.DistIndBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DistIndBox.Location = new System.Drawing.Point(72, 25);
+            this.DistIndBox.Margin = new System.Windows.Forms.Padding(2);
             this.DistIndBox.Name = "DistIndBox";
             this.DistIndBox.Size = new System.Drawing.Size(96, 24);
             this.DistIndBox.TabIndex = 404;
@@ -5704,6 +6026,7 @@
             // 
             this.label89.AutoSize = true;
             this.label89.Location = new System.Drawing.Point(42, 370);
+            this.label89.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(0, 20);
             this.label89.TabIndex = 403;
@@ -5712,7 +6035,8 @@
             // 
             this.label112.AutoSize = true;
             this.label112.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label112.Location = new System.Drawing.Point(228, 197);
+            this.label112.Location = new System.Drawing.Point(228, 272);
+            this.label112.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label112.Name = "label112";
             this.label112.Size = new System.Drawing.Size(133, 20);
             this.label112.TabIndex = 403;
@@ -5723,6 +6047,7 @@
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label50.Location = new System.Drawing.Point(10, 50);
+            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(78, 20);
             this.label50.TabIndex = 403;
@@ -5733,6 +6058,7 @@
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label38.Location = new System.Drawing.Point(10, 25);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(51, 20);
             this.label38.TabIndex = 403;
@@ -5742,7 +6068,8 @@
             // 
             this.DistSlatkinBox.AutoSize = true;
             this.DistSlatkinBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DistSlatkinBox.Location = new System.Drawing.Point(25, 197);
+            this.DistSlatkinBox.Location = new System.Drawing.Point(25, 272);
+            this.DistSlatkinBox.Margin = new System.Windows.Forms.Padding(2);
             this.DistSlatkinBox.Name = "DistSlatkinBox";
             this.DistSlatkinBox.Size = new System.Drawing.Size(208, 24);
             this.DistSlatkinBox.TabIndex = 0;
@@ -5750,23 +6077,64 @@
             this.DistSlatkinBox.UseVisualStyleBackColor = true;
             this.DistSlatkinBox.CheckedChanged += new System.EventHandler(this.PreSaveSettings);
             // 
-            // DistRoger1973Box
+            // DistRussel1940Box
             // 
-            this.DistRoger1973Box.AutoSize = true;
-            this.DistRoger1973Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DistRoger1973Box.Location = new System.Drawing.Point(218, 147);
-            this.DistRoger1973Box.Name = "DistRoger1973Box";
-            this.DistRoger1973Box.Size = new System.Drawing.Size(135, 24);
-            this.DistRoger1973Box.TabIndex = 0;
-            this.DistRoger1973Box.Text = "Roger 1972 DR ";
-            this.DistRoger1973Box.UseVisualStyleBackColor = true;
-            this.DistRoger1973Box.CheckedChanged += new System.EventHandler(this.PreSaveSettings);
+            this.DistRussel1940Box.AutoSize = true;
+            this.DistRussel1940Box.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DistRussel1940Box.Location = new System.Drawing.Point(218, 222);
+            this.DistRussel1940Box.Margin = new System.Windows.Forms.Padding(2);
+            this.DistRussel1940Box.Name = "DistRussel1940Box";
+            this.DistRussel1940Box.Size = new System.Drawing.Size(112, 24);
+            this.DistRussel1940Box.TabIndex = 0;
+            this.DistRussel1940Box.Text = "Russell 1940";
+            this.DistRussel1940Box.UseVisualStyleBackColor = true;
+            this.DistRussel1940Box.CheckedChanged += new System.EventHandler(this.PreSaveSettings);
+            // 
+            // DistSorensen1948Box
+            // 
+            this.DistSorensen1948Box.AutoSize = true;
+            this.DistSorensen1948Box.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DistSorensen1948Box.Location = new System.Drawing.Point(218, 198);
+            this.DistSorensen1948Box.Margin = new System.Windows.Forms.Padding(2);
+            this.DistSorensen1948Box.Name = "DistSorensen1948Box";
+            this.DistSorensen1948Box.Size = new System.Drawing.Size(127, 24);
+            this.DistSorensen1948Box.TabIndex = 0;
+            this.DistSorensen1948Box.Text = "Sørensen 1948";
+            this.DistSorensen1948Box.UseVisualStyleBackColor = true;
+            this.DistSorensen1948Box.CheckedChanged += new System.EventHandler(this.PreSaveSettings);
+            // 
+            // DistRogers1960Box
+            // 
+            this.DistRogers1960Box.AutoSize = true;
+            this.DistRogers1960Box.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DistRogers1960Box.Location = new System.Drawing.Point(218, 172);
+            this.DistRogers1960Box.Margin = new System.Windows.Forms.Padding(2);
+            this.DistRogers1960Box.Name = "DistRogers1960Box";
+            this.DistRogers1960Box.Size = new System.Drawing.Size(113, 24);
+            this.DistRogers1960Box.TabIndex = 0;
+            this.DistRogers1960Box.Text = "Rogers 1960";
+            this.DistRogers1960Box.UseVisualStyleBackColor = true;
+            this.DistRogers1960Box.CheckedChanged += new System.EventHandler(this.PreSaveSettings);
+            // 
+            // DistRogers1973Box
+            // 
+            this.DistRogers1973Box.AutoSize = true;
+            this.DistRogers1973Box.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DistRogers1973Box.Location = new System.Drawing.Point(218, 148);
+            this.DistRogers1973Box.Margin = new System.Windows.Forms.Padding(2);
+            this.DistRogers1973Box.Name = "DistRogers1973Box";
+            this.DistRogers1973Box.Size = new System.Drawing.Size(141, 24);
+            this.DistRogers1973Box.TabIndex = 0;
+            this.DistRogers1973Box.Text = "Rogers 1972 DR ";
+            this.DistRogers1973Box.UseVisualStyleBackColor = true;
+            this.DistRogers1973Box.CheckedChanged += new System.EventHandler(this.PreSaveSettings);
             // 
             // DistNei1983Box
             // 
             this.DistNei1983Box.AutoSize = true;
             this.DistNei1983Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DistNei1983Box.Location = new System.Drawing.Point(218, 97);
+            this.DistNei1983Box.Location = new System.Drawing.Point(218, 98);
+            this.DistNei1983Box.Margin = new System.Windows.Forms.Padding(2);
             this.DistNei1983Box.Name = "DistNei1983Box";
             this.DistNei1983Box.Size = new System.Drawing.Size(115, 24);
             this.DistNei1983Box.TabIndex = 0;
@@ -5774,11 +6142,51 @@
             this.DistNei1983Box.UseVisualStyleBackColor = true;
             this.DistNei1983Box.CheckedChanged += new System.EventHandler(this.PreSaveSettings);
             // 
+            // DistSokal1963Box
+            // 
+            this.DistSokal1963Box.AutoSize = true;
+            this.DistSokal1963Box.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DistSokal1963Box.Location = new System.Drawing.Point(25, 222);
+            this.DistSokal1963Box.Margin = new System.Windows.Forms.Padding(2);
+            this.DistSokal1963Box.Name = "DistSokal1963Box";
+            this.DistSokal1963Box.Size = new System.Drawing.Size(103, 24);
+            this.DistSokal1963Box.TabIndex = 0;
+            this.DistSokal1963Box.Text = "Sokal 1963";
+            this.DistSokal1963Box.UseVisualStyleBackColor = true;
+            this.DistSokal1963Box.CheckedChanged += new System.EventHandler(this.PreSaveSettings);
+            // 
+            // DistJaccard1901Box
+            // 
+            this.DistJaccard1901Box.AutoSize = true;
+            this.DistJaccard1901Box.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DistJaccard1901Box.Location = new System.Drawing.Point(25, 198);
+            this.DistJaccard1901Box.Margin = new System.Windows.Forms.Padding(2);
+            this.DistJaccard1901Box.Name = "DistJaccard1901Box";
+            this.DistJaccard1901Box.Size = new System.Drawing.Size(116, 24);
+            this.DistJaccard1901Box.TabIndex = 0;
+            this.DistJaccard1901Box.Text = "Jaccard 1901";
+            this.DistJaccard1901Box.UseVisualStyleBackColor = true;
+            this.DistJaccard1901Box.CheckedChanged += new System.EventHandler(this.PreSaveSettings);
+            // 
+            // DistSokal1958Box
+            // 
+            this.DistSokal1958Box.AutoSize = true;
+            this.DistSokal1958Box.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DistSokal1958Box.Location = new System.Drawing.Point(25, 172);
+            this.DistSokal1958Box.Margin = new System.Windows.Forms.Padding(2);
+            this.DistSokal1958Box.Name = "DistSokal1958Box";
+            this.DistSokal1958Box.Size = new System.Drawing.Size(103, 24);
+            this.DistSokal1958Box.TabIndex = 0;
+            this.DistSokal1958Box.Text = "Sokal 1958";
+            this.DistSokal1958Box.UseVisualStyleBackColor = true;
+            this.DistSokal1958Box.CheckedChanged += new System.EventHandler(this.PreSaveSettings);
+            // 
             // DistReynolds1983Box
             // 
             this.DistReynolds1983Box.AutoSize = true;
             this.DistReynolds1983Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DistReynolds1983Box.Location = new System.Drawing.Point(25, 172);
+            this.DistReynolds1983Box.Location = new System.Drawing.Point(25, 248);
+            this.DistReynolds1983Box.Margin = new System.Windows.Forms.Padding(2);
             this.DistReynolds1983Box.Name = "DistReynolds1983Box";
             this.DistReynolds1983Box.Size = new System.Drawing.Size(229, 24);
             this.DistReynolds1983Box.TabIndex = 0;
@@ -5790,7 +6198,8 @@
             // 
             this.DistNei1973Box.AutoSize = true;
             this.DistNei1973Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DistNei1973Box.Location = new System.Drawing.Point(25, 147);
+            this.DistNei1973Box.Location = new System.Drawing.Point(25, 148);
+            this.DistNei1973Box.Margin = new System.Windows.Forms.Padding(2);
             this.DistNei1973Box.Name = "DistNei1973Box";
             this.DistNei1973Box.Size = new System.Drawing.Size(118, 24);
             this.DistNei1973Box.TabIndex = 0;
@@ -5802,7 +6211,8 @@
             // 
             this.DistReynold1993Box.AutoSize = true;
             this.DistReynold1993Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DistReynold1993Box.Location = new System.Drawing.Point(25, 97);
+            this.DistReynold1993Box.Location = new System.Drawing.Point(25, 98);
+            this.DistReynold1993Box.Margin = new System.Windows.Forms.Padding(2);
             this.DistReynold1993Box.Name = "DistReynold1993Box";
             this.DistReynold1993Box.Size = new System.Drawing.Size(158, 24);
             this.DistReynold1993Box.TabIndex = 0;
@@ -5815,6 +6225,7 @@
             this.DistGoldstein1995Box.AutoSize = true;
             this.DistGoldstein1995Box.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DistGoldstein1995Box.Location = new System.Drawing.Point(218, 122);
+            this.DistGoldstein1995Box.Margin = new System.Windows.Forms.Padding(2);
             this.DistGoldstein1995Box.Name = "DistGoldstein1995Box";
             this.DistGoldstein1995Box.Size = new System.Drawing.Size(160, 24);
             this.DistGoldstein1995Box.TabIndex = 0;
@@ -5827,6 +6238,7 @@
             this.DistCavalli1967Box.AutoSize = true;
             this.DistCavalli1967Box.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DistCavalli1967Box.Location = new System.Drawing.Point(25, 72);
+            this.DistCavalli1967Box.Margin = new System.Windows.Forms.Padding(2);
             this.DistCavalli1967Box.Name = "DistCavalli1967Box";
             this.DistCavalli1967Box.Size = new System.Drawing.Size(194, 24);
             this.DistCavalli1967Box.TabIndex = 0;
@@ -5839,6 +6251,7 @@
             this.DistEuclideanBox.AutoSize = true;
             this.DistEuclideanBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DistEuclideanBox.Location = new System.Drawing.Point(25, 122);
+            this.DistEuclideanBox.Margin = new System.Windows.Forms.Padding(2);
             this.DistEuclideanBox.Name = "DistEuclideanBox";
             this.DistEuclideanBox.Size = new System.Drawing.Size(154, 24);
             this.DistEuclideanBox.TabIndex = 0;
@@ -5865,9 +6278,11 @@
             this.GroupBoxRelationship.Controls.Add(this.RelationshipRitland1996mBox);
             this.GroupBoxRelationship.Controls.Add(this.RelationshipTotBox);
             this.GroupBoxRelationship.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxRelationship.Location = new System.Drawing.Point(757, 443);
+            this.GroupBoxRelationship.Location = new System.Drawing.Point(758, 514);
+            this.GroupBoxRelationship.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxRelationship.Name = "GroupBoxRelationship";
-            this.GroupBoxRelationship.Size = new System.Drawing.Size(370, 227);
+            this.GroupBoxRelationship.Padding = new System.Windows.Forms.Padding(2);
+            this.GroupBoxRelationship.Size = new System.Drawing.Size(370, 228);
             this.GroupBoxRelationship.TabIndex = 6;
             this.GroupBoxRelationship.TabStop = false;
             this.GroupBoxRelationship.Text = "Relationship coefficient";
@@ -5877,6 +6292,7 @@
             this.RelationshipRegBox.AutoSize = true;
             this.RelationshipRegBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RelationshipRegBox.Location = new System.Drawing.Point(178, 25);
+            this.RelationshipRegBox.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipRegBox.Name = "RelationshipRegBox";
             this.RelationshipRegBox.Size = new System.Drawing.Size(78, 24);
             this.RelationshipRegBox.TabIndex = 404;
@@ -5888,7 +6304,8 @@
             // 
             this.RelationshipJackknifeBox.AutoSize = true;
             this.RelationshipJackknifeBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RelationshipJackknifeBox.Location = new System.Drawing.Point(17, 197);
+            this.RelationshipJackknifeBox.Location = new System.Drawing.Point(18, 198);
+            this.RelationshipJackknifeBox.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipJackknifeBox.Name = "RelationshipJackknifeBox";
             this.RelationshipJackknifeBox.Size = new System.Drawing.Size(247, 24);
             this.RelationshipJackknifeBox.TabIndex = 404;
@@ -5901,6 +6318,7 @@
             this.RelationshipPopBox.AutoSize = true;
             this.RelationshipPopBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RelationshipPopBox.Location = new System.Drawing.Point(65, 25);
+            this.RelationshipPopBox.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipPopBox.Name = "RelationshipPopBox";
             this.RelationshipPopBox.Size = new System.Drawing.Size(102, 24);
             this.RelationshipPopBox.TabIndex = 404;
@@ -5912,7 +6330,8 @@
             // 
             this.RelationshipLoiselle1995Box.AutoSize = true;
             this.RelationshipLoiselle1995Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RelationshipLoiselle1995Box.Location = new System.Drawing.Point(187, 122);
+            this.RelationshipLoiselle1995Box.Location = new System.Drawing.Point(188, 122);
+            this.RelationshipLoiselle1995Box.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipLoiselle1995Box.Name = "RelationshipLoiselle1995Box";
             this.RelationshipLoiselle1995Box.Size = new System.Drawing.Size(140, 24);
             this.RelationshipLoiselle1995Box.TabIndex = 0;
@@ -5924,7 +6343,8 @@
             // 
             this.RelationshipRitland1996Box.AutoSize = true;
             this.RelationshipRitland1996Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RelationshipRitland1996Box.Location = new System.Drawing.Point(187, 97);
+            this.RelationshipRitland1996Box.Location = new System.Drawing.Point(188, 98);
+            this.RelationshipRitland1996Box.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipRitland1996Box.Name = "RelationshipRitland1996Box";
             this.RelationshipRitland1996Box.Size = new System.Drawing.Size(137, 24);
             this.RelationshipRitland1996Box.TabIndex = 0;
@@ -5936,7 +6356,8 @@
             // 
             this.RelationshipHuang2015Box.AutoSize = true;
             this.RelationshipHuang2015Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RelationshipHuang2015Box.Location = new System.Drawing.Point(187, 72);
+            this.RelationshipHuang2015Box.Location = new System.Drawing.Point(188, 72);
+            this.RelationshipHuang2015Box.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipHuang2015Box.Name = "RelationshipHuang2015Box";
             this.RelationshipHuang2015Box.Size = new System.Drawing.Size(184, 24);
             this.RelationshipHuang2015Box.TabIndex = 0;
@@ -5949,6 +6370,7 @@
             this.RelationshipLoiselle1995mBox.AutoSize = true;
             this.RelationshipLoiselle1995mBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RelationshipLoiselle1995mBox.Location = new System.Drawing.Point(25, 122);
+            this.RelationshipLoiselle1995mBox.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipLoiselle1995mBox.Name = "RelationshipLoiselle1995mBox";
             this.RelationshipLoiselle1995mBox.Size = new System.Drawing.Size(136, 24);
             this.RelationshipLoiselle1995mBox.TabIndex = 0;
@@ -5961,6 +6383,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label4.Location = new System.Drawing.Point(10, 25);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 401;
@@ -5971,6 +6394,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label9.Location = new System.Drawing.Point(10, 50);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 20);
             this.label9.TabIndex = 401;
@@ -5980,7 +6404,8 @@
             // 
             this.RelationshipHuangUnpubBox.AutoSize = true;
             this.RelationshipHuangUnpubBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RelationshipHuangUnpubBox.Location = new System.Drawing.Point(187, 172);
+            this.RelationshipHuangUnpubBox.Location = new System.Drawing.Point(188, 172);
+            this.RelationshipHuangUnpubBox.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipHuangUnpubBox.Name = "RelationshipHuangUnpubBox";
             this.RelationshipHuangUnpubBox.Size = new System.Drawing.Size(144, 24);
             this.RelationshipHuangUnpubBox.TabIndex = 0;
@@ -5993,6 +6418,7 @@
             this.RelationshipHuangUnpubmBox.AutoSize = true;
             this.RelationshipHuangUnpubmBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RelationshipHuangUnpubmBox.Location = new System.Drawing.Point(25, 172);
+            this.RelationshipHuangUnpubmBox.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipHuangUnpubmBox.Name = "RelationshipHuangUnpubmBox";
             this.RelationshipHuangUnpubmBox.Size = new System.Drawing.Size(140, 24);
             this.RelationshipHuangUnpubmBox.TabIndex = 0;
@@ -6004,7 +6430,8 @@
             // 
             this.RelationshipHardy1999Box.AutoSize = true;
             this.RelationshipHardy1999Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RelationshipHardy1999Box.Location = new System.Drawing.Point(25, 147);
+            this.RelationshipHardy1999Box.Location = new System.Drawing.Point(25, 148);
+            this.RelationshipHardy1999Box.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipHardy1999Box.Name = "RelationshipHardy1999Box";
             this.RelationshipHardy1999Box.Size = new System.Drawing.Size(126, 24);
             this.RelationshipHardy1999Box.TabIndex = 0;
@@ -6016,7 +6443,8 @@
             // 
             this.RelationshipWeir1996Box.AutoSize = true;
             this.RelationshipWeir1996Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RelationshipWeir1996Box.Location = new System.Drawing.Point(187, 147);
+            this.RelationshipWeir1996Box.Location = new System.Drawing.Point(188, 148);
+            this.RelationshipWeir1996Box.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipWeir1996Box.Name = "RelationshipWeir1996Box";
             this.RelationshipWeir1996Box.Size = new System.Drawing.Size(120, 24);
             this.RelationshipWeir1996Box.TabIndex = 0;
@@ -6029,6 +6457,7 @@
             this.RelationshipHuang2014Box.AutoSize = true;
             this.RelationshipHuang2014Box.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RelationshipHuang2014Box.Location = new System.Drawing.Point(25, 72);
+            this.RelationshipHuang2014Box.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipHuang2014Box.Name = "RelationshipHuang2014Box";
             this.RelationshipHuang2014Box.Size = new System.Drawing.Size(152, 24);
             this.RelationshipHuang2014Box.TabIndex = 0;
@@ -6040,7 +6469,8 @@
             // 
             this.RelationshipRitland1996mBox.AutoSize = true;
             this.RelationshipRitland1996mBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RelationshipRitland1996mBox.Location = new System.Drawing.Point(25, 97);
+            this.RelationshipRitland1996mBox.Location = new System.Drawing.Point(25, 98);
+            this.RelationshipRitland1996mBox.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipRitland1996mBox.Name = "RelationshipRitland1996mBox";
             this.RelationshipRitland1996mBox.Size = new System.Drawing.Size(133, 24);
             this.RelationshipRitland1996mBox.TabIndex = 0;
@@ -6053,6 +6483,7 @@
             this.RelationshipTotBox.AutoSize = true;
             this.RelationshipTotBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RelationshipTotBox.Location = new System.Drawing.Point(265, 25);
+            this.RelationshipTotBox.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipTotBox.Name = "RelationshipTotBox";
             this.RelationshipTotBox.Size = new System.Drawing.Size(98, 24);
             this.RelationshipTotBox.TabIndex = 0;
@@ -6070,7 +6501,9 @@
             this.GroupBoxInbreeding.Controls.Add(this.InbreedingWeir1996Box);
             this.GroupBoxInbreeding.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxInbreeding.Location = new System.Drawing.Point(378, 388);
+            this.GroupBoxInbreeding.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxInbreeding.Name = "GroupBoxInbreeding";
+            this.GroupBoxInbreeding.Padding = new System.Windows.Forms.Padding(2);
             this.GroupBoxInbreeding.Size = new System.Drawing.Size(370, 122);
             this.GroupBoxInbreeding.TabIndex = 8;
             this.GroupBoxInbreeding.TabStop = false;
@@ -6081,6 +6514,7 @@
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label40.Location = new System.Drawing.Point(10, 22);
+            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(78, 20);
             this.label40.TabIndex = 408;
@@ -6090,7 +6524,8 @@
             // 
             this.InbreedingJackknifeBox.AutoSize = true;
             this.InbreedingJackknifeBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.InbreedingJackknifeBox.Location = new System.Drawing.Point(17, 92);
+            this.InbreedingJackknifeBox.Location = new System.Drawing.Point(18, 92);
+            this.InbreedingJackknifeBox.Margin = new System.Windows.Forms.Padding(2);
             this.InbreedingJackknifeBox.Name = "InbreedingJackknifeBox";
             this.InbreedingJackknifeBox.Size = new System.Drawing.Size(247, 24);
             this.InbreedingJackknifeBox.TabIndex = 407;
@@ -6102,6 +6537,7 @@
             this.InbreedingLoiselle1995Box.AutoSize = true;
             this.InbreedingLoiselle1995Box.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.InbreedingLoiselle1995Box.Location = new System.Drawing.Point(178, 42);
+            this.InbreedingLoiselle1995Box.Margin = new System.Windows.Forms.Padding(2);
             this.InbreedingLoiselle1995Box.Name = "InbreedingLoiselle1995Box";
             this.InbreedingLoiselle1995Box.Size = new System.Drawing.Size(117, 24);
             this.InbreedingLoiselle1995Box.TabIndex = 405;
@@ -6113,7 +6549,8 @@
             // 
             this.InbreedingRitland1996Box.AutoSize = true;
             this.InbreedingRitland1996Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.InbreedingRitland1996Box.Location = new System.Drawing.Point(23, 42);
+            this.InbreedingRitland1996Box.Location = new System.Drawing.Point(22, 42);
+            this.InbreedingRitland1996Box.Margin = new System.Windows.Forms.Padding(2);
             this.InbreedingRitland1996Box.Name = "InbreedingRitland1996Box";
             this.InbreedingRitland1996Box.Size = new System.Drawing.Size(114, 24);
             this.InbreedingRitland1996Box.TabIndex = 406;
@@ -6125,7 +6562,8 @@
             // 
             this.InbreedingHuangUnpubBox.AutoSize = true;
             this.InbreedingHuangUnpubBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.InbreedingHuangUnpubBox.Location = new System.Drawing.Point(178, 67);
+            this.InbreedingHuangUnpubBox.Location = new System.Drawing.Point(178, 68);
+            this.InbreedingHuangUnpubBox.Margin = new System.Windows.Forms.Padding(2);
             this.InbreedingHuangUnpubBox.Name = "InbreedingHuangUnpubBox";
             this.InbreedingHuangUnpubBox.Size = new System.Drawing.Size(121, 24);
             this.InbreedingHuangUnpubBox.TabIndex = 402;
@@ -6137,7 +6575,8 @@
             // 
             this.InbreedingWeir1996Box.AutoSize = true;
             this.InbreedingWeir1996Box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.InbreedingWeir1996Box.Location = new System.Drawing.Point(23, 67);
+            this.InbreedingWeir1996Box.Location = new System.Drawing.Point(22, 68);
+            this.InbreedingWeir1996Box.Margin = new System.Windows.Forms.Padding(2);
             this.InbreedingWeir1996Box.Name = "InbreedingWeir1996Box";
             this.InbreedingWeir1996Box.Size = new System.Drawing.Size(97, 24);
             this.InbreedingWeir1996Box.TabIndex = 402;
@@ -6148,9 +6587,10 @@
             // DiversityPage
             // 
             this.DiversityPage.Controls.Add(this.groupBox6);
-            this.DiversityPage.Location = new System.Drawing.Point(4, 54);
+            this.DiversityPage.Location = new System.Drawing.Point(4, 79);
+            this.DiversityPage.Margin = new System.Windows.Forms.Padding(2);
             this.DiversityPage.Name = "DiversityPage";
-            this.DiversityPage.Size = new System.Drawing.Size(1419, 694);
+            this.DiversityPage.Size = new System.Drawing.Size(881, 406);
             this.DiversityPage.TabIndex = 8;
             this.DiversityPage.Text = "Diversity";
             this.DiversityPage.UseVisualStyleBackColor = true;
@@ -6160,8 +6600,10 @@
             this.groupBox6.Controls.Add(this.DiversityResBox);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(0, 0);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox6.Size = new System.Drawing.Size(881, 406);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Genetic diversity";
@@ -6172,12 +6614,13 @@
             this.DiversityResBox.AcceptsTab = true;
             this.DiversityResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DiversityResBox.HideSelection = false;
-            this.DiversityResBox.Location = new System.Drawing.Point(3, 23);
+            this.DiversityResBox.Location = new System.Drawing.Point(2, 22);
+            this.DiversityResBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiversityResBox.MaxLength = 32767000;
             this.DiversityResBox.Multiline = true;
             this.DiversityResBox.Name = "DiversityResBox";
             this.DiversityResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.DiversityResBox.Size = new System.Drawing.Size(1413, 668);
+            this.DiversityResBox.Size = new System.Drawing.Size(877, 382);
             this.DiversityResBox.TabIndex = 1;
             this.DiversityResBox.WordWrap = false;
             this.DiversityResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -6185,9 +6628,10 @@
             // FrequencyPage
             // 
             this.FrequencyPage.Controls.Add(this.groupBox3);
-            this.FrequencyPage.Location = new System.Drawing.Point(4, 54);
+            this.FrequencyPage.Location = new System.Drawing.Point(4, 79);
+            this.FrequencyPage.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencyPage.Name = "FrequencyPage";
-            this.FrequencyPage.Size = new System.Drawing.Size(1419, 694);
+            this.FrequencyPage.Size = new System.Drawing.Size(881, 406);
             this.FrequencyPage.TabIndex = 2;
             this.FrequencyPage.Text = "Frequency";
             this.FrequencyPage.UseVisualStyleBackColor = true;
@@ -6197,8 +6641,10 @@
             this.groupBox3.Controls.Add(this.FrequencyResBox);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(881, 406);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Allele frequencies";
@@ -6209,12 +6655,13 @@
             this.FrequencyResBox.AcceptsTab = true;
             this.FrequencyResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FrequencyResBox.HideSelection = false;
-            this.FrequencyResBox.Location = new System.Drawing.Point(3, 23);
+            this.FrequencyResBox.Location = new System.Drawing.Point(2, 22);
+            this.FrequencyResBox.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencyResBox.MaxLength = 32767000;
             this.FrequencyResBox.Multiline = true;
             this.FrequencyResBox.Name = "FrequencyResBox";
             this.FrequencyResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.FrequencyResBox.Size = new System.Drawing.Size(1413, 668);
+            this.FrequencyResBox.Size = new System.Drawing.Size(877, 382);
             this.FrequencyResBox.TabIndex = 1;
             this.FrequencyResBox.WordWrap = false;
             this.FrequencyResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -6222,9 +6669,10 @@
             // DistributionPage
             // 
             this.DistributionPage.Controls.Add(this.groupBox5);
-            this.DistributionPage.Location = new System.Drawing.Point(4, 54);
+            this.DistributionPage.Location = new System.Drawing.Point(4, 79);
+            this.DistributionPage.Margin = new System.Windows.Forms.Padding(2);
             this.DistributionPage.Name = "DistributionPage";
-            this.DistributionPage.Size = new System.Drawing.Size(1419, 694);
+            this.DistributionPage.Size = new System.Drawing.Size(881, 406);
             this.DistributionPage.TabIndex = 4;
             this.DistributionPage.Text = "Distribution";
             this.DistributionPage.UseVisualStyleBackColor = true;
@@ -6234,8 +6682,10 @@
             this.groupBox5.Controls.Add(this.DistributionResBox);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox5.Size = new System.Drawing.Size(881, 406);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Double-reduction equilibrium test for phenotypic frequency";
@@ -6246,12 +6696,13 @@
             this.DistributionResBox.AcceptsTab = true;
             this.DistributionResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DistributionResBox.HideSelection = false;
-            this.DistributionResBox.Location = new System.Drawing.Point(3, 23);
+            this.DistributionResBox.Location = new System.Drawing.Point(2, 22);
+            this.DistributionResBox.Margin = new System.Windows.Forms.Padding(2);
             this.DistributionResBox.MaxLength = 32767000;
             this.DistributionResBox.Multiline = true;
             this.DistributionResBox.Name = "DistributionResBox";
             this.DistributionResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.DistributionResBox.Size = new System.Drawing.Size(1413, 668);
+            this.DistributionResBox.Size = new System.Drawing.Size(877, 382);
             this.DistributionResBox.TabIndex = 1;
             this.DistributionResBox.WordWrap = false;
             this.DistributionResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -6259,9 +6710,10 @@
             // LinkagePage
             // 
             this.LinkagePage.Controls.Add(this.groupBox19);
-            this.LinkagePage.Location = new System.Drawing.Point(4, 54);
+            this.LinkagePage.Location = new System.Drawing.Point(4, 79);
+            this.LinkagePage.Margin = new System.Windows.Forms.Padding(2);
             this.LinkagePage.Name = "LinkagePage";
-            this.LinkagePage.Size = new System.Drawing.Size(1419, 694);
+            this.LinkagePage.Size = new System.Drawing.Size(881, 406);
             this.LinkagePage.TabIndex = 11;
             this.LinkagePage.Text = "Linkage";
             this.LinkagePage.UseVisualStyleBackColor = true;
@@ -6271,8 +6723,10 @@
             this.groupBox19.Controls.Add(this.LinkageResBox);
             this.groupBox19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox19.Location = new System.Drawing.Point(0, 0);
+            this.groupBox19.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox19.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox19.Size = new System.Drawing.Size(881, 406);
             this.groupBox19.TabIndex = 2;
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "Linkage disequilibrium test";
@@ -6283,12 +6737,13 @@
             this.LinkageResBox.AcceptsTab = true;
             this.LinkageResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LinkageResBox.HideSelection = false;
-            this.LinkageResBox.Location = new System.Drawing.Point(3, 23);
+            this.LinkageResBox.Location = new System.Drawing.Point(2, 22);
+            this.LinkageResBox.Margin = new System.Windows.Forms.Padding(2);
             this.LinkageResBox.MaxLength = 32767000;
             this.LinkageResBox.Multiline = true;
             this.LinkageResBox.Name = "LinkageResBox";
             this.LinkageResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.LinkageResBox.Size = new System.Drawing.Size(1413, 668);
+            this.LinkageResBox.Size = new System.Drawing.Size(877, 382);
             this.LinkageResBox.TabIndex = 1;
             this.LinkageResBox.WordWrap = false;
             this.LinkageResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -6296,9 +6751,10 @@
             // NePage
             // 
             this.NePage.Controls.Add(this.groupBox56);
-            this.NePage.Location = new System.Drawing.Point(4, 54);
+            this.NePage.Location = new System.Drawing.Point(4, 79);
+            this.NePage.Margin = new System.Windows.Forms.Padding(2);
             this.NePage.Name = "NePage";
-            this.NePage.Size = new System.Drawing.Size(1419, 694);
+            this.NePage.Size = new System.Drawing.Size(881, 406);
             this.NePage.TabIndex = 18;
             this.NePage.Text = "Ne";
             this.NePage.UseVisualStyleBackColor = true;
@@ -6308,8 +6764,10 @@
             this.groupBox56.Controls.Add(this.NeResBox);
             this.groupBox56.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox56.Location = new System.Drawing.Point(0, 0);
+            this.groupBox56.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox56.Name = "groupBox56";
-            this.groupBox56.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox56.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox56.Size = new System.Drawing.Size(881, 406);
             this.groupBox56.TabIndex = 3;
             this.groupBox56.TabStop = false;
             this.groupBox56.Text = "Effective population size";
@@ -6320,21 +6778,23 @@
             this.NeResBox.AcceptsTab = true;
             this.NeResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NeResBox.HideSelection = false;
-            this.NeResBox.Location = new System.Drawing.Point(3, 23);
+            this.NeResBox.Location = new System.Drawing.Point(2, 22);
+            this.NeResBox.Margin = new System.Windows.Forms.Padding(2);
             this.NeResBox.MaxLength = 32767000;
             this.NeResBox.Multiline = true;
             this.NeResBox.Name = "NeResBox";
             this.NeResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.NeResBox.Size = new System.Drawing.Size(1413, 668);
+            this.NeResBox.Size = new System.Drawing.Size(877, 382);
             this.NeResBox.TabIndex = 1;
             this.NeResBox.WordWrap = false;
             // 
             // DiffPage
             // 
             this.DiffPage.Controls.Add(this.groupBox4);
-            this.DiffPage.Location = new System.Drawing.Point(4, 54);
+            this.DiffPage.Location = new System.Drawing.Point(4, 79);
+            this.DiffPage.Margin = new System.Windows.Forms.Padding(2);
             this.DiffPage.Name = "DiffPage";
-            this.DiffPage.Size = new System.Drawing.Size(1419, 694);
+            this.DiffPage.Size = new System.Drawing.Size(881, 406);
             this.DiffPage.TabIndex = 3;
             this.DiffPage.Text = "Differentiation";
             this.DiffPage.UseVisualStyleBackColor = true;
@@ -6344,8 +6804,10 @@
             this.groupBox4.Controls.Add(this.DiffResBox);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(881, 406);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Genetic differantation";
@@ -6356,12 +6818,13 @@
             this.DiffResBox.AcceptsTab = true;
             this.DiffResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DiffResBox.HideSelection = false;
-            this.DiffResBox.Location = new System.Drawing.Point(3, 23);
+            this.DiffResBox.Location = new System.Drawing.Point(2, 22);
+            this.DiffResBox.Margin = new System.Windows.Forms.Padding(2);
             this.DiffResBox.MaxLength = 32767000;
             this.DiffResBox.Multiline = true;
             this.DiffResBox.Name = "DiffResBox";
             this.DiffResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.DiffResBox.Size = new System.Drawing.Size(1413, 668);
+            this.DiffResBox.Size = new System.Drawing.Size(877, 382);
             this.DiffResBox.TabIndex = 1;
             this.DiffResBox.WordWrap = false;
             this.DiffResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -6369,9 +6832,10 @@
             // DistPage
             // 
             this.DistPage.Controls.Add(this.groupBox22);
-            this.DistPage.Location = new System.Drawing.Point(4, 54);
+            this.DistPage.Location = new System.Drawing.Point(4, 79);
+            this.DistPage.Margin = new System.Windows.Forms.Padding(2);
             this.DistPage.Name = "DistPage";
-            this.DistPage.Size = new System.Drawing.Size(1419, 694);
+            this.DistPage.Size = new System.Drawing.Size(881, 406);
             this.DistPage.TabIndex = 12;
             this.DistPage.Text = "Distance";
             this.DistPage.UseVisualStyleBackColor = true;
@@ -6381,8 +6845,10 @@
             this.groupBox22.Controls.Add(this.DistResBox);
             this.groupBox22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox22.Location = new System.Drawing.Point(0, 0);
+            this.groupBox22.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox22.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox22.Size = new System.Drawing.Size(881, 406);
             this.groupBox22.TabIndex = 3;
             this.groupBox22.TabStop = false;
             this.groupBox22.Text = "Genetic distance";
@@ -6393,12 +6859,13 @@
             this.DistResBox.AcceptsTab = true;
             this.DistResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DistResBox.HideSelection = false;
-            this.DistResBox.Location = new System.Drawing.Point(3, 23);
+            this.DistResBox.Location = new System.Drawing.Point(2, 22);
+            this.DistResBox.Margin = new System.Windows.Forms.Padding(2);
             this.DistResBox.MaxLength = 32767000;
             this.DistResBox.Multiline = true;
             this.DistResBox.Name = "DistResBox";
             this.DistResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.DistResBox.Size = new System.Drawing.Size(1413, 668);
+            this.DistResBox.Size = new System.Drawing.Size(877, 382);
             this.DistResBox.TabIndex = 1;
             this.DistResBox.WordWrap = false;
             this.DistResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -6407,8 +6874,9 @@
             // 
             this.OrdinationPage.Controls.Add(this.splitContainer15);
             this.OrdinationPage.Location = new System.Drawing.Point(4, 54);
+            this.OrdinationPage.Margin = new System.Windows.Forms.Padding(2);
             this.OrdinationPage.Name = "OrdinationPage";
-            this.OrdinationPage.Size = new System.Drawing.Size(1419, 694);
+            this.OrdinationPage.Size = new System.Drawing.Size(881, 437);
             this.OrdinationPage.TabIndex = 16;
             this.OrdinationPage.Text = "Ordination";
             this.OrdinationPage.UseVisualStyleBackColor = true;
@@ -6417,6 +6885,7 @@
             // 
             this.splitContainer15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer15.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer15.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer15.Name = "splitContainer15";
             // 
             // splitContainer15.Panel1
@@ -6426,8 +6895,8 @@
             // splitContainer15.Panel2
             // 
             this.splitContainer15.Panel2.Controls.Add(this.groupBox47);
-            this.splitContainer15.Size = new System.Drawing.Size(1419, 694);
-            this.splitContainer15.SplitterDistance = 1068;
+            this.splitContainer15.Size = new System.Drawing.Size(881, 437);
+            this.splitContainer15.SplitterDistance = 661;
             this.splitContainer15.SplitterWidth = 5;
             this.splitContainer15.TabIndex = 5;
             // 
@@ -6437,8 +6906,10 @@
             this.groupBox52.Controls.Add(this.OrdinationToolStrip);
             this.groupBox52.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox52.Location = new System.Drawing.Point(0, 0);
+            this.groupBox52.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox52.Name = "groupBox52";
-            this.groupBox52.Size = new System.Drawing.Size(1068, 694);
+            this.groupBox52.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox52.Size = new System.Drawing.Size(661, 437);
             this.groupBox52.TabIndex = 7;
             this.groupBox52.TabStop = false;
             this.groupBox52.Text = "Scatter plot preview";
@@ -6447,17 +6918,19 @@
             // 
             this.PCoAPanel.Controls.Add(this.OrdinationPicBox);
             this.PCoAPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PCoAPanel.Location = new System.Drawing.Point(3, 51);
+            this.PCoAPanel.Location = new System.Drawing.Point(2, 54);
+            this.PCoAPanel.Margin = new System.Windows.Forms.Padding(2);
             this.PCoAPanel.Name = "PCoAPanel";
-            this.PCoAPanel.Size = new System.Drawing.Size(1062, 640);
+            this.PCoAPanel.Size = new System.Drawing.Size(657, 381);
             this.PCoAPanel.TabIndex = 1;
             // 
             // OrdinationPicBox
             // 
             this.OrdinationPicBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OrdinationPicBox.Location = new System.Drawing.Point(0, 0);
+            this.OrdinationPicBox.Margin = new System.Windows.Forms.Padding(2);
             this.OrdinationPicBox.Name = "OrdinationPicBox";
-            this.OrdinationPicBox.Size = new System.Drawing.Size(1062, 640);
+            this.OrdinationPicBox.Size = new System.Drawing.Size(657, 381);
             this.OrdinationPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.OrdinationPicBox.TabIndex = 2;
             this.OrdinationPicBox.TabStop = false;
@@ -6483,9 +6956,10 @@
             this.OrdinationMarkerBox,
             this.toolStripLabel5,
             this.OrdinationAxesBox});
-            this.OrdinationToolStrip.Location = new System.Drawing.Point(3, 23);
+            this.OrdinationToolStrip.Location = new System.Drawing.Point(2, 22);
             this.OrdinationToolStrip.Name = "OrdinationToolStrip";
-            this.OrdinationToolStrip.Size = new System.Drawing.Size(1062, 28);
+            this.OrdinationToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.OrdinationToolStrip.Size = new System.Drawing.Size(657, 32);
             this.OrdinationToolStrip.TabIndex = 0;
             this.OrdinationToolStrip.Text = "toolStrip3";
             // 
@@ -6494,13 +6968,13 @@
             this.OrdinationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.OrdinationComboBox.DropDownWidth = 500;
             this.OrdinationComboBox.Name = "OrdinationComboBox";
-            this.OrdinationComboBox.Size = new System.Drawing.Size(300, 28);
+            this.OrdinationComboBox.Size = new System.Drawing.Size(300, 32);
             this.OrdinationComboBox.SelectedIndexChanged += new System.EventHandler(this.OrdinationComboBox_SelectedIndexChanged);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 28);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 32);
             // 
             // OrdinationPreviousButton
             // 
@@ -6508,7 +6982,7 @@
             this.OrdinationPreviousButton.Image = ((System.Drawing.Image)(resources.GetObject("OrdinationPreviousButton.Image")));
             this.OrdinationPreviousButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OrdinationPreviousButton.Name = "OrdinationPreviousButton";
-            this.OrdinationPreviousButton.Size = new System.Drawing.Size(75, 25);
+            this.OrdinationPreviousButton.Size = new System.Drawing.Size(75, 29);
             this.OrdinationPreviousButton.Text = "&Previous";
             this.OrdinationPreviousButton.Click += new System.EventHandler(this.ScrollPic);
             // 
@@ -6518,7 +6992,7 @@
             this.OrdinationNextButton.Image = ((System.Drawing.Image)(resources.GetObject("OrdinationNextButton.Image")));
             this.OrdinationNextButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OrdinationNextButton.Name = "OrdinationNextButton";
-            this.OrdinationNextButton.Size = new System.Drawing.Size(48, 25);
+            this.OrdinationNextButton.Size = new System.Drawing.Size(48, 29);
             this.OrdinationNextButton.Text = "&Next";
             this.OrdinationNextButton.Click += new System.EventHandler(this.ScrollPic);
             // 
@@ -6528,26 +7002,26 @@
             this.SaveOrdinationButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveOrdinationButton.Image")));
             this.SaveOrdinationButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveOrdinationButton.Name = "SaveOrdinationButton";
-            this.SaveOrdinationButton.Size = new System.Drawing.Size(47, 25);
+            this.SaveOrdinationButton.Size = new System.Drawing.Size(47, 29);
             this.SaveOrdinationButton.Text = "&Save";
             this.SaveOrdinationButton.Click += new System.EventHandler(this.SavePic);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 28);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 32);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(71, 25);
+            this.toolStripLabel1.Size = new System.Drawing.Size(71, 29);
             this.toolStripLabel1.Text = "FontSize";
             // 
             // OrdinationFontSizeBox
             // 
             this.OrdinationFontSizeBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.OrdinationFontSizeBox.Name = "OrdinationFontSizeBox";
-            this.OrdinationFontSizeBox.Size = new System.Drawing.Size(32, 28);
+            this.OrdinationFontSizeBox.Size = new System.Drawing.Size(26, 32);
             this.OrdinationFontSizeBox.Text = "12";
             this.OrdinationFontSizeBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ToolStripKeyDown);
             this.OrdinationFontSizeBox.TextChanged += new System.EventHandler(this.OrdinationFontSizeBox_TextChanged);
@@ -6555,7 +7029,7 @@
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(45, 25);
+            this.toolStripLabel2.Size = new System.Drawing.Size(45, 20);
             this.toolStripLabel2.Text = "Style";
             // 
             // OrdinationStyleBox
@@ -6567,20 +7041,20 @@
             "Marker + #",
             "Marker + ID"});
             this.OrdinationStyleBox.Name = "OrdinationStyleBox";
-            this.OrdinationStyleBox.Size = new System.Drawing.Size(112, 28);
+            this.OrdinationStyleBox.Size = new System.Drawing.Size(90, 28);
             this.OrdinationStyleBox.TextChanged += new System.EventHandler(this.OrdinationStyleBox_SelectedIndexChanged);
             // 
             // toolStripLabel8
             // 
             this.toolStripLabel8.Name = "toolStripLabel8";
-            this.toolStripLabel8.Size = new System.Drawing.Size(90, 25);
+            this.toolStripLabel8.Size = new System.Drawing.Size(90, 20);
             this.toolStripLabel8.Text = "MarkerSize";
             // 
             // OrdinationMarkerSizeBox
             // 
             this.OrdinationMarkerSizeBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.OrdinationMarkerSizeBox.Name = "OrdinationMarkerSizeBox";
-            this.OrdinationMarkerSizeBox.Size = new System.Drawing.Size(12, 28);
+            this.OrdinationMarkerSizeBox.Size = new System.Drawing.Size(26, 27);
             this.OrdinationMarkerSizeBox.Text = "10";
             this.OrdinationMarkerSizeBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ToolStripKeyDown);
             this.OrdinationMarkerSizeBox.TextChanged += new System.EventHandler(this.OrdinationMarkerSizeBox_TextChanged);
@@ -6588,28 +7062,28 @@
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(61, 25);
+            this.toolStripLabel3.Size = new System.Drawing.Size(61, 20);
             this.toolStripLabel3.Text = "Marker";
             // 
             // OrdinationMarkerBox
             // 
             this.OrdinationMarkerBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.OrdinationMarkerBox.Name = "OrdinationMarkerBox";
-            this.OrdinationMarkerBox.Size = new System.Drawing.Size(15, 28);
+            this.OrdinationMarkerBox.Size = new System.Drawing.Size(50, 27);
             this.OrdinationMarkerBox.Text = "+✕○●△▲□■⬠⬟⬡⬢";
             this.OrdinationMarkerBox.TextChanged += new System.EventHandler(this.OrdinationMarkerBox_TextChanged);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(44, 25);
+            this.toolStripLabel5.Size = new System.Drawing.Size(44, 20);
             this.toolStripLabel5.Text = "Axes";
             // 
             // OrdinationAxesBox
             // 
             this.OrdinationAxesBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.OrdinationAxesBox.Name = "OrdinationAxesBox";
-            this.OrdinationAxesBox.Size = new System.Drawing.Size(36, 28);
+            this.OrdinationAxesBox.Size = new System.Drawing.Size(30, 27);
             this.OrdinationAxesBox.Text = "1,2";
             this.OrdinationAxesBox.TextChanged += new System.EventHandler(this.OrdinationAxesBox_TextChanged);
             // 
@@ -6618,8 +7092,10 @@
             this.groupBox47.Controls.Add(this.OrdinationResBox);
             this.groupBox47.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox47.Location = new System.Drawing.Point(0, 0);
+            this.groupBox47.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox47.Name = "groupBox47";
-            this.groupBox47.Size = new System.Drawing.Size(346, 694);
+            this.groupBox47.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox47.Size = new System.Drawing.Size(215, 437);
             this.groupBox47.TabIndex = 4;
             this.groupBox47.TabStop = false;
             this.groupBox47.Text = "Ordination result details";
@@ -6630,12 +7106,13 @@
             this.OrdinationResBox.AcceptsTab = true;
             this.OrdinationResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OrdinationResBox.HideSelection = false;
-            this.OrdinationResBox.Location = new System.Drawing.Point(3, 23);
+            this.OrdinationResBox.Location = new System.Drawing.Point(2, 22);
+            this.OrdinationResBox.Margin = new System.Windows.Forms.Padding(2);
             this.OrdinationResBox.MaxLength = 32767000;
             this.OrdinationResBox.Multiline = true;
             this.OrdinationResBox.Name = "OrdinationResBox";
             this.OrdinationResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.OrdinationResBox.Size = new System.Drawing.Size(340, 668);
+            this.OrdinationResBox.Size = new System.Drawing.Size(211, 413);
             this.OrdinationResBox.TabIndex = 1;
             this.OrdinationResBox.WordWrap = false;
             this.OrdinationResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -6643,9 +7120,10 @@
             // ClusteringPage
             // 
             this.ClusteringPage.Controls.Add(this.splitContainer16);
-            this.ClusteringPage.Location = new System.Drawing.Point(4, 54);
+            this.ClusteringPage.Location = new System.Drawing.Point(4, 79);
+            this.ClusteringPage.Margin = new System.Windows.Forms.Padding(2);
             this.ClusteringPage.Name = "ClusteringPage";
-            this.ClusteringPage.Size = new System.Drawing.Size(1419, 694);
+            this.ClusteringPage.Size = new System.Drawing.Size(881, 406);
             this.ClusteringPage.TabIndex = 17;
             this.ClusteringPage.Text = "Clustering";
             this.ClusteringPage.UseVisualStyleBackColor = true;
@@ -6654,6 +7132,7 @@
             // 
             this.splitContainer16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer16.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer16.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer16.Name = "splitContainer16";
             // 
             // splitContainer16.Panel1
@@ -6663,8 +7142,8 @@
             // splitContainer16.Panel2
             // 
             this.splitContainer16.Panel2.Controls.Add(this.groupBox49);
-            this.splitContainer16.Size = new System.Drawing.Size(1419, 694);
-            this.splitContainer16.SplitterDistance = 650;
+            this.splitContainer16.Size = new System.Drawing.Size(881, 406);
+            this.splitContainer16.SplitterDistance = 402;
             this.splitContainer16.SplitterWidth = 5;
             this.splitContainer16.TabIndex = 6;
             // 
@@ -6674,8 +7153,10 @@
             this.groupBox51.Controls.Add(this.ClusteringToolStrip);
             this.groupBox51.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox51.Location = new System.Drawing.Point(0, 0);
+            this.groupBox51.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox51.Name = "groupBox51";
-            this.groupBox51.Size = new System.Drawing.Size(650, 694);
+            this.groupBox51.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox51.Size = new System.Drawing.Size(402, 406);
             this.groupBox51.TabIndex = 6;
             this.groupBox51.TabStop = false;
             this.groupBox51.Text = "Tree preview";
@@ -6686,17 +7167,19 @@
             this.ClusteringPanel.AutoSize = true;
             this.ClusteringPanel.Controls.Add(this.ClusteringPicBox);
             this.ClusteringPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ClusteringPanel.Location = new System.Drawing.Point(3, 52);
+            this.ClusteringPanel.Location = new System.Drawing.Point(2, 51);
+            this.ClusteringPanel.Margin = new System.Windows.Forms.Padding(2);
             this.ClusteringPanel.Name = "ClusteringPanel";
-            this.ClusteringPanel.Size = new System.Drawing.Size(644, 639);
+            this.ClusteringPanel.Size = new System.Drawing.Size(398, 353);
             this.ClusteringPanel.TabIndex = 1;
             // 
             // ClusteringPicBox
             // 
             this.ClusteringPicBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.ClusteringPicBox.Location = new System.Drawing.Point(0, 0);
+            this.ClusteringPicBox.Margin = new System.Windows.Forms.Padding(2);
             this.ClusteringPicBox.Name = "ClusteringPicBox";
-            this.ClusteringPicBox.Size = new System.Drawing.Size(644, 617);
+            this.ClusteringPicBox.Size = new System.Drawing.Size(377, 618);
             this.ClusteringPicBox.TabIndex = 3;
             this.ClusteringPicBox.TabStop = false;
             this.ClusteringPicBox.SizeChanged += new System.EventHandler(this.ClusteringComboBox_SelectedIndexChanged);
@@ -6715,9 +7198,10 @@
             this.ClusteringFontSizeBox,
             this.toolStripLabel14,
             this.ClusteringLineSepBox});
-            this.ClusteringToolStrip.Location = new System.Drawing.Point(3, 23);
+            this.ClusteringToolStrip.Location = new System.Drawing.Point(2, 22);
             this.ClusteringToolStrip.Name = "ClusteringToolStrip";
-            this.ClusteringToolStrip.Size = new System.Drawing.Size(644, 29);
+            this.ClusteringToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.ClusteringToolStrip.Size = new System.Drawing.Size(398, 29);
             this.ClusteringToolStrip.TabIndex = 0;
             this.ClusteringToolStrip.Text = "toolStrip2";
             // 
@@ -6739,7 +7223,7 @@
             this.ClusteringPreviousButton.Image = ((System.Drawing.Image)(resources.GetObject("ClusteringPreviousButton.Image")));
             this.ClusteringPreviousButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ClusteringPreviousButton.Name = "ClusteringPreviousButton";
-            this.ClusteringPreviousButton.Size = new System.Drawing.Size(75, 26);
+            this.ClusteringPreviousButton.Size = new System.Drawing.Size(75, 24);
             this.ClusteringPreviousButton.Text = "&Previous";
             this.ClusteringPreviousButton.Click += new System.EventHandler(this.ScrollPic);
             // 
@@ -6749,7 +7233,7 @@
             this.ClusteringNextButton.Image = ((System.Drawing.Image)(resources.GetObject("ClusteringNextButton.Image")));
             this.ClusteringNextButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ClusteringNextButton.Name = "ClusteringNextButton";
-            this.ClusteringNextButton.Size = new System.Drawing.Size(48, 26);
+            this.ClusteringNextButton.Size = new System.Drawing.Size(48, 24);
             this.ClusteringNextButton.Text = "&Next";
             this.ClusteringNextButton.Click += new System.EventHandler(this.ScrollPic);
             // 
@@ -6759,26 +7243,26 @@
             this.SaveClusteringButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveClusteringButton.Image")));
             this.SaveClusteringButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveClusteringButton.Name = "SaveClusteringButton";
-            this.SaveClusteringButton.Size = new System.Drawing.Size(47, 26);
+            this.SaveClusteringButton.Size = new System.Drawing.Size(47, 24);
             this.SaveClusteringButton.Text = "&Save";
             this.SaveClusteringButton.Click += new System.EventHandler(this.SavePic);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 29);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripLabel15
             // 
             this.toolStripLabel15.Name = "toolStripLabel15";
-            this.toolStripLabel15.Size = new System.Drawing.Size(71, 26);
+            this.toolStripLabel15.Size = new System.Drawing.Size(71, 20);
             this.toolStripLabel15.Text = "FontSize";
             // 
             // ClusteringFontSizeBox
             // 
             this.ClusteringFontSizeBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.ClusteringFontSizeBox.Name = "ClusteringFontSizeBox";
-            this.ClusteringFontSizeBox.Size = new System.Drawing.Size(6, 29);
+            this.ClusteringFontSizeBox.Size = new System.Drawing.Size(5, 27);
             this.ClusteringFontSizeBox.Text = "12";
             this.ClusteringFontSizeBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ToolStripKeyDown);
             this.ClusteringFontSizeBox.TextChanged += new System.EventHandler(this.ClusteringFontSizeBox_TextChanged);
@@ -6793,7 +7277,7 @@
             // 
             this.ClusteringLineSepBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.ClusteringLineSepBox.Name = "ClusteringLineSepBox";
-            this.ClusteringLineSepBox.Size = new System.Drawing.Size(6, 27);
+            this.ClusteringLineSepBox.Size = new System.Drawing.Size(5, 27);
             this.ClusteringLineSepBox.Text = "12";
             this.ClusteringLineSepBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ToolStripKeyDown);
             this.ClusteringLineSepBox.TextChanged += new System.EventHandler(this.ClusteringLineSepBox_TextChanged);
@@ -6803,8 +7287,10 @@
             this.groupBox49.Controls.Add(this.ClusteringResBox);
             this.groupBox49.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox49.Location = new System.Drawing.Point(0, 0);
+            this.groupBox49.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox49.Name = "groupBox49";
-            this.groupBox49.Size = new System.Drawing.Size(764, 694);
+            this.groupBox49.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox49.Size = new System.Drawing.Size(474, 406);
             this.groupBox49.TabIndex = 5;
             this.groupBox49.TabStop = false;
             this.groupBox49.Text = "Hierarchical clustering";
@@ -6815,12 +7301,13 @@
             this.ClusteringResBox.AcceptsTab = true;
             this.ClusteringResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ClusteringResBox.HideSelection = false;
-            this.ClusteringResBox.Location = new System.Drawing.Point(3, 23);
+            this.ClusteringResBox.Location = new System.Drawing.Point(2, 22);
+            this.ClusteringResBox.Margin = new System.Windows.Forms.Padding(2);
             this.ClusteringResBox.MaxLength = 32767000;
             this.ClusteringResBox.Multiline = true;
             this.ClusteringResBox.Name = "ClusteringResBox";
             this.ClusteringResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ClusteringResBox.Size = new System.Drawing.Size(758, 668);
+            this.ClusteringResBox.Size = new System.Drawing.Size(470, 382);
             this.ClusteringResBox.TabIndex = 1;
             this.ClusteringResBox.WordWrap = false;
             this.ClusteringResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -6828,9 +7315,10 @@
             // InbreedingPage
             // 
             this.InbreedingPage.Controls.Add(this.groupBox2);
-            this.InbreedingPage.Location = new System.Drawing.Point(4, 54);
+            this.InbreedingPage.Location = new System.Drawing.Point(4, 79);
+            this.InbreedingPage.Margin = new System.Windows.Forms.Padding(2);
             this.InbreedingPage.Name = "InbreedingPage";
-            this.InbreedingPage.Size = new System.Drawing.Size(1419, 694);
+            this.InbreedingPage.Size = new System.Drawing.Size(881, 406);
             this.InbreedingPage.TabIndex = 5;
             this.InbreedingPage.Text = "Inbreeding";
             this.InbreedingPage.UseVisualStyleBackColor = true;
@@ -6840,8 +7328,10 @@
             this.groupBox2.Controls.Add(this.InbreedingResBox);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(881, 406);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Individual inbreeding coefficient";
@@ -6852,12 +7342,13 @@
             this.InbreedingResBox.AcceptsTab = true;
             this.InbreedingResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.InbreedingResBox.HideSelection = false;
-            this.InbreedingResBox.Location = new System.Drawing.Point(3, 23);
+            this.InbreedingResBox.Location = new System.Drawing.Point(2, 22);
+            this.InbreedingResBox.Margin = new System.Windows.Forms.Padding(2);
             this.InbreedingResBox.MaxLength = 32767000;
             this.InbreedingResBox.Multiline = true;
             this.InbreedingResBox.Name = "InbreedingResBox";
             this.InbreedingResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.InbreedingResBox.Size = new System.Drawing.Size(1413, 668);
+            this.InbreedingResBox.Size = new System.Drawing.Size(877, 382);
             this.InbreedingResBox.TabIndex = 1;
             this.InbreedingResBox.WordWrap = false;
             this.InbreedingResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -6865,9 +7356,10 @@
             // HIndexPage
             // 
             this.HIndexPage.Controls.Add(this.groupBox11);
-            this.HIndexPage.Location = new System.Drawing.Point(4, 54);
+            this.HIndexPage.Location = new System.Drawing.Point(4, 79);
+            this.HIndexPage.Margin = new System.Windows.Forms.Padding(2);
             this.HIndexPage.Name = "HIndexPage";
-            this.HIndexPage.Size = new System.Drawing.Size(1419, 694);
+            this.HIndexPage.Size = new System.Drawing.Size(881, 406);
             this.HIndexPage.TabIndex = 7;
             this.HIndexPage.Text = "H-Index";
             this.HIndexPage.UseVisualStyleBackColor = true;
@@ -6877,8 +7369,10 @@
             this.groupBox11.Controls.Add(this.HIndexResBox);
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox11.Location = new System.Drawing.Point(0, 0);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox11.Size = new System.Drawing.Size(881, 406);
             this.groupBox11.TabIndex = 5;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Individual hetrozygosity";
@@ -6889,12 +7383,13 @@
             this.HIndexResBox.AcceptsTab = true;
             this.HIndexResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HIndexResBox.HideSelection = false;
-            this.HIndexResBox.Location = new System.Drawing.Point(3, 23);
+            this.HIndexResBox.Location = new System.Drawing.Point(2, 22);
+            this.HIndexResBox.Margin = new System.Windows.Forms.Padding(2);
             this.HIndexResBox.MaxLength = 32767000;
             this.HIndexResBox.Multiline = true;
             this.HIndexResBox.Name = "HIndexResBox";
             this.HIndexResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.HIndexResBox.Size = new System.Drawing.Size(1413, 668);
+            this.HIndexResBox.Size = new System.Drawing.Size(877, 382);
             this.HIndexResBox.TabIndex = 1;
             this.HIndexResBox.WordWrap = false;
             this.HIndexResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -6902,9 +7397,10 @@
             // AssignmentPage
             // 
             this.AssignmentPage.Controls.Add(this.groupBox12);
-            this.AssignmentPage.Location = new System.Drawing.Point(4, 54);
+            this.AssignmentPage.Location = new System.Drawing.Point(4, 79);
+            this.AssignmentPage.Margin = new System.Windows.Forms.Padding(2);
             this.AssignmentPage.Name = "AssignmentPage";
-            this.AssignmentPage.Size = new System.Drawing.Size(1419, 694);
+            this.AssignmentPage.Size = new System.Drawing.Size(881, 406);
             this.AssignmentPage.TabIndex = 9;
             this.AssignmentPage.Text = "Assignment";
             this.AssignmentPage.UseVisualStyleBackColor = true;
@@ -6914,8 +7410,10 @@
             this.groupBox12.Controls.Add(this.AssignmentResBox);
             this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox12.Location = new System.Drawing.Point(0, 0);
+            this.groupBox12.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox12.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox12.Size = new System.Drawing.Size(881, 406);
             this.groupBox12.TabIndex = 6;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Population assignment";
@@ -6926,12 +7424,13 @@
             this.AssignmentResBox.AcceptsTab = true;
             this.AssignmentResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AssignmentResBox.HideSelection = false;
-            this.AssignmentResBox.Location = new System.Drawing.Point(3, 23);
+            this.AssignmentResBox.Location = new System.Drawing.Point(2, 22);
+            this.AssignmentResBox.Margin = new System.Windows.Forms.Padding(2);
             this.AssignmentResBox.MaxLength = 32767000;
             this.AssignmentResBox.Multiline = true;
             this.AssignmentResBox.Name = "AssignmentResBox";
             this.AssignmentResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.AssignmentResBox.Size = new System.Drawing.Size(1413, 668);
+            this.AssignmentResBox.Size = new System.Drawing.Size(877, 382);
             this.AssignmentResBox.TabIndex = 1;
             this.AssignmentResBox.WordWrap = false;
             this.AssignmentResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -6939,9 +7438,10 @@
             // SpatialPage
             // 
             this.SpatialPage.Controls.Add(this.groupBox59);
-            this.SpatialPage.Location = new System.Drawing.Point(4, 54);
+            this.SpatialPage.Location = new System.Drawing.Point(4, 79);
+            this.SpatialPage.Margin = new System.Windows.Forms.Padding(2);
             this.SpatialPage.Name = "SpatialPage";
-            this.SpatialPage.Size = new System.Drawing.Size(1419, 694);
+            this.SpatialPage.Size = new System.Drawing.Size(881, 406);
             this.SpatialPage.TabIndex = 19;
             this.SpatialPage.Text = "Spatial";
             this.SpatialPage.UseVisualStyleBackColor = true;
@@ -6951,8 +7451,10 @@
             this.groupBox59.Controls.Add(this.SpatialResBox);
             this.groupBox59.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox59.Location = new System.Drawing.Point(0, 0);
+            this.groupBox59.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox59.Name = "groupBox59";
-            this.groupBox59.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox59.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox59.Size = new System.Drawing.Size(881, 406);
             this.groupBox59.TabIndex = 8;
             this.groupBox59.TabStop = false;
             this.groupBox59.Text = "Spatial pattern analysis";
@@ -6963,21 +7465,23 @@
             this.SpatialResBox.AcceptsTab = true;
             this.SpatialResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SpatialResBox.HideSelection = false;
-            this.SpatialResBox.Location = new System.Drawing.Point(3, 23);
+            this.SpatialResBox.Location = new System.Drawing.Point(2, 22);
+            this.SpatialResBox.Margin = new System.Windows.Forms.Padding(2);
             this.SpatialResBox.MaxLength = 32767000;
             this.SpatialResBox.Multiline = true;
             this.SpatialResBox.Name = "SpatialResBox";
             this.SpatialResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.SpatialResBox.Size = new System.Drawing.Size(1413, 668);
+            this.SpatialResBox.Size = new System.Drawing.Size(877, 382);
             this.SpatialResBox.TabIndex = 1;
             this.SpatialResBox.WordWrap = false;
             // 
             // RelationshipPage
             // 
             this.RelationshipPage.Controls.Add(this.groupBox17);
-            this.RelationshipPage.Location = new System.Drawing.Point(4, 54);
+            this.RelationshipPage.Location = new System.Drawing.Point(4, 79);
+            this.RelationshipPage.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipPage.Name = "RelationshipPage";
-            this.RelationshipPage.Size = new System.Drawing.Size(1419, 694);
+            this.RelationshipPage.Size = new System.Drawing.Size(881, 406);
             this.RelationshipPage.TabIndex = 10;
             this.RelationshipPage.Text = "Relationship";
             this.RelationshipPage.UseVisualStyleBackColor = true;
@@ -6987,8 +7491,10 @@
             this.groupBox17.Controls.Add(this.RelationshipResBox);
             this.groupBox17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox17.Location = new System.Drawing.Point(0, 0);
+            this.groupBox17.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox17.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox17.Size = new System.Drawing.Size(881, 406);
             this.groupBox17.TabIndex = 7;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Pairwise relatedness/kinship coefficient";
@@ -6999,12 +7505,13 @@
             this.RelationshipResBox.AcceptsTab = true;
             this.RelationshipResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RelationshipResBox.HideSelection = false;
-            this.RelationshipResBox.Location = new System.Drawing.Point(3, 23);
+            this.RelationshipResBox.Location = new System.Drawing.Point(2, 22);
+            this.RelationshipResBox.Margin = new System.Windows.Forms.Padding(2);
             this.RelationshipResBox.MaxLength = 32767000;
             this.RelationshipResBox.Multiline = true;
             this.RelationshipResBox.Name = "RelationshipResBox";
             this.RelationshipResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.RelationshipResBox.Size = new System.Drawing.Size(1413, 668);
+            this.RelationshipResBox.Size = new System.Drawing.Size(877, 382);
             this.RelationshipResBox.TabIndex = 1;
             this.RelationshipResBox.WordWrap = false;
             this.RelationshipResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -7012,10 +7519,10 @@
             // HeritabilityPage
             // 
             this.HeritabilityPage.Controls.Add(this.groupBox60);
-            this.HeritabilityPage.Location = new System.Drawing.Point(4, 54);
+            this.HeritabilityPage.Location = new System.Drawing.Point(4, 79);
             this.HeritabilityPage.Margin = new System.Windows.Forms.Padding(2);
             this.HeritabilityPage.Name = "HeritabilityPage";
-            this.HeritabilityPage.Size = new System.Drawing.Size(1419, 694);
+            this.HeritabilityPage.Size = new System.Drawing.Size(881, 406);
             this.HeritabilityPage.TabIndex = 20;
             this.HeritabilityPage.Text = "Heritability";
             this.HeritabilityPage.UseVisualStyleBackColor = true;
@@ -7025,8 +7532,10 @@
             this.groupBox60.Controls.Add(this.HeritabilityResBox);
             this.groupBox60.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox60.Location = new System.Drawing.Point(0, 0);
+            this.groupBox60.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox60.Name = "groupBox60";
-            this.groupBox60.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox60.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox60.Size = new System.Drawing.Size(881, 406);
             this.groupBox60.TabIndex = 8;
             this.groupBox60.TabStop = false;
             this.groupBox60.Text = "Heritability";
@@ -7037,23 +7546,24 @@
             this.HeritabilityResBox.AcceptsTab = true;
             this.HeritabilityResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HeritabilityResBox.HideSelection = false;
-            this.HeritabilityResBox.Location = new System.Drawing.Point(3, 23);
+            this.HeritabilityResBox.Location = new System.Drawing.Point(2, 22);
+            this.HeritabilityResBox.Margin = new System.Windows.Forms.Padding(2);
             this.HeritabilityResBox.MaxLength = 32767000;
             this.HeritabilityResBox.Multiline = true;
             this.HeritabilityResBox.Name = "HeritabilityResBox";
             this.HeritabilityResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.HeritabilityResBox.Size = new System.Drawing.Size(1413, 668);
+            this.HeritabilityResBox.Size = new System.Drawing.Size(877, 382);
             this.HeritabilityResBox.TabIndex = 1;
             this.HeritabilityResBox.WordWrap = false;
             // 
             // QstPage
             // 
             this.QstPage.Controls.Add(this.groupBox18);
-            this.QstPage.Location = new System.Drawing.Point(4, 54);
+            this.QstPage.Location = new System.Drawing.Point(4, 79);
             this.QstPage.Margin = new System.Windows.Forms.Padding(2);
             this.QstPage.Name = "QstPage";
             this.QstPage.Padding = new System.Windows.Forms.Padding(2);
-            this.QstPage.Size = new System.Drawing.Size(1419, 694);
+            this.QstPage.Size = new System.Drawing.Size(881, 406);
             this.QstPage.TabIndex = 22;
             this.QstPage.Text = "Qst";
             this.QstPage.UseVisualStyleBackColor = true;
@@ -7063,8 +7573,10 @@
             this.groupBox18.Controls.Add(this.QstResBox);
             this.groupBox18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox18.Location = new System.Drawing.Point(2, 2);
+            this.groupBox18.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(1415, 690);
+            this.groupBox18.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox18.Size = new System.Drawing.Size(877, 402);
             this.groupBox18.TabIndex = 9;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Qst";
@@ -7075,21 +7587,23 @@
             this.QstResBox.AcceptsTab = true;
             this.QstResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.QstResBox.HideSelection = false;
-            this.QstResBox.Location = new System.Drawing.Point(3, 23);
+            this.QstResBox.Location = new System.Drawing.Point(2, 22);
+            this.QstResBox.Margin = new System.Windows.Forms.Padding(2);
             this.QstResBox.MaxLength = 32767000;
             this.QstResBox.Multiline = true;
             this.QstResBox.Name = "QstResBox";
             this.QstResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.QstResBox.Size = new System.Drawing.Size(1409, 664);
+            this.QstResBox.Size = new System.Drawing.Size(873, 378);
             this.QstResBox.TabIndex = 1;
             this.QstResBox.WordWrap = false;
             // 
             // ParentagePage
             // 
             this.ParentagePage.Controls.Add(this.tabControl2);
-            this.ParentagePage.Location = new System.Drawing.Point(4, 54);
+            this.ParentagePage.Location = new System.Drawing.Point(4, 79);
+            this.ParentagePage.Margin = new System.Windows.Forms.Padding(2);
             this.ParentagePage.Name = "ParentagePage";
-            this.ParentagePage.Size = new System.Drawing.Size(1419, 694);
+            this.ParentagePage.Size = new System.Drawing.Size(881, 406);
             this.ParentagePage.TabIndex = 15;
             this.ParentagePage.Text = "Parentage";
             this.ParentagePage.UseVisualStyleBackColor = true;
@@ -7104,17 +7618,19 @@
             this.tabControl2.Controls.Add(this.tabPage24);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1419, 694);
+            this.tabControl2.Size = new System.Drawing.Size(881, 406);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage20
             // 
             this.tabPage20.Controls.Add(this.splitContainer12);
             this.tabPage20.Location = new System.Drawing.Point(4, 29);
+            this.tabPage20.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage20.Name = "tabPage20";
-            this.tabPage20.Size = new System.Drawing.Size(1411, 661);
+            this.tabPage20.Size = new System.Drawing.Size(873, 373);
             this.tabPage20.TabIndex = 3;
             this.tabPage20.Text = "Simulation";
             this.tabPage20.UseVisualStyleBackColor = true;
@@ -7124,6 +7640,7 @@
             this.splitContainer12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer12.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer12.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer12.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer12.Name = "splitContainer12";
             // 
             // splitContainer12.Panel1
@@ -7133,7 +7650,7 @@
             // splitContainer12.Panel2
             // 
             this.splitContainer12.Panel2.Controls.Add(this.groupBox46);
-            this.splitContainer12.Size = new System.Drawing.Size(1411, 661);
+            this.splitContainer12.Size = new System.Drawing.Size(873, 373);
             this.splitContainer12.SplitterDistance = 365;
             this.splitContainer12.SplitterWidth = 5;
             this.splitContainer12.TabIndex = 1;
@@ -7177,8 +7694,10 @@
             this.groupBox45.Controls.Add(this.label64);
             this.groupBox45.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox45.Location = new System.Drawing.Point(0, 0);
+            this.groupBox45.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox45.Name = "groupBox45";
-            this.groupBox45.Size = new System.Drawing.Size(365, 661);
+            this.groupBox45.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox45.Size = new System.Drawing.Size(365, 373);
             this.groupBox45.TabIndex = 1;
             this.groupBox45.TabStop = false;
             this.groupBox45.Text = "Critical values of Delta";
@@ -7191,14 +7710,15 @@
             0,
             0,
             131072});
-            this.DPU_80.Location = new System.Drawing.Point(327, 410);
+            this.DPU_80.Location = new System.Drawing.Point(328, 410);
+            this.DPU_80.Margin = new System.Windows.Forms.Padding(2);
             this.DPU_80.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPU_80.Name = "DPU_80";
-            this.DPU_80.Size = new System.Drawing.Size(77, 27);
+            this.DPU_80.Size = new System.Drawing.Size(78, 27);
             this.DPU_80.TabIndex = 9;
             this.DPU_80.ValueChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -7210,14 +7730,15 @@
             0,
             0,
             131072});
-            this.DP_80.Location = new System.Drawing.Point(327, 343);
+            this.DP_80.Location = new System.Drawing.Point(328, 342);
+            this.DP_80.Margin = new System.Windows.Forms.Padding(2);
             this.DP_80.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DP_80.Name = "DP_80";
-            this.DP_80.Size = new System.Drawing.Size(77, 27);
+            this.DP_80.Size = new System.Drawing.Size(78, 27);
             this.DP_80.TabIndex = 11;
             this.DP_80.ValueChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -7229,14 +7750,15 @@
             0,
             0,
             131072});
-            this.DPF_80.Location = new System.Drawing.Point(327, 278);
+            this.DPF_80.Location = new System.Drawing.Point(328, 278);
+            this.DPF_80.Margin = new System.Windows.Forms.Padding(2);
             this.DPF_80.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPF_80.Name = "DPF_80";
-            this.DPF_80.Size = new System.Drawing.Size(77, 27);
+            this.DPF_80.Size = new System.Drawing.Size(78, 27);
             this.DPF_80.TabIndex = 22;
             this.DPF_80.ValueChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -7249,13 +7771,14 @@
             0,
             131072});
             this.DPF_95.Location = new System.Drawing.Point(228, 278);
+            this.DPF_95.Margin = new System.Windows.Forms.Padding(2);
             this.DPF_95.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPF_95.Name = "DPF_95";
-            this.DPF_95.Size = new System.Drawing.Size(77, 27);
+            this.DPF_95.Size = new System.Drawing.Size(78, 27);
             this.DPF_95.TabIndex = 2;
             this.DPF_95.Value = new decimal(new int[] {
             27433,
@@ -7272,14 +7795,15 @@
             0,
             0,
             131072});
-            this.DP_95.Location = new System.Drawing.Point(228, 343);
+            this.DP_95.Location = new System.Drawing.Point(228, 342);
+            this.DP_95.Margin = new System.Windows.Forms.Padding(2);
             this.DP_95.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DP_95.Name = "DP_95";
-            this.DP_95.Size = new System.Drawing.Size(77, 27);
+            this.DP_95.Size = new System.Drawing.Size(78, 27);
             this.DP_95.TabIndex = 13;
             this.DP_95.Value = new decimal(new int[] {
             2,
@@ -7297,13 +7821,14 @@
             0,
             131072});
             this.DPU_95.Location = new System.Drawing.Point(228, 410);
+            this.DPU_95.Margin = new System.Windows.Forms.Padding(2);
             this.DPU_95.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPU_95.Name = "DPU_95";
-            this.DPU_95.Size = new System.Drawing.Size(77, 27);
+            this.DPU_95.Size = new System.Drawing.Size(78, 27);
             this.DPU_95.TabIndex = 5;
             this.DPU_95.Value = new decimal(new int[] {
             2,
@@ -7321,13 +7846,14 @@
             0,
             131072});
             this.DPF_99.Location = new System.Drawing.Point(125, 278);
+            this.DPF_99.Margin = new System.Windows.Forms.Padding(2);
             this.DPF_99.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPF_99.Name = "DPF_99";
-            this.DPF_99.Size = new System.Drawing.Size(77, 27);
+            this.DPF_99.Size = new System.Drawing.Size(78, 27);
             this.DPF_99.TabIndex = 12;
             this.DPF_99.Value = new decimal(new int[] {
             27433,
@@ -7344,14 +7870,15 @@
             0,
             0,
             131072});
-            this.DP_99.Location = new System.Drawing.Point(125, 343);
+            this.DP_99.Location = new System.Drawing.Point(125, 342);
+            this.DP_99.Margin = new System.Windows.Forms.Padding(2);
             this.DP_99.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DP_99.Name = "DP_99";
-            this.DP_99.Size = new System.Drawing.Size(77, 27);
+            this.DP_99.Size = new System.Drawing.Size(78, 27);
             this.DP_99.TabIndex = 3;
             this.DP_99.Value = new decimal(new int[] {
             2,
@@ -7369,13 +7896,14 @@
             0,
             131072});
             this.DPU_99.Location = new System.Drawing.Point(125, 410);
+            this.DPU_99.Margin = new System.Windows.Forms.Padding(2);
             this.DPU_99.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPU_99.Name = "DPU_99";
-            this.DPU_99.Size = new System.Drawing.Size(77, 27);
+            this.DPU_99.Size = new System.Drawing.Size(78, 27);
             this.DPU_99.TabIndex = 15;
             this.DPU_99.Value = new decimal(new int[] {
             2,
@@ -7392,14 +7920,15 @@
             0,
             0,
             131072});
-            this.DPF_999.Location = new System.Drawing.Point(23, 278);
+            this.DPF_999.Location = new System.Drawing.Point(22, 278);
+            this.DPF_999.Margin = new System.Windows.Forms.Padding(2);
             this.DPF_999.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPF_999.Name = "DPF_999";
-            this.DPF_999.Size = new System.Drawing.Size(77, 27);
+            this.DPF_999.Size = new System.Drawing.Size(78, 27);
             this.DPF_999.TabIndex = 10;
             this.DPF_999.Value = new decimal(new int[] {
             27433,
@@ -7416,14 +7945,15 @@
             0,
             0,
             131072});
-            this.DPU_999.Location = new System.Drawing.Point(23, 410);
+            this.DPU_999.Location = new System.Drawing.Point(22, 410);
+            this.DPU_999.Margin = new System.Windows.Forms.Padding(2);
             this.DPU_999.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPU_999.Name = "DPU_999";
-            this.DPU_999.Size = new System.Drawing.Size(77, 27);
+            this.DPU_999.Size = new System.Drawing.Size(78, 27);
             this.DPU_999.TabIndex = 7;
             this.DPU_999.Value = new decimal(new int[] {
             2,
@@ -7440,14 +7970,15 @@
             0,
             0,
             131072});
-            this.DP_999.Location = new System.Drawing.Point(23, 343);
+            this.DP_999.Location = new System.Drawing.Point(22, 342);
+            this.DP_999.Margin = new System.Windows.Forms.Padding(2);
             this.DP_999.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DP_999.Name = "DP_999";
-            this.DP_999.Size = new System.Drawing.Size(77, 27);
+            this.DP_999.Size = new System.Drawing.Size(78, 27);
             this.DP_999.TabIndex = 23;
             this.DP_999.Value = new decimal(new int[] {
             2,
@@ -7464,14 +7995,15 @@
             0,
             0,
             131072});
-            this.D2_80.Location = new System.Drawing.Point(327, 147);
+            this.D2_80.Location = new System.Drawing.Point(328, 148);
+            this.D2_80.Margin = new System.Windows.Forms.Padding(2);
             this.D2_80.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.D2_80.Name = "D2_80";
-            this.D2_80.Size = new System.Drawing.Size(77, 27);
+            this.D2_80.Size = new System.Drawing.Size(78, 27);
             this.D2_80.TabIndex = 20;
             this.D2_80.ValueChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -7483,14 +8015,15 @@
             0,
             0,
             131072});
-            this.DPM_80.Location = new System.Drawing.Point(328, 213);
+            this.DPM_80.Location = new System.Drawing.Point(328, 212);
+            this.DPM_80.Margin = new System.Windows.Forms.Padding(2);
             this.DPM_80.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPM_80.Name = "DPM_80";
-            this.DPM_80.Size = new System.Drawing.Size(77, 27);
+            this.DPM_80.Size = new System.Drawing.Size(78, 27);
             this.DPM_80.TabIndex = 24;
             this.DPM_80.ValueChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -7502,14 +8035,15 @@
             0,
             0,
             131072});
-            this.D1_80.Location = new System.Drawing.Point(327, 80);
+            this.D1_80.Location = new System.Drawing.Point(328, 80);
+            this.D1_80.Margin = new System.Windows.Forms.Padding(2);
             this.D1_80.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.D1_80.Name = "D1_80";
-            this.D1_80.Size = new System.Drawing.Size(77, 27);
+            this.D1_80.Size = new System.Drawing.Size(78, 27);
             this.D1_80.TabIndex = 18;
             this.D1_80.ValueChanged += new System.EventHandler(this.PreSaveSettings);
             // 
@@ -7521,14 +8055,15 @@
             0,
             0,
             131072});
-            this.D2_95.Location = new System.Drawing.Point(228, 147);
+            this.D2_95.Location = new System.Drawing.Point(228, 148);
+            this.D2_95.Margin = new System.Windows.Forms.Padding(2);
             this.D2_95.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.D2_95.Name = "D2_95";
-            this.D2_95.Size = new System.Drawing.Size(77, 27);
+            this.D2_95.Size = new System.Drawing.Size(78, 27);
             this.D2_95.TabIndex = 19;
             this.D2_95.Value = new decimal(new int[] {
             17823,
@@ -7546,13 +8081,14 @@
             0,
             131072});
             this.D1_95.Location = new System.Drawing.Point(228, 80);
+            this.D1_95.Margin = new System.Windows.Forms.Padding(2);
             this.D1_95.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.D1_95.Name = "D1_95";
-            this.D1_95.Size = new System.Drawing.Size(77, 27);
+            this.D1_95.Size = new System.Drawing.Size(78, 27);
             this.D1_95.TabIndex = 25;
             this.D1_95.Value = new decimal(new int[] {
             27433,
@@ -7569,14 +8105,15 @@
             0,
             0,
             131072});
-            this.DPM_95.Location = new System.Drawing.Point(228, 213);
+            this.DPM_95.Location = new System.Drawing.Point(228, 212);
+            this.DPM_95.Margin = new System.Windows.Forms.Padding(2);
             this.DPM_95.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPM_95.Name = "DPM_95";
-            this.DPM_95.Size = new System.Drawing.Size(77, 27);
+            this.DPM_95.Size = new System.Drawing.Size(78, 27);
             this.DPM_95.TabIndex = 14;
             this.DPM_95.Value = new decimal(new int[] {
             27433,
@@ -7593,14 +8130,15 @@
             0,
             0,
             131072});
-            this.D2_99.Location = new System.Drawing.Point(125, 147);
+            this.D2_99.Location = new System.Drawing.Point(125, 148);
+            this.D2_99.Margin = new System.Windows.Forms.Padding(2);
             this.D2_99.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.D2_99.Name = "D2_99";
-            this.D2_99.Size = new System.Drawing.Size(77, 27);
+            this.D2_99.Size = new System.Drawing.Size(78, 27);
             this.D2_99.TabIndex = 17;
             this.D2_99.Value = new decimal(new int[] {
             17823,
@@ -7618,13 +8156,14 @@
             0,
             131072});
             this.D1_99.Location = new System.Drawing.Point(125, 80);
+            this.D1_99.Margin = new System.Windows.Forms.Padding(2);
             this.D1_99.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.D1_99.Name = "D1_99";
-            this.D1_99.Size = new System.Drawing.Size(77, 27);
+            this.D1_99.Size = new System.Drawing.Size(78, 27);
             this.D1_99.TabIndex = 21;
             this.D1_99.Value = new decimal(new int[] {
             27433,
@@ -7641,14 +8180,15 @@
             0,
             0,
             131072});
-            this.DPM_99.Location = new System.Drawing.Point(127, 213);
+            this.DPM_99.Location = new System.Drawing.Point(128, 212);
+            this.DPM_99.Margin = new System.Windows.Forms.Padding(2);
             this.DPM_99.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPM_99.Name = "DPM_99";
-            this.DPM_99.Size = new System.Drawing.Size(77, 27);
+            this.DPM_99.Size = new System.Drawing.Size(78, 27);
             this.DPM_99.TabIndex = 4;
             this.DPM_99.Value = new decimal(new int[] {
             27433,
@@ -7665,14 +8205,15 @@
             0,
             0,
             131072});
-            this.D2_999.Location = new System.Drawing.Point(23, 147);
+            this.D2_999.Location = new System.Drawing.Point(22, 148);
+            this.D2_999.Margin = new System.Windows.Forms.Padding(2);
             this.D2_999.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.D2_999.Name = "D2_999";
-            this.D2_999.Size = new System.Drawing.Size(77, 27);
+            this.D2_999.Size = new System.Drawing.Size(78, 27);
             this.D2_999.TabIndex = 16;
             this.D2_999.Value = new decimal(new int[] {
             17823,
@@ -7689,14 +8230,15 @@
             0,
             0,
             131072});
-            this.D1_999.Location = new System.Drawing.Point(23, 80);
+            this.D1_999.Location = new System.Drawing.Point(22, 80);
+            this.D1_999.Margin = new System.Windows.Forms.Padding(2);
             this.D1_999.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.D1_999.Name = "D1_999";
-            this.D1_999.Size = new System.Drawing.Size(77, 27);
+            this.D1_999.Size = new System.Drawing.Size(78, 27);
             this.D1_999.TabIndex = 6;
             this.D1_999.Value = new decimal(new int[] {
             27433,
@@ -7713,14 +8255,15 @@
             0,
             0,
             131072});
-            this.DPM_999.Location = new System.Drawing.Point(25, 213);
+            this.DPM_999.Location = new System.Drawing.Point(25, 212);
+            this.DPM_999.Margin = new System.Windows.Forms.Padding(2);
             this.DPM_999.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.DPM_999.Name = "DPM_999";
-            this.DPM_999.Size = new System.Drawing.Size(77, 27);
+            this.DPM_999.Size = new System.Drawing.Size(78, 27);
             this.DPM_999.TabIndex = 8;
             this.DPM_999.Value = new decimal(new int[] {
             27433,
@@ -7733,6 +8276,7 @@
             // 
             this.label53.AutoSize = true;
             this.label53.Location = new System.Drawing.Point(8, 188);
+            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(178, 20);
             this.label53.TabIndex = 26;
@@ -7742,6 +8286,7 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Location = new System.Drawing.Point(8, 320);
+            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(167, 20);
             this.label54.TabIndex = 30;
@@ -7751,6 +8296,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Location = new System.Drawing.Point(8, 252);
+            this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(169, 20);
             this.label55.TabIndex = 31;
@@ -7759,7 +8305,8 @@
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(8, 387);
+            this.label56.Location = new System.Drawing.Point(8, 388);
+            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(187, 20);
             this.label56.TabIndex = 29;
@@ -7768,7 +8315,8 @@
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(8, 57);
+            this.label57.Location = new System.Drawing.Point(8, 58);
+            this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(184, 20);
             this.label57.TabIndex = 27;
@@ -7778,6 +8326,7 @@
             // 
             this.label59.AutoSize = true;
             this.label59.Location = new System.Drawing.Point(8, 122);
+            this.label59.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(168, 20);
             this.label59.TabIndex = 32;
@@ -7787,6 +8336,7 @@
             // 
             this.label60.AutoSize = true;
             this.label60.Location = new System.Drawing.Point(322, 30);
+            this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(60, 20);
             this.label60.TabIndex = 36;
@@ -7796,6 +8346,7 @@
             // 
             this.label61.AutoSize = true;
             this.label61.Location = new System.Drawing.Point(128, 30);
+            this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(62, 20);
             this.label61.TabIndex = 37;
@@ -7805,6 +8356,7 @@
             // 
             this.label62.AutoSize = true;
             this.label62.Location = new System.Drawing.Point(228, 30);
+            this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(56, 20);
             this.label62.TabIndex = 35;
@@ -7814,6 +8366,7 @@
             // 
             this.label63.AutoSize = true;
             this.label63.Location = new System.Drawing.Point(22, 30);
+            this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(76, 20);
             this.label63.TabIndex = 33;
@@ -7823,6 +8376,7 @@
             // 
             this.label64.AutoSize = true;
             this.label64.Location = new System.Drawing.Point(122, 165);
+            this.label64.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(0, 20);
             this.label64.TabIndex = 34;
@@ -7832,8 +8386,10 @@
             this.groupBox46.Controls.Add(this.ParentageSimResBox);
             this.groupBox46.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox46.Location = new System.Drawing.Point(0, 0);
+            this.groupBox46.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox46.Name = "groupBox46";
-            this.groupBox46.Size = new System.Drawing.Size(1041, 661);
+            this.groupBox46.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox46.Size = new System.Drawing.Size(503, 373);
             this.groupBox46.TabIndex = 1;
             this.groupBox46.TabStop = false;
             this.groupBox46.Text = "Summary";
@@ -7844,12 +8400,13 @@
             this.ParentageSimResBox.AcceptsTab = true;
             this.ParentageSimResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentageSimResBox.HideSelection = false;
-            this.ParentageSimResBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentageSimResBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentageSimResBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageSimResBox.MaxLength = 32767000;
             this.ParentageSimResBox.Multiline = true;
             this.ParentageSimResBox.Name = "ParentageSimResBox";
             this.ParentageSimResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentageSimResBox.Size = new System.Drawing.Size(1035, 635);
+            this.ParentageSimResBox.Size = new System.Drawing.Size(499, 349);
             this.ParentageSimResBox.TabIndex = 2;
             this.ParentageSimResBox.WordWrap = false;
             this.ParentageSimResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -7858,8 +8415,9 @@
             // 
             this.tabPage17.Controls.Add(this.splitContainer6);
             this.tabPage17.Location = new System.Drawing.Point(4, 29);
+            this.tabPage17.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Size = new System.Drawing.Size(1411, 661);
+            this.tabPage17.Size = new System.Drawing.Size(871, 371);
             this.tabPage17.TabIndex = 0;
             this.tabPage17.Text = "Paternity";
             this.tabPage17.UseVisualStyleBackColor = true;
@@ -7868,6 +8426,7 @@
             // 
             this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer6.Name = "splitContainer6";
             // 
             // splitContainer6.Panel1
@@ -7877,8 +8436,8 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.groupBox36);
-            this.splitContainer6.Size = new System.Drawing.Size(1411, 661);
-            this.splitContainer6.SplitterDistance = 427;
+            this.splitContainer6.Size = new System.Drawing.Size(871, 371);
+            this.splitContainer6.SplitterDistance = 261;
             this.splitContainer6.SplitterWidth = 5;
             this.splitContainer6.TabIndex = 0;
             // 
@@ -7887,8 +8446,10 @@
             this.groupBox37.Controls.Add(this.ParentagePaternityOffspringBox);
             this.groupBox37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox37.Location = new System.Drawing.Point(0, 0);
+            this.groupBox37.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox37.Name = "groupBox37";
-            this.groupBox37.Size = new System.Drawing.Size(427, 661);
+            this.groupBox37.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox37.Size = new System.Drawing.Size(261, 371);
             this.groupBox37.TabIndex = 1;
             this.groupBox37.TabStop = false;
             this.groupBox37.Text = "Offspring, known mother and candidate fathers";
@@ -7899,12 +8460,13 @@
             this.ParentagePaternityOffspringBox.AcceptsTab = true;
             this.ParentagePaternityOffspringBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentagePaternityOffspringBox.HideSelection = false;
-            this.ParentagePaternityOffspringBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentagePaternityOffspringBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentagePaternityOffspringBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentagePaternityOffspringBox.MaxLength = 32767000;
             this.ParentagePaternityOffspringBox.Multiline = true;
             this.ParentagePaternityOffspringBox.Name = "ParentagePaternityOffspringBox";
             this.ParentagePaternityOffspringBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentagePaternityOffspringBox.Size = new System.Drawing.Size(421, 635);
+            this.ParentagePaternityOffspringBox.Size = new System.Drawing.Size(257, 347);
             this.ParentagePaternityOffspringBox.TabIndex = 2;
             this.ParentagePaternityOffspringBox.WordWrap = false;
             this.ParentagePaternityOffspringBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -7914,8 +8476,10 @@
             this.groupBox36.Controls.Add(this.ParentagePaternityResBox);
             this.groupBox36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox36.Location = new System.Drawing.Point(0, 0);
+            this.groupBox36.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox36.Name = "groupBox36";
-            this.groupBox36.Size = new System.Drawing.Size(979, 661);
+            this.groupBox36.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox36.Size = new System.Drawing.Size(605, 371);
             this.groupBox36.TabIndex = 1;
             this.groupBox36.TabStop = false;
             this.groupBox36.Text = "Results";
@@ -7926,12 +8490,13 @@
             this.ParentagePaternityResBox.AcceptsTab = true;
             this.ParentagePaternityResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentagePaternityResBox.HideSelection = false;
-            this.ParentagePaternityResBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentagePaternityResBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentagePaternityResBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentagePaternityResBox.MaxLength = 32767000;
             this.ParentagePaternityResBox.Multiline = true;
             this.ParentagePaternityResBox.Name = "ParentagePaternityResBox";
             this.ParentagePaternityResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentagePaternityResBox.Size = new System.Drawing.Size(973, 635);
+            this.ParentagePaternityResBox.Size = new System.Drawing.Size(601, 347);
             this.ParentagePaternityResBox.TabIndex = 2;
             this.ParentagePaternityResBox.WordWrap = false;
             this.ParentagePaternityResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -7940,8 +8505,9 @@
             // 
             this.tabPage18.Controls.Add(this.splitContainer7);
             this.tabPage18.Location = new System.Drawing.Point(4, 29);
+            this.tabPage18.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Size = new System.Drawing.Size(1411, 661);
+            this.tabPage18.Size = new System.Drawing.Size(871, 371);
             this.tabPage18.TabIndex = 1;
             this.tabPage18.Text = "Parent pair";
             this.tabPage18.UseVisualStyleBackColor = true;
@@ -7950,6 +8516,7 @@
             // 
             this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer7.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer7.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer7.Name = "splitContainer7";
             // 
             // splitContainer7.Panel1
@@ -7959,8 +8526,8 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.groupBox39);
-            this.splitContainer7.Size = new System.Drawing.Size(1411, 661);
-            this.splitContainer7.SplitterDistance = 426;
+            this.splitContainer7.Size = new System.Drawing.Size(871, 371);
+            this.splitContainer7.SplitterDistance = 261;
             this.splitContainer7.SplitterWidth = 5;
             this.splitContainer7.TabIndex = 1;
             // 
@@ -7968,6 +8535,7 @@
             // 
             this.splitContainer9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer9.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer9.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer9.Name = "splitContainer9";
             this.splitContainer9.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -7978,8 +8546,8 @@
             // splitContainer9.Panel2
             // 
             this.splitContainer9.Panel2.Controls.Add(this.splitContainer10);
-            this.splitContainer9.Size = new System.Drawing.Size(426, 661);
-            this.splitContainer9.SplitterDistance = 154;
+            this.splitContainer9.Size = new System.Drawing.Size(261, 371);
+            this.splitContainer9.SplitterDistance = 84;
             this.splitContainer9.SplitterWidth = 5;
             this.splitContainer9.TabIndex = 0;
             // 
@@ -7988,8 +8556,10 @@
             this.groupBox40.Controls.Add(this.ParentageParentPairOffspringBox);
             this.groupBox40.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox40.Location = new System.Drawing.Point(0, 0);
+            this.groupBox40.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox40.Name = "groupBox40";
-            this.groupBox40.Size = new System.Drawing.Size(426, 154);
+            this.groupBox40.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox40.Size = new System.Drawing.Size(261, 84);
             this.groupBox40.TabIndex = 2;
             this.groupBox40.TabStop = false;
             this.groupBox40.Text = "Offspring";
@@ -8000,12 +8570,13 @@
             this.ParentageParentPairOffspringBox.AcceptsTab = true;
             this.ParentageParentPairOffspringBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentageParentPairOffspringBox.HideSelection = false;
-            this.ParentageParentPairOffspringBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentageParentPairOffspringBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentageParentPairOffspringBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageParentPairOffspringBox.MaxLength = 32767000;
             this.ParentageParentPairOffspringBox.Multiline = true;
             this.ParentageParentPairOffspringBox.Name = "ParentageParentPairOffspringBox";
             this.ParentageParentPairOffspringBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentageParentPairOffspringBox.Size = new System.Drawing.Size(420, 128);
+            this.ParentageParentPairOffspringBox.Size = new System.Drawing.Size(257, 60);
             this.ParentageParentPairOffspringBox.TabIndex = 2;
             this.ParentageParentPairOffspringBox.WordWrap = false;
             this.ParentageParentPairOffspringBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -8014,6 +8585,7 @@
             // 
             this.splitContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer10.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer10.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer10.Name = "splitContainer10";
             this.splitContainer10.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -8024,8 +8596,8 @@
             // splitContainer10.Panel2
             // 
             this.splitContainer10.Panel2.Controls.Add(this.groupBox42);
-            this.splitContainer10.Size = new System.Drawing.Size(426, 502);
-            this.splitContainer10.SplitterDistance = 193;
+            this.splitContainer10.Size = new System.Drawing.Size(261, 282);
+            this.splitContainer10.SplitterDistance = 106;
             this.splitContainer10.SplitterWidth = 5;
             this.splitContainer10.TabIndex = 1;
             // 
@@ -8034,8 +8606,10 @@
             this.groupBox41.Controls.Add(this.ParentageParentPairMotherBox);
             this.groupBox41.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox41.Location = new System.Drawing.Point(0, 0);
+            this.groupBox41.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox41.Name = "groupBox41";
-            this.groupBox41.Size = new System.Drawing.Size(426, 193);
+            this.groupBox41.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox41.Size = new System.Drawing.Size(261, 106);
             this.groupBox41.TabIndex = 2;
             this.groupBox41.TabStop = false;
             this.groupBox41.Text = "Candidate mothers";
@@ -8046,12 +8620,13 @@
             this.ParentageParentPairMotherBox.AcceptsTab = true;
             this.ParentageParentPairMotherBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentageParentPairMotherBox.HideSelection = false;
-            this.ParentageParentPairMotherBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentageParentPairMotherBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentageParentPairMotherBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageParentPairMotherBox.MaxLength = 32767000;
             this.ParentageParentPairMotherBox.Multiline = true;
             this.ParentageParentPairMotherBox.Name = "ParentageParentPairMotherBox";
             this.ParentageParentPairMotherBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentageParentPairMotherBox.Size = new System.Drawing.Size(420, 167);
+            this.ParentageParentPairMotherBox.Size = new System.Drawing.Size(257, 82);
             this.ParentageParentPairMotherBox.TabIndex = 2;
             this.ParentageParentPairMotherBox.WordWrap = false;
             this.ParentageParentPairMotherBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -8061,8 +8636,10 @@
             this.groupBox42.Controls.Add(this.ParentageParentPairFatherBox);
             this.groupBox42.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox42.Location = new System.Drawing.Point(0, 0);
+            this.groupBox42.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox42.Name = "groupBox42";
-            this.groupBox42.Size = new System.Drawing.Size(426, 304);
+            this.groupBox42.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox42.Size = new System.Drawing.Size(261, 171);
             this.groupBox42.TabIndex = 2;
             this.groupBox42.TabStop = false;
             this.groupBox42.Text = "Candidate fathers";
@@ -8073,12 +8650,13 @@
             this.ParentageParentPairFatherBox.AcceptsTab = true;
             this.ParentageParentPairFatherBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentageParentPairFatherBox.HideSelection = false;
-            this.ParentageParentPairFatherBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentageParentPairFatherBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentageParentPairFatherBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageParentPairFatherBox.MaxLength = 32767000;
             this.ParentageParentPairFatherBox.Multiline = true;
             this.ParentageParentPairFatherBox.Name = "ParentageParentPairFatherBox";
             this.ParentageParentPairFatherBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentageParentPairFatherBox.Size = new System.Drawing.Size(420, 278);
+            this.ParentageParentPairFatherBox.Size = new System.Drawing.Size(257, 147);
             this.ParentageParentPairFatherBox.TabIndex = 2;
             this.ParentageParentPairFatherBox.WordWrap = false;
             this.ParentageParentPairFatherBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -8088,8 +8666,10 @@
             this.groupBox39.Controls.Add(this.ParentageParentPairResBox);
             this.groupBox39.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox39.Location = new System.Drawing.Point(0, 0);
+            this.groupBox39.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox39.Name = "groupBox39";
-            this.groupBox39.Size = new System.Drawing.Size(980, 661);
+            this.groupBox39.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox39.Size = new System.Drawing.Size(605, 371);
             this.groupBox39.TabIndex = 1;
             this.groupBox39.TabStop = false;
             this.groupBox39.Text = "Results";
@@ -8100,12 +8680,13 @@
             this.ParentageParentPairResBox.AcceptsTab = true;
             this.ParentageParentPairResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentageParentPairResBox.HideSelection = false;
-            this.ParentageParentPairResBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentageParentPairResBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentageParentPairResBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageParentPairResBox.MaxLength = 32767000;
             this.ParentageParentPairResBox.Multiline = true;
             this.ParentageParentPairResBox.Name = "ParentageParentPairResBox";
             this.ParentageParentPairResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentageParentPairResBox.Size = new System.Drawing.Size(974, 635);
+            this.ParentageParentPairResBox.Size = new System.Drawing.Size(601, 347);
             this.ParentageParentPairResBox.TabIndex = 2;
             this.ParentageParentPairResBox.WordWrap = false;
             this.ParentageParentPairResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -8114,8 +8695,9 @@
             // 
             this.tabPage19.Controls.Add(this.splitContainer11);
             this.tabPage19.Location = new System.Drawing.Point(4, 29);
+            this.tabPage19.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage19.Name = "tabPage19";
-            this.tabPage19.Size = new System.Drawing.Size(1411, 661);
+            this.tabPage19.Size = new System.Drawing.Size(871, 371);
             this.tabPage19.TabIndex = 2;
             this.tabPage19.Text = "Parent pair (sexes unknown)";
             this.tabPage19.UseVisualStyleBackColor = true;
@@ -8124,6 +8706,7 @@
             // 
             this.splitContainer11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer11.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer11.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer11.Name = "splitContainer11";
             // 
             // splitContainer11.Panel1
@@ -8133,8 +8716,8 @@
             // splitContainer11.Panel2
             // 
             this.splitContainer11.Panel2.Controls.Add(this.groupBox38);
-            this.splitContainer11.Size = new System.Drawing.Size(1411, 661);
-            this.splitContainer11.SplitterDistance = 426;
+            this.splitContainer11.Size = new System.Drawing.Size(871, 371);
+            this.splitContainer11.SplitterDistance = 261;
             this.splitContainer11.SplitterWidth = 5;
             this.splitContainer11.TabIndex = 2;
             // 
@@ -8142,6 +8725,7 @@
             // 
             this.splitContainer13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer13.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer13.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer13.Name = "splitContainer13";
             this.splitContainer13.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -8152,8 +8736,8 @@
             // splitContainer13.Panel2
             // 
             this.splitContainer13.Panel2.Controls.Add(this.groupBox44);
-            this.splitContainer13.Size = new System.Drawing.Size(426, 661);
-            this.splitContainer13.SplitterDistance = 266;
+            this.splitContainer13.Size = new System.Drawing.Size(261, 371);
+            this.splitContainer13.SplitterDistance = 148;
             this.splitContainer13.SplitterWidth = 5;
             this.splitContainer13.TabIndex = 2;
             // 
@@ -8162,8 +8746,10 @@
             this.groupBox43.Controls.Add(this.ParentageUnknownOffspringBox);
             this.groupBox43.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox43.Location = new System.Drawing.Point(0, 0);
+            this.groupBox43.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox43.Name = "groupBox43";
-            this.groupBox43.Size = new System.Drawing.Size(426, 266);
+            this.groupBox43.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox43.Size = new System.Drawing.Size(261, 148);
             this.groupBox43.TabIndex = 3;
             this.groupBox43.TabStop = false;
             this.groupBox43.Text = "Offspring";
@@ -8174,12 +8760,13 @@
             this.ParentageUnknownOffspringBox.AcceptsTab = true;
             this.ParentageUnknownOffspringBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentageUnknownOffspringBox.HideSelection = false;
-            this.ParentageUnknownOffspringBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentageUnknownOffspringBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentageUnknownOffspringBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageUnknownOffspringBox.MaxLength = 32767000;
             this.ParentageUnknownOffspringBox.Multiline = true;
             this.ParentageUnknownOffspringBox.Name = "ParentageUnknownOffspringBox";
             this.ParentageUnknownOffspringBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentageUnknownOffspringBox.Size = new System.Drawing.Size(420, 240);
+            this.ParentageUnknownOffspringBox.Size = new System.Drawing.Size(257, 124);
             this.ParentageUnknownOffspringBox.TabIndex = 2;
             this.ParentageUnknownOffspringBox.WordWrap = false;
             this.ParentageUnknownOffspringBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -8189,8 +8776,10 @@
             this.groupBox44.Controls.Add(this.ParentageUnknownParentBox);
             this.groupBox44.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox44.Location = new System.Drawing.Point(0, 0);
+            this.groupBox44.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox44.Name = "groupBox44";
-            this.groupBox44.Size = new System.Drawing.Size(426, 390);
+            this.groupBox44.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox44.Size = new System.Drawing.Size(261, 218);
             this.groupBox44.TabIndex = 3;
             this.groupBox44.TabStop = false;
             this.groupBox44.Text = "Candidate parents";
@@ -8201,12 +8790,13 @@
             this.ParentageUnknownParentBox.AcceptsTab = true;
             this.ParentageUnknownParentBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentageUnknownParentBox.HideSelection = false;
-            this.ParentageUnknownParentBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentageUnknownParentBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentageUnknownParentBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageUnknownParentBox.MaxLength = 32767000;
             this.ParentageUnknownParentBox.Multiline = true;
             this.ParentageUnknownParentBox.Name = "ParentageUnknownParentBox";
             this.ParentageUnknownParentBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentageUnknownParentBox.Size = new System.Drawing.Size(420, 364);
+            this.ParentageUnknownParentBox.Size = new System.Drawing.Size(257, 194);
             this.ParentageUnknownParentBox.TabIndex = 2;
             this.ParentageUnknownParentBox.WordWrap = false;
             this.ParentageUnknownParentBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -8216,8 +8806,10 @@
             this.groupBox38.Controls.Add(this.ParentageUnknownResBox);
             this.groupBox38.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox38.Location = new System.Drawing.Point(0, 0);
+            this.groupBox38.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox38.Name = "groupBox38";
-            this.groupBox38.Size = new System.Drawing.Size(980, 661);
+            this.groupBox38.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox38.Size = new System.Drawing.Size(605, 371);
             this.groupBox38.TabIndex = 1;
             this.groupBox38.TabStop = false;
             this.groupBox38.Text = "Results";
@@ -8228,12 +8820,13 @@
             this.ParentageUnknownResBox.AcceptsTab = true;
             this.ParentageUnknownResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentageUnknownResBox.HideSelection = false;
-            this.ParentageUnknownResBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentageUnknownResBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentageUnknownResBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageUnknownResBox.MaxLength = 32767000;
             this.ParentageUnknownResBox.Multiline = true;
             this.ParentageUnknownResBox.Name = "ParentageUnknownResBox";
             this.ParentageUnknownResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentageUnknownResBox.Size = new System.Drawing.Size(974, 635);
+            this.ParentageUnknownResBox.Size = new System.Drawing.Size(601, 347);
             this.ParentageUnknownResBox.TabIndex = 2;
             this.ParentageUnknownResBox.WordWrap = false;
             this.ParentageUnknownResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -8242,8 +8835,9 @@
             // 
             this.tabPage23.Controls.Add(this.groupBox53);
             this.tabPage23.Location = new System.Drawing.Point(4, 29);
+            this.tabPage23.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage23.Name = "tabPage23";
-            this.tabPage23.Size = new System.Drawing.Size(1411, 661);
+            this.tabPage23.Size = new System.Drawing.Size(871, 371);
             this.tabPage23.TabIndex = 4;
             this.tabPage23.Text = "Genotyping error rate";
             this.tabPage23.UseVisualStyleBackColor = true;
@@ -8253,8 +8847,10 @@
             this.groupBox53.Controls.Add(this.ParentageErrorResBox);
             this.groupBox53.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox53.Location = new System.Drawing.Point(0, 0);
+            this.groupBox53.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox53.Name = "groupBox53";
-            this.groupBox53.Size = new System.Drawing.Size(1411, 661);
+            this.groupBox53.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox53.Size = new System.Drawing.Size(871, 371);
             this.groupBox53.TabIndex = 4;
             this.groupBox53.TabStop = false;
             this.groupBox53.Text = "Result";
@@ -8265,12 +8861,13 @@
             this.ParentageErrorResBox.AcceptsTab = true;
             this.ParentageErrorResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentageErrorResBox.HideSelection = false;
-            this.ParentageErrorResBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentageErrorResBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentageErrorResBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageErrorResBox.MaxLength = 32767000;
             this.ParentageErrorResBox.Multiline = true;
             this.ParentageErrorResBox.Name = "ParentageErrorResBox";
             this.ParentageErrorResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentageErrorResBox.Size = new System.Drawing.Size(1405, 635);
+            this.ParentageErrorResBox.Size = new System.Drawing.Size(867, 347);
             this.ParentageErrorResBox.TabIndex = 2;
             this.ParentageErrorResBox.WordWrap = false;
             // 
@@ -8278,8 +8875,9 @@
             // 
             this.tabPage24.Controls.Add(this.groupBox54);
             this.tabPage24.Location = new System.Drawing.Point(4, 29);
+            this.tabPage24.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage24.Name = "tabPage24";
-            this.tabPage24.Size = new System.Drawing.Size(1411, 661);
+            this.tabPage24.Size = new System.Drawing.Size(871, 371);
             this.tabPage24.TabIndex = 5;
             this.tabPage24.Text = "Sample rate";
             this.tabPage24.UseVisualStyleBackColor = true;
@@ -8289,8 +8887,10 @@
             this.groupBox54.Controls.Add(this.ParentageSampleResBox);
             this.groupBox54.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox54.Location = new System.Drawing.Point(0, 0);
+            this.groupBox54.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox54.Name = "groupBox54";
-            this.groupBox54.Size = new System.Drawing.Size(1411, 661);
+            this.groupBox54.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox54.Size = new System.Drawing.Size(871, 371);
             this.groupBox54.TabIndex = 5;
             this.groupBox54.TabStop = false;
             this.groupBox54.Text = "Result";
@@ -8301,21 +8901,23 @@
             this.ParentageSampleResBox.AcceptsTab = true;
             this.ParentageSampleResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentageSampleResBox.HideSelection = false;
-            this.ParentageSampleResBox.Location = new System.Drawing.Point(3, 23);
+            this.ParentageSampleResBox.Location = new System.Drawing.Point(2, 22);
+            this.ParentageSampleResBox.Margin = new System.Windows.Forms.Padding(2);
             this.ParentageSampleResBox.MaxLength = 32767000;
             this.ParentageSampleResBox.Multiline = true;
             this.ParentageSampleResBox.Name = "ParentageSampleResBox";
             this.ParentageSampleResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ParentageSampleResBox.Size = new System.Drawing.Size(1405, 635);
+            this.ParentageSampleResBox.Size = new System.Drawing.Size(867, 347);
             this.ParentageSampleResBox.TabIndex = 2;
             this.ParentageSampleResBox.WordWrap = false;
             // 
             // AMOVAPage
             // 
             this.AMOVAPage.Controls.Add(this.groupBox10);
-            this.AMOVAPage.Location = new System.Drawing.Point(4, 54);
+            this.AMOVAPage.Location = new System.Drawing.Point(4, 79);
+            this.AMOVAPage.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVAPage.Name = "AMOVAPage";
-            this.AMOVAPage.Size = new System.Drawing.Size(1419, 694);
+            this.AMOVAPage.Size = new System.Drawing.Size(881, 406);
             this.AMOVAPage.TabIndex = 6;
             this.AMOVAPage.Text = "AMOVA";
             this.AMOVAPage.UseVisualStyleBackColor = true;
@@ -8325,8 +8927,10 @@
             this.groupBox10.Controls.Add(this.AMOVAResBox);
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.Location = new System.Drawing.Point(0, 0);
+            this.groupBox10.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1419, 694);
+            this.groupBox10.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox10.Size = new System.Drawing.Size(881, 406);
             this.groupBox10.TabIndex = 4;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Analysis of molecular variance";
@@ -8337,12 +8941,13 @@
             this.AMOVAResBox.AcceptsTab = true;
             this.AMOVAResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AMOVAResBox.HideSelection = false;
-            this.AMOVAResBox.Location = new System.Drawing.Point(3, 23);
+            this.AMOVAResBox.Location = new System.Drawing.Point(2, 22);
+            this.AMOVAResBox.Margin = new System.Windows.Forms.Padding(2);
             this.AMOVAResBox.MaxLength = 32767000;
             this.AMOVAResBox.Multiline = true;
             this.AMOVAResBox.Name = "AMOVAResBox";
             this.AMOVAResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.AMOVAResBox.Size = new System.Drawing.Size(1413, 668);
+            this.AMOVAResBox.Size = new System.Drawing.Size(877, 382);
             this.AMOVAResBox.TabIndex = 1;
             this.AMOVAResBox.WordWrap = false;
             this.AMOVAResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -8350,9 +8955,10 @@
             // StructurePage
             // 
             this.StructurePage.Controls.Add(this.splitContainer1);
-            this.StructurePage.Location = new System.Drawing.Point(4, 54);
+            this.StructurePage.Location = new System.Drawing.Point(4, 79);
+            this.StructurePage.Margin = new System.Windows.Forms.Padding(2);
             this.StructurePage.Name = "StructurePage";
-            this.StructurePage.Size = new System.Drawing.Size(1419, 694);
+            this.StructurePage.Size = new System.Drawing.Size(881, 406);
             this.StructurePage.TabIndex = 13;
             this.StructurePage.Text = "Structure";
             this.StructurePage.UseVisualStyleBackColor = true;
@@ -8362,6 +8968,7 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -8371,7 +8978,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1419, 694);
+            this.splitContainer1.Size = new System.Drawing.Size(881, 406);
             this.splitContainer1.SplitterDistance = 426;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
@@ -8380,6 +8987,7 @@
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -8390,8 +8998,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupBox25);
-            this.splitContainer3.Size = new System.Drawing.Size(426, 694);
-            this.splitContainer3.SplitterDistance = 260;
+            this.splitContainer3.Size = new System.Drawing.Size(426, 406);
+            this.splitContainer3.SplitterDistance = 149;
             this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 1;
             // 
@@ -8400,8 +9008,10 @@
             this.groupBox29.Controls.Add(this.StructureResultFileBox);
             this.groupBox29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox29.Location = new System.Drawing.Point(0, 0);
+            this.groupBox29.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox29.Name = "groupBox29";
-            this.groupBox29.Size = new System.Drawing.Size(426, 260);
+            this.groupBox29.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox29.Size = new System.Drawing.Size(426, 149);
             this.groupBox29.TabIndex = 1;
             this.groupBox29.TabStop = false;
             this.groupBox29.Text = "Result files (right click to delete)";
@@ -8416,9 +9026,10 @@
             this.StructureResultFileBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StructureResultFileBox.FullRowSelect = true;
             this.StructureResultFileBox.HideSelection = false;
-            this.StructureResultFileBox.Location = new System.Drawing.Point(3, 23);
+            this.StructureResultFileBox.Location = new System.Drawing.Point(2, 22);
+            this.StructureResultFileBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureResultFileBox.Name = "StructureResultFileBox";
-            this.StructureResultFileBox.Size = new System.Drawing.Size(420, 234);
+            this.StructureResultFileBox.Size = new System.Drawing.Size(422, 125);
             this.StructureResultFileBox.TabIndex = 0;
             this.StructureResultFileBox.UseCompatibleStateImageBehavior = false;
             this.StructureResultFileBox.View = System.Windows.Forms.View.Details;
@@ -8449,8 +9060,10 @@
             this.groupBox25.Controls.Add(this.StructureRunListBox);
             this.groupBox25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox25.Location = new System.Drawing.Point(0, 0);
+            this.groupBox25.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox25.Name = "groupBox25";
-            this.groupBox25.Size = new System.Drawing.Size(426, 429);
+            this.groupBox25.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox25.Size = new System.Drawing.Size(426, 252);
             this.groupBox25.TabIndex = 0;
             this.groupBox25.TabStop = false;
             this.groupBox25.Text = "Run summary";
@@ -8466,9 +9079,10 @@
             this.StructureRunListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StructureRunListBox.FullRowSelect = true;
             this.StructureRunListBox.HideSelection = false;
-            this.StructureRunListBox.Location = new System.Drawing.Point(3, 23);
+            this.StructureRunListBox.Location = new System.Drawing.Point(2, 22);
+            this.StructureRunListBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureRunListBox.Name = "StructureRunListBox";
-            this.StructureRunListBox.Size = new System.Drawing.Size(420, 403);
+            this.StructureRunListBox.Size = new System.Drawing.Size(422, 228);
             this.StructureRunListBox.TabIndex = 0;
             this.StructureRunListBox.UseCompatibleStateImageBehavior = false;
             this.StructureRunListBox.View = System.Windows.Forms.View.Details;
@@ -8505,6 +9119,7 @@
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -8515,7 +9130,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox27);
-            this.splitContainer2.Size = new System.Drawing.Size(988, 694);
+            this.splitContainer2.Size = new System.Drawing.Size(450, 406);
             this.splitContainer2.SplitterDistance = 202;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
@@ -8526,8 +9141,10 @@
             this.groupBox26.Controls.Add(this.StructureToolStrip);
             this.groupBox26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox26.Location = new System.Drawing.Point(0, 0);
+            this.groupBox26.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox26.Name = "groupBox26";
-            this.groupBox26.Size = new System.Drawing.Size(988, 202);
+            this.groupBox26.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox26.Size = new System.Drawing.Size(450, 202);
             this.groupBox26.TabIndex = 1;
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "Chart";
@@ -8536,9 +9153,10 @@
             // 
             this.StructurePicBox.BackColor = System.Drawing.Color.LightGray;
             this.StructurePicBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StructurePicBox.Location = new System.Drawing.Point(3, 51);
+            this.StructurePicBox.Location = new System.Drawing.Point(2, 54);
+            this.StructurePicBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructurePicBox.Name = "StructurePicBox";
-            this.StructurePicBox.Size = new System.Drawing.Size(982, 148);
+            this.StructurePicBox.Size = new System.Drawing.Size(446, 146);
             this.StructurePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.StructurePicBox.TabIndex = 0;
             this.StructurePicBox.TabStop = false;
@@ -8554,9 +9172,10 @@
             this.StructureIndividualOrderBox,
             this.toolStripLabel9,
             this.StructureRearrangeColorBox});
-            this.StructureToolStrip.Location = new System.Drawing.Point(3, 23);
+            this.StructureToolStrip.Location = new System.Drawing.Point(2, 22);
             this.StructureToolStrip.Name = "StructureToolStrip";
-            this.StructureToolStrip.Size = new System.Drawing.Size(982, 28);
+            this.StructureToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.StructureToolStrip.Size = new System.Drawing.Size(446, 32);
             this.StructureToolStrip.TabIndex = 0;
             this.StructureToolStrip.Text = "toolStrip1";
             // 
@@ -8566,7 +9185,7 @@
             this.SaveStructureButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveStructureButton.Image")));
             this.SaveStructureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveStructureButton.Name = "SaveStructureButton";
-            this.SaveStructureButton.Size = new System.Drawing.Size(47, 25);
+            this.SaveStructureButton.Size = new System.Drawing.Size(47, 29);
             this.SaveStructureButton.Text = "&Save";
             this.SaveStructureButton.Click += new System.EventHandler(this.SavePic);
             // 
@@ -8576,19 +9195,19 @@
             this.ExportStructureButton.Image = ((System.Drawing.Image)(resources.GetObject("ExportStructureButton.Image")));
             this.ExportStructureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExportStructureButton.Name = "ExportStructureButton";
-            this.ExportStructureButton.Size = new System.Drawing.Size(86, 25);
+            this.ExportStructureButton.Size = new System.Drawing.Size(86, 29);
             this.ExportStructureButton.Text = "Export &lnL";
             this.ExportStructureButton.Click += new System.EventHandler(this.ExportlnL);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 28);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 32);
             // 
             // toolStripLabel13
             // 
             this.toolStripLabel13.Name = "toolStripLabel13";
-            this.toolStripLabel13.Size = new System.Drawing.Size(45, 25);
+            this.toolStripLabel13.Size = new System.Drawing.Size(45, 29);
             this.toolStripLabel13.Text = "Type";
             // 
             // StructureIndividualOrderBox
@@ -8599,13 +9218,13 @@
             "Ancestry (by ancestry)",
             "Likelihood convergency"});
             this.StructureIndividualOrderBox.Name = "StructureIndividualOrderBox";
-            this.StructureIndividualOrderBox.Size = new System.Drawing.Size(217, 28);
+            this.StructureIndividualOrderBox.Size = new System.Drawing.Size(174, 32);
             this.StructureIndividualOrderBox.SelectedIndexChanged += new System.EventHandler(this.StructureIndividualOrderBox_SelectedIndexChanged);
             // 
             // toolStripLabel9
             // 
             this.toolStripLabel9.Name = "toolStripLabel9";
-            this.toolStripLabel9.Size = new System.Drawing.Size(126, 25);
+            this.toolStripLabel9.Size = new System.Drawing.Size(126, 20);
             this.toolStripLabel9.Text = "Rearrange color";
             // 
             // StructureRearrangeColorBox
@@ -8614,7 +9233,7 @@
             "Yes",
             "No"});
             this.StructureRearrangeColorBox.Name = "StructureRearrangeColorBox";
-            this.StructureRearrangeColorBox.Size = new System.Drawing.Size(92, 28);
+            this.StructureRearrangeColorBox.Size = new System.Drawing.Size(75, 28);
             this.StructureRearrangeColorBox.SelectedIndexChanged += new System.EventHandler(this.StructureRearrangeColorBox_SelectedIndexChanged);
             // 
             // groupBox27
@@ -8622,8 +9241,10 @@
             this.groupBox27.Controls.Add(this.StructureRunDetailBox);
             this.groupBox27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox27.Location = new System.Drawing.Point(0, 0);
+            this.groupBox27.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox27.Name = "groupBox27";
-            this.groupBox27.Size = new System.Drawing.Size(988, 487);
+            this.groupBox27.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox27.Size = new System.Drawing.Size(450, 199);
             this.groupBox27.TabIndex = 1;
             this.groupBox27.TabStop = false;
             this.groupBox27.Text = "Details";
@@ -8634,22 +9255,23 @@
             this.StructureRunDetailBox.AcceptsTab = true;
             this.StructureRunDetailBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StructureRunDetailBox.HideSelection = false;
-            this.StructureRunDetailBox.Location = new System.Drawing.Point(3, 23);
+            this.StructureRunDetailBox.Location = new System.Drawing.Point(2, 22);
+            this.StructureRunDetailBox.Margin = new System.Windows.Forms.Padding(2);
             this.StructureRunDetailBox.MaxLength = 32767000;
             this.StructureRunDetailBox.Multiline = true;
             this.StructureRunDetailBox.Name = "StructureRunDetailBox";
             this.StructureRunDetailBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.StructureRunDetailBox.Size = new System.Drawing.Size(982, 461);
+            this.StructureRunDetailBox.Size = new System.Drawing.Size(446, 175);
             this.StructureRunDetailBox.TabIndex = 0;
             this.StructureRunDetailBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
             // 
             // BayesAssPage
             // 
             this.BayesAssPage.Controls.Add(this.splitContainer17);
-            this.BayesAssPage.Location = new System.Drawing.Point(4, 54);
+            this.BayesAssPage.Location = new System.Drawing.Point(4, 79);
             this.BayesAssPage.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssPage.Name = "BayesAssPage";
-            this.BayesAssPage.Size = new System.Drawing.Size(1419, 694);
+            this.BayesAssPage.Size = new System.Drawing.Size(881, 406);
             this.BayesAssPage.TabIndex = 21;
             this.BayesAssPage.Text = "BayesAss";
             this.BayesAssPage.UseVisualStyleBackColor = true;
@@ -8659,6 +9281,7 @@
             this.splitContainer17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer17.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer17.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer17.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer17.Name = "splitContainer17";
             // 
             // splitContainer17.Panel1
@@ -8668,7 +9291,7 @@
             // splitContainer17.Panel2
             // 
             this.splitContainer17.Panel2.Controls.Add(this.splitContainer19);
-            this.splitContainer17.Size = new System.Drawing.Size(1419, 694);
+            this.splitContainer17.Size = new System.Drawing.Size(881, 406);
             this.splitContainer17.SplitterDistance = 426;
             this.splitContainer17.SplitterWidth = 5;
             this.splitContainer17.TabIndex = 1;
@@ -8677,6 +9300,7 @@
             // 
             this.splitContainer18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer18.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer18.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer18.Name = "splitContainer18";
             this.splitContainer18.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -8687,8 +9311,8 @@
             // splitContainer18.Panel2
             // 
             this.splitContainer18.Panel2.Controls.Add(this.groupBox9);
-            this.splitContainer18.Size = new System.Drawing.Size(426, 694);
-            this.splitContainer18.SplitterDistance = 333;
+            this.splitContainer18.Size = new System.Drawing.Size(426, 406);
+            this.splitContainer18.SplitterDistance = 193;
             this.splitContainer18.SplitterWidth = 5;
             this.splitContainer18.TabIndex = 1;
             // 
@@ -8697,8 +9321,10 @@
             this.groupBox7.Controls.Add(this.BayesAssResultFileBox);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(0, 0);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(426, 333);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox7.Size = new System.Drawing.Size(426, 193);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Result files (right click to delete)";
@@ -8713,9 +9339,10 @@
             this.BayesAssResultFileBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BayesAssResultFileBox.FullRowSelect = true;
             this.BayesAssResultFileBox.HideSelection = false;
-            this.BayesAssResultFileBox.Location = new System.Drawing.Point(3, 23);
+            this.BayesAssResultFileBox.Location = new System.Drawing.Point(2, 22);
+            this.BayesAssResultFileBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssResultFileBox.Name = "BayesAssResultFileBox";
-            this.BayesAssResultFileBox.Size = new System.Drawing.Size(420, 307);
+            this.BayesAssResultFileBox.Size = new System.Drawing.Size(422, 169);
             this.BayesAssResultFileBox.TabIndex = 0;
             this.BayesAssResultFileBox.UseCompatibleStateImageBehavior = false;
             this.BayesAssResultFileBox.View = System.Windows.Forms.View.Details;
@@ -8747,8 +9374,10 @@
             this.groupBox9.Controls.Add(this.BayesAssRunListBox);
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(0, 0);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(426, 356);
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox9.Size = new System.Drawing.Size(426, 208);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Run summary";
@@ -8763,9 +9392,10 @@
             this.BayesAssRunListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BayesAssRunListBox.FullRowSelect = true;
             this.BayesAssRunListBox.HideSelection = false;
-            this.BayesAssRunListBox.Location = new System.Drawing.Point(3, 23);
+            this.BayesAssRunListBox.Location = new System.Drawing.Point(2, 22);
+            this.BayesAssRunListBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssRunListBox.Name = "BayesAssRunListBox";
-            this.BayesAssRunListBox.Size = new System.Drawing.Size(420, 330);
+            this.BayesAssRunListBox.Size = new System.Drawing.Size(422, 184);
             this.BayesAssRunListBox.TabIndex = 0;
             this.BayesAssRunListBox.UseCompatibleStateImageBehavior = false;
             this.BayesAssRunListBox.View = System.Windows.Forms.View.Details;
@@ -8796,6 +9426,7 @@
             this.splitContainer19.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer19.IsSplitterFixed = true;
             this.splitContainer19.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer19.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer19.Name = "splitContainer19";
             this.splitContainer19.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -8806,7 +9437,7 @@
             // splitContainer19.Panel2
             // 
             this.splitContainer19.Panel2.Controls.Add(this.groupBox15);
-            this.splitContainer19.Size = new System.Drawing.Size(988, 694);
+            this.splitContainer19.Size = new System.Drawing.Size(450, 406);
             this.splitContainer19.SplitterDistance = 202;
             this.splitContainer19.SplitterWidth = 5;
             this.splitContainer19.TabIndex = 0;
@@ -8817,8 +9448,10 @@
             this.groupBox13.Controls.Add(this.BayesAssToolStrip);
             this.groupBox13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox13.Location = new System.Drawing.Point(0, 0);
+            this.groupBox13.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(988, 202);
+            this.groupBox13.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox13.Size = new System.Drawing.Size(450, 202);
             this.groupBox13.TabIndex = 1;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Chart";
@@ -8827,9 +9460,10 @@
             // 
             this.BayesAssPicBox.BackColor = System.Drawing.Color.LightGray;
             this.BayesAssPicBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BayesAssPicBox.Location = new System.Drawing.Point(3, 51);
+            this.BayesAssPicBox.Location = new System.Drawing.Point(2, 54);
+            this.BayesAssPicBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssPicBox.Name = "BayesAssPicBox";
-            this.BayesAssPicBox.Size = new System.Drawing.Size(982, 148);
+            this.BayesAssPicBox.Size = new System.Drawing.Size(446, 146);
             this.BayesAssPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BayesAssPicBox.TabIndex = 0;
             this.BayesAssPicBox.TabStop = false;
@@ -8844,9 +9478,10 @@
             this.toolStripSeparator12,
             this.toolStripLabel16,
             this.BayesAssPlotStyleBox});
-            this.BayesAssToolStrip.Location = new System.Drawing.Point(3, 23);
+            this.BayesAssToolStrip.Location = new System.Drawing.Point(2, 22);
             this.BayesAssToolStrip.Name = "BayesAssToolStrip";
-            this.BayesAssToolStrip.Size = new System.Drawing.Size(982, 28);
+            this.BayesAssToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.BayesAssToolStrip.Size = new System.Drawing.Size(446, 32);
             this.BayesAssToolStrip.TabIndex = 0;
             this.BayesAssToolStrip.Text = "BayesAssToolStrip";
             // 
@@ -8856,7 +9491,7 @@
             this.SaveBayesAssButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveBayesAssButton.Image")));
             this.SaveBayesAssButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveBayesAssButton.Name = "SaveBayesAssButton";
-            this.SaveBayesAssButton.Size = new System.Drawing.Size(47, 25);
+            this.SaveBayesAssButton.Size = new System.Drawing.Size(47, 29);
             this.SaveBayesAssButton.Text = "&Save";
             this.SaveBayesAssButton.Click += new System.EventHandler(this.SavePic);
             // 
@@ -8866,7 +9501,7 @@
             this.ExportBayesAssButton.Image = ((System.Drawing.Image)(resources.GetObject("ExportBayesAssButton.Image")));
             this.ExportBayesAssButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExportBayesAssButton.Name = "ExportBayesAssButton";
-            this.ExportBayesAssButton.Size = new System.Drawing.Size(86, 25);
+            this.ExportBayesAssButton.Size = new System.Drawing.Size(86, 29);
             this.ExportBayesAssButton.Text = "Export &lnL";
             this.ExportBayesAssButton.Click += new System.EventHandler(this.ExportlnL);
             // 
@@ -8876,19 +9511,19 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(114, 25);
+            this.toolStripButton1.Size = new System.Drawing.Size(114, 29);
             this.toolStripButton1.Text = "Export &Details";
             this.toolStripButton1.Click += new System.EventHandler(this.ExportBayesAssDetails);
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 28);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 32);
             // 
             // toolStripLabel16
             // 
             this.toolStripLabel16.Name = "toolStripLabel16";
-            this.toolStripLabel16.Size = new System.Drawing.Size(45, 25);
+            this.toolStripLabel16.Size = new System.Drawing.Size(45, 29);
             this.toolStripLabel16.Text = "Type";
             // 
             // BayesAssPlotStyleBox
@@ -8904,7 +9539,7 @@
             "Migrant Likelihood convergency",
             "Total Likelihood convergency"});
             this.BayesAssPlotStyleBox.Name = "BayesAssPlotStyleBox";
-            this.BayesAssPlotStyleBox.Size = new System.Drawing.Size(217, 28);
+            this.BayesAssPlotStyleBox.Size = new System.Drawing.Size(174, 28);
             this.BayesAssPlotStyleBox.SelectedIndexChanged += new System.EventHandler(this.BayesAssPlotStyleBox_SelectedIndexChanged);
             // 
             // groupBox15
@@ -8912,8 +9547,10 @@
             this.groupBox15.Controls.Add(this.BayesAssRunDetailBox);
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.Location = new System.Drawing.Point(0, 0);
+            this.groupBox15.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(988, 487);
+            this.groupBox15.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox15.Size = new System.Drawing.Size(450, 199);
             this.groupBox15.TabIndex = 1;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Details";
@@ -8924,21 +9561,23 @@
             this.BayesAssRunDetailBox.AcceptsTab = true;
             this.BayesAssRunDetailBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BayesAssRunDetailBox.HideSelection = false;
-            this.BayesAssRunDetailBox.Location = new System.Drawing.Point(3, 23);
+            this.BayesAssRunDetailBox.Location = new System.Drawing.Point(2, 22);
+            this.BayesAssRunDetailBox.Margin = new System.Windows.Forms.Padding(2);
             this.BayesAssRunDetailBox.MaxLength = 32767000;
             this.BayesAssRunDetailBox.Multiline = true;
             this.BayesAssRunDetailBox.Name = "BayesAssRunDetailBox";
             this.BayesAssRunDetailBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.BayesAssRunDetailBox.Size = new System.Drawing.Size(982, 461);
+            this.BayesAssRunDetailBox.Size = new System.Drawing.Size(446, 175);
             this.BayesAssRunDetailBox.TabIndex = 0;
             this.BayesAssRunDetailBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
             // 
             // MantelPage
             // 
             this.MantelPage.Controls.Add(this.splitContainer4);
-            this.MantelPage.Location = new System.Drawing.Point(4, 54);
+            this.MantelPage.Location = new System.Drawing.Point(4, 79);
+            this.MantelPage.Margin = new System.Windows.Forms.Padding(2);
             this.MantelPage.Name = "MantelPage";
-            this.MantelPage.Size = new System.Drawing.Size(1419, 694);
+            this.MantelPage.Size = new System.Drawing.Size(881, 406);
             this.MantelPage.TabIndex = 14;
             this.MantelPage.Text = "Mantel";
             this.MantelPage.UseVisualStyleBackColor = true;
@@ -8948,6 +9587,7 @@
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
@@ -8957,7 +9597,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.groupBox32);
-            this.splitContainer4.Size = new System.Drawing.Size(1419, 694);
+            this.splitContainer4.Size = new System.Drawing.Size(881, 406);
             this.splitContainer4.SplitterDistance = 368;
             this.splitContainer4.SplitterWidth = 5;
             this.splitContainer4.TabIndex = 0;
@@ -8967,6 +9607,7 @@
             this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer5.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer5.Name = "splitContainer5";
             this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -8977,7 +9618,7 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.groupBox30);
-            this.splitContainer5.Size = new System.Drawing.Size(368, 694);
+            this.splitContainer5.Size = new System.Drawing.Size(368, 406);
             this.splitContainer5.SplitterDistance = 166;
             this.splitContainer5.SplitterWidth = 5;
             this.splitContainer5.TabIndex = 1;
@@ -8991,7 +9632,9 @@
             this.groupBox31.Controls.Add(this.label44);
             this.groupBox31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox31.Location = new System.Drawing.Point(0, 0);
+            this.groupBox31.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox31.Name = "groupBox31";
+            this.groupBox31.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox31.Size = new System.Drawing.Size(368, 166);
             this.groupBox31.TabIndex = 1;
             this.groupBox31.TabStop = false;
@@ -9001,6 +9644,7 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Location = new System.Drawing.Point(22, 102);
+            this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(319, 60);
             this.linkLabel2.TabIndex = 512;
@@ -9011,9 +9655,10 @@
             // 
             // MantelPermuteButton
             // 
-            this.MantelPermuteButton.Location = new System.Drawing.Point(27, 32);
+            this.MantelPermuteButton.Location = new System.Drawing.Point(28, 32);
+            this.MantelPermuteButton.Margin = new System.Windows.Forms.Padding(2);
             this.MantelPermuteButton.Name = "MantelPermuteButton";
-            this.MantelPermuteButton.Size = new System.Drawing.Size(93, 27);
+            this.MantelPermuteButton.Size = new System.Drawing.Size(92, 28);
             this.MantelPermuteButton.TabIndex = 511;
             this.MantelPermuteButton.Text = "&Permute";
             this.MantelPermuteButton.UseVisualStyleBackColor = true;
@@ -9021,9 +9666,10 @@
             // 
             // MantelExampleButton
             // 
-            this.MantelExampleButton.Location = new System.Drawing.Point(137, 32);
+            this.MantelExampleButton.Location = new System.Drawing.Point(138, 32);
+            this.MantelExampleButton.Margin = new System.Windows.Forms.Padding(2);
             this.MantelExampleButton.Name = "MantelExampleButton";
-            this.MantelExampleButton.Size = new System.Drawing.Size(93, 27);
+            this.MantelExampleButton.Size = new System.Drawing.Size(92, 28);
             this.MantelExampleButton.TabIndex = 511;
             this.MantelExampleButton.Text = "&Example";
             this.MantelExampleButton.UseVisualStyleBackColor = true;
@@ -9036,7 +9682,8 @@
             0,
             0,
             0});
-            this.MantelNPermBox.Location = new System.Drawing.Point(137, 68);
+            this.MantelNPermBox.Location = new System.Drawing.Point(138, 68);
+            this.MantelNPermBox.Margin = new System.Windows.Forms.Padding(2);
             this.MantelNPermBox.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -9048,7 +9695,7 @@
             0,
             0});
             this.MantelNPermBox.Name = "MantelNPermBox";
-            this.MantelNPermBox.Size = new System.Drawing.Size(93, 27);
+            this.MantelNPermBox.Size = new System.Drawing.Size(92, 27);
             this.MantelNPermBox.TabIndex = 510;
             this.MantelNPermBox.Value = new decimal(new int[] {
             5000,
@@ -9061,6 +9708,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Location = new System.Drawing.Point(22, 70);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(104, 20);
             this.label44.TabIndex = 509;
@@ -9071,8 +9719,10 @@
             this.groupBox30.Controls.Add(this.MantelResBox);
             this.groupBox30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox30.Location = new System.Drawing.Point(0, 0);
+            this.groupBox30.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox30.Name = "groupBox30";
-            this.groupBox30.Size = new System.Drawing.Size(368, 523);
+            this.groupBox30.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox30.Size = new System.Drawing.Size(368, 235);
             this.groupBox30.TabIndex = 0;
             this.groupBox30.TabStop = false;
             this.groupBox30.Text = "Results";
@@ -9083,12 +9733,13 @@
             this.MantelResBox.AcceptsTab = true;
             this.MantelResBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MantelResBox.HideSelection = false;
-            this.MantelResBox.Location = new System.Drawing.Point(3, 23);
+            this.MantelResBox.Location = new System.Drawing.Point(2, 22);
+            this.MantelResBox.Margin = new System.Windows.Forms.Padding(2);
             this.MantelResBox.MaxLength = 32767000;
             this.MantelResBox.Multiline = true;
             this.MantelResBox.Name = "MantelResBox";
             this.MantelResBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.MantelResBox.Size = new System.Drawing.Size(362, 497);
+            this.MantelResBox.Size = new System.Drawing.Size(364, 211);
             this.MantelResBox.TabIndex = 2;
             this.MantelResBox.WordWrap = false;
             this.MantelResBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -9098,8 +9749,10 @@
             this.groupBox32.Controls.Add(this.MantelMatBox);
             this.groupBox32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox32.Location = new System.Drawing.Point(0, 0);
+            this.groupBox32.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox32.Name = "groupBox32";
-            this.groupBox32.Size = new System.Drawing.Size(1046, 694);
+            this.groupBox32.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox32.Size = new System.Drawing.Size(508, 406);
             this.groupBox32.TabIndex = 1;
             this.groupBox32.TabStop = false;
             this.groupBox32.Text = "Matrices (2 or up to 7 matrices, for simple or partial Mantel test, in order Y,X," +
@@ -9111,12 +9764,13 @@
             this.MantelMatBox.AcceptsTab = true;
             this.MantelMatBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MantelMatBox.HideSelection = false;
-            this.MantelMatBox.Location = new System.Drawing.Point(3, 23);
+            this.MantelMatBox.Location = new System.Drawing.Point(2, 22);
+            this.MantelMatBox.Margin = new System.Windows.Forms.Padding(2);
             this.MantelMatBox.MaxLength = 32767000;
             this.MantelMatBox.Multiline = true;
             this.MantelMatBox.Name = "MantelMatBox";
             this.MantelMatBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.MantelMatBox.Size = new System.Drawing.Size(1040, 668);
+            this.MantelMatBox.Size = new System.Drawing.Size(504, 382);
             this.MantelMatBox.TabIndex = 2;
             this.MantelMatBox.WordWrap = false;
             this.MantelMatBox.TextChanged += new System.EventHandler(this.PreSaveSettings);
@@ -9180,12 +9834,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1427, 783);
+            this.ClientSize = new System.Drawing.Size(889, 522);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.MainToolStrip);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "PolyGene V1.5";
+            this.Text = "PolyGene V1.6";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
@@ -9642,7 +10297,7 @@
         private System.Windows.Forms.GroupBox GroupBoxDiff;
         private System.Windows.Forms.CheckBox DiffSlatkin1995Box;
         private System.Windows.Forms.CheckBox DistSlatkinBox;
-        private System.Windows.Forms.CheckBox DistRoger1973Box;
+        private System.Windows.Forms.CheckBox DistRogers1973Box;
         private System.Windows.Forms.CheckBox DistNei1983Box;
         private System.Windows.Forms.CheckBox DistReynolds1983Box;
         private System.Windows.Forms.CheckBox DistNei1973Box;
@@ -10142,6 +10797,12 @@
         private System.Windows.Forms.CheckBox AMOVAOutputSSBox;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripTextBox OrdinationAxesBox;
+        private System.Windows.Forms.CheckBox DistRussel1940Box;
+        private System.Windows.Forms.CheckBox DistSorensen1948Box;
+        private System.Windows.Forms.CheckBox DistRogers1960Box;
+        private System.Windows.Forms.CheckBox DistSokal1963Box;
+        private System.Windows.Forms.CheckBox DistJaccard1901Box;
+        private System.Windows.Forms.CheckBox DistSokal1958Box;
     }
 }
 

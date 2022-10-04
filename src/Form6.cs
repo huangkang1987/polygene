@@ -120,11 +120,16 @@ namespace PolyGene
                     genotypes[i] = GetGenotype(f2[gtid], freq);
                     if (gq < mingq || dp < mindp) Form1.SetVal(genotypes[i], (byte)255);
 
-                    if (indv != null && indv[i] != genotypes[i].Length)
+                    if (indv != null && indv[i] != genotypes[i].Length && genotypes[i].Max() != 255)
                     {
-                        errormsg = "Inconsistent individual ploidy level, in individual " + (i + 1) + " at line " + pos;
-                        pass = -1;
-                        return;
+                        if (indv[i] == 0)
+                            indv[i] = genotypes[i].Length;
+                        else
+                        {
+                            errormsg = "Inconsistent individual ploidy level, in individual " + (i + 1) + " at line " + pos;
+                            pass = -1;
+                            return;
+                        }
                     }
 
                     if (genotypes[i][0] != 255) ntyped++;
@@ -268,7 +273,7 @@ namespace PolyGene
 
                     SNP tsnp1 = new SNP(0, firstline, true);
 
-                    indv = tsnp1.genotypes.Select(o => o.Length).ToArray();
+                    indv = tsnp1.genotypes.Select(o => o.Max() == 255 ? 0 : o.Length).ToArray();
                     toolStripProgressBar1.Value = 0;
                     toolStripProgressBar1.Maximum = (int)((snpfile.BaseStream.Length - 1) >> 10);
                     
